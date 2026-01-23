@@ -1,7 +1,8 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const aiWindow = document.getElementById('ai-chat-window');
     const openBtn = document.getElementById('open-chat');
-    const triggerBtn = document.getElementById('trigger-voicebox');
+    const triggerBtn = document.getElementById('trigger-Olga-Bot');
     const closeBtn = document.getElementById('close-chat');
     const chatForm = document.getElementById('chat-form');
     const chatInput = document.getElementById('chat-input');
@@ -59,3 +60,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+//ARTICOLO 1
+window.GoArt1 = async function() {
+    const wrapper = document.getElementById('page-wrapper');
+    if (!wrapper) return;
+
+    try {
+        const response = await fetch('GoArt1.html');
+        if (!response.ok) throw new Error("File GoArt1.html non trovato");
+        const html = await response.text();
+
+        // Sostituisce Header e Main della home con l'articolo
+        wrapper.innerHTML = html;
+        window.location.hash = 'articolo1';
+        window.scrollTo(0, 0);
+
+        // Attiva il tasto indietro
+        const backBtn = document.getElementById('back-home');
+        if (backBtn) {
+            backBtn.onclick = function() {
+                window.location.hash = '';
+                location.reload(); // Ricarica la home originale
+            };
+        }
+    } catch (err) {
+        console.error("Errore:", err);
+    }
+};
