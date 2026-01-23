@@ -1,50 +1,27 @@
-/* Custom Scrollbar */
+/* Custom resets */
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Heights */
-.chat-height { height: 600px; }
-
-/* Message Animations */
-@keyframes popIn {
-    0% { opacity: 0; transform: scale(0.9) translateY(20px); }
-    100% { opacity: 1; transform: scale(1) translateY(0); }
+/* Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
+.animate-float { animation: float 6s ease-in-out infinite; }
 
-.msg-user, .msg-bot { animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; display: flex; width: 100%; }
+/* Chat Bubbles */
+.msg-user, .msg-bot { display: flex; width: 100%; margin-bottom: 1rem; opacity: 0; transform: translateY(10px); animation: enter 0.3s forwards; }
 .msg-user { justify-content: flex-end; }
 .msg-bot { justify-content: flex-start; }
 
-.bubble {
-    padding: 16px 20px;
-    max-width: 80%;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    font-weight: 500;
+.bubble { padding: 12px 18px; max-width: 85%; font-size: 0.85rem; font-weight: 500; line-height: 1.4; }
+.msg-user .bubble { background: #6366f1; color: white; border-radius: 18px 18px 4px 18px; }
+.msg-bot .bubble { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 18px 18px 18px 4px; }
+
+@keyframes enter {
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.msg-user .bubble {
-    background: linear-gradient(135deg, #6366f1, #4f46e5);
-    color: white;
-    border-radius: 25px 25px 4px 25px;
-    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
-}
-
-.msg-bot .bubble {
-    background: white;
-    color: #1e293b;
-    border-radius: 25px 25px 25px 4px;
-    border: 1px solid #f1f5f9;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-}
-
-/* Background pattern per il body */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: radial-gradient(#6366f1 0.5px, transparent 0.5px);
-    background-size: 30px 30px;
-    opacity: 0.1;
-    z-index: -1;
-}
+/* Typography refinements */
+h1 { letter-spacing: -0.05em; }

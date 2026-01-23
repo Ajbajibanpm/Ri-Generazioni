@@ -28,15 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
             appendMessage(text, true);
             chatInput.value = '';
 
+            // Simulazione IA specifica per il progetto
             setTimeout(() => {
                 const replies = [
-                    "Ho ricevuto il tuo input. Lo sto categorizzando nella sezione 'Mobilità'. Grazie!",
-                    "Questo è un punto fondamentale. Lo aggiungo subito al report per le istituzioni.",
-                    "Ottima segnalazione. Pensi che anche i tuoi amici abbiano lo stesso bisogno?",
-                    "Ricevuto. La tua voce conta per definire le priorità della mappa!"
+                    "Analisi avviata. Ho aggiunto il tuo contributo al cluster 'Pianificazione Urbana'.",
+                    "Interessante segnalazione. Abbiamo riscontrato pattern simili in altri 4 quartieri.",
+                    "Dato ricevuto. Entro domani questa esigenza apparirà sulla mappa pubblica.",
+                    "Ottimo spunto. Vuoi approfondire con un breve quiz per definire meglio il problema?"
                 ];
                 appendMessage(replies[Math.floor(Math.random() * replies.length)], false);
-            }, 1000);
+            }, 800);
         }
     });
 });
