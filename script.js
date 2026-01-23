@@ -6,14 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const openBtn = document.getElementById('open-chat');
     const closeBtn = document.getElementById('close-chat');
 
-    // Apertura: Rimuove classe hidden, aggiunge visible
-    openBtn.addEventListener('click', () => {
+    // Funzione per mostrare il bot
+    openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         aiWindow.classList.remove('chat-hidden');
         aiWindow.classList.add('chat-visible');
     });
     
-    // Chiusura: Rimuove classe visible, aggiunge hidden
-    closeBtn.addEventListener('click', () => {
+    // Funzione per nascondere il bot
+    closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Previene conflitti di eventi
         aiWindow.classList.remove('chat-visible');
         aiWindow.classList.add('chat-hidden');
     });
@@ -36,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appendMessage(text, true);
             chatInput.value = '';
             setTimeout(() => {
-                appendMessage("Analisi della segnalazione completata.", false);
+                appendMessage("Ricevuto. La segnalazione è stata caricata nel sistema.", false);
             }, 800);
         }
     });
