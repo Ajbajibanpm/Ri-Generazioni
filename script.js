@@ -106,3 +106,51 @@ function GoArt1() {
         window.scrollTo(0, 0);
     }
 }
+//ARTICOLO 2
+function GoArt2() {
+    // 1. Identificativo URL specifico per l'articolo 2
+    window.location.hash = "articolo-arte-rigenerazione";
+
+    const currentHeader = document.querySelector('header');
+    const currentMain = document.querySelector('main');
+    const nav = document.querySelector('nav');
+
+    if (currentHeader && currentMain) {
+        currentHeader.remove();
+        currentMain.remove();
+
+        const articleHTML = `
+        <header class="relative h-[60vh] w-full flex items-center justify-start px-6 md:px-20 overflow-hidden pt-20">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1920&q=80" 
+                 class="absolute inset-0 w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+            <div class="relative z-10 max-w-4xl pt-20">
+                <span class="inline-block px-4 py-1 border border-indigo-500 text-indigo-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-6 italic">Cultura & Territorio</span>
+                <h1 class="text-4xl md:text-7xl font-black leading-tight mb-6 uppercase text-white">L'Arte come Motore di <br><span class="text-indigo-500">Rigenerazione.</span></h1>
+            </div>
+        </header>
+        <main class="w-full bg-white text-slate-900 py-20 px-6 md:px-20 relative z-20">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-xl md:text-2xl font-medium text-slate-600 mb-12 leading-relaxed italic border-l-4 border-indigo-500 pl-6">
+                    Come le residenze d'artista e i progetti culturali stanno trasformando i piccoli centri in hub creativi per giovani talenti.
+                </p>
+                <div class="prose prose-slate lg:prose-xl max-w-none text-slate-800">
+                    <p>Il riuso degli spazi attraverso la cultura rappresenta oggi una delle strategie più efficaci per contrastare lo spopolamento dei borghi...</p>
+                    </div>
+                <div class="mt-12 text-center">
+                    <button onclick="window.location.hash=''; window.location.reload();" class="text-slate-400 font-bold text-xs uppercase tracking-[0.2em] hover:text-indigo-600">
+                        <i class="fas fa-arrow-left mr-2"></i> Torna alla home
+                    </button>
+                </div>
+            </div>
+        </main>`;
+
+        if (nav) {
+            nav.insertAdjacentHTML('afterend', articleHTML);
+        } else {
+            document.body.insertAdjacentHTML('afterbegin', articleHTML);
+        }
+        
+        window.scrollTo(0, 0);
+    }
+}
