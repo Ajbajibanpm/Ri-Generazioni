@@ -300,6 +300,8 @@ function GoChiSiamo() {
     }
 }
 
+//GIOCOQUIZ
+//GIOCOQUIZ
 function GoGIOCOQUIZ() {
     window.location.hash = "gioco-quiz";
 
@@ -327,7 +329,7 @@ function GoGIOCOQUIZ() {
 
             <div id="quiz-screen" class="hidden">
                 <div class="flex justify-between items-center mb-6">
-                    <span id="question-counter" class="text-[10px] font-bold text-indigo-500 uppercase tracking-[0.2em]">Domanda 1/4</span>
+                    <span id="question-counter" class="text-[10px] font-bold text-indigo-500 uppercase tracking-[0.2em]"></span>
                 </div>
                 <div id="question-text" class="text-2xl font-black mb-6 leading-tight text-slate-800"></div>
                 <div id="options-container" class="space-y-3"></div>
@@ -337,7 +339,7 @@ function GoGIOCOQUIZ() {
                         <p id="feedback-text" class="font-bold text-sm leading-relaxed"></p>
                     </div>
                     <button id="next-question-btn" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-black uppercase tracking-widest hover:bg-indigo-600 transition-all shadow-xl flex items-center justify-center gap-3">
-                        Prossima domanda <i class="fas fa-arrow-right text-xs"></i>
+                        Avanti <i class="fas fa-arrow-right text-xs"></i>
                     </button>
                 </div>
             </div>
@@ -353,32 +355,70 @@ function GoGIOCOQUIZ() {
 
     document.body.appendChild(quizSection);
 
-    const questions = [
+    const allQuestions = [
         {
-            q: "In quale città si trova l'Orto Botanico più antico del mondo (1545)?",
-            options: ["Verona", "Padova", "Vicenza", "Venezia"],
+            q: "Qual è il soprannome della città di Venezia, riferito al suo storico dominio marittimo?",
+            options: ["La Superba", "La Serenissima", "La Dotta", "La Dominante"],
             correct: 1,
-            anecdote: "L'Orto Botanico di Padova è Patrimonio UNESCO e fu creato per lo studio delle piante medicinali."
+            anecdote: "Il termine 'Serenissima' deriva dal titolo spettante ai Dogi e rifletteva la stabilità e la giustizia del governo veneziano."
         },
         {
-            q: "Quale architetto ha progettato la Basilica Palladiana a Vicenza?",
-            options: ["Leon Battista Alberti", "Andrea Palladio", "Donatello", "Sansovino"],
-            correct: 1,
-            anecdote: "Andrea Palladio è l'architetto più imitato al mondo; lo stile 'palladiano' ha ispirato perfino la Casa Bianca."
-        },
-        {
-            q: "Cosa si celebra a Venezia durante la 'Festa del Redentore'?",
-            options: ["La fine della peste", "Il Carnevale", "La fondazione della città", "La vittoria a Lepanto"],
+            q: "In quale comune veneto si produce il celebre vino rosso 'Amarone'?",
+            options: ["Negrar di Valpolicella", "Asolo", "Soave", "Bardolino"],
             correct: 0,
-            anecdote: "Si festeggia la fine della peste del 1576 con un ponte di barche che attraversa il canale della Giudecca."
+            anecdote: "L'Amarone nasce da un errore: un produttore dimenticò una botte di Recioto (dolce), permettendo ai lieviti di fermentare tutti gli zuccheri, rendendo il vino amaro."
         },
         {
-            q: "Qual è l'ingrediente principe del Pandoro di Verona?",
-            options: ["Uvetta", "Crema pasticcera", "Burro e uova", "Cioccolato"],
+            q: "Quale università veneta, fondata nel 1222, ospita il primo teatro anatomico stabile al mondo?",
+            options: ["Università di Verona", "Università di Venezia (Ca' Foscari)", "Università di Padova", "Università di Treviso"],
             correct: 2,
-            anecdote: "Il Pandoro deriva dal 'Nadalin' veronese, ma la versione moderna fu brevettata da Melegatti nel 1894."
+            anecdote: "Il Teatro Anatomico di Padova, costruito nel 1594, permetteva agli studenti di assistere alle autopsie da una struttura a imbuto."
+        },
+        {
+            q: "Che cos'è il 'Baccalà alla vicentina'?",
+            options: ["Merluzzo fresco fritto", "Stoccafisso essiccato e cotto a fuoco lento", "Zuppa di pesce di laguna", "Pesce spada grigliato"],
+            correct: 1,
+            anecdote: "Nonostante il nome, si usa lo stoccafisso (merluzzo essiccato) importato dalle isole Lofoten in Norvegia fin dal 1432."
+        },
+        {
+            q: "Come si chiama la maschera veneziana che ricorda un medico della peste?",
+            options: ["Arlecchino", "Pantalone", "Medico della Peste", "Colombina"],
+            correct: 2,
+            anecdote: "Il lungo naso a becco veniva riempito di erbe profumate per proteggere il medico dai presunti miasmi del contagio."
+        },
+        {
+            q: "In quale città si svolge ogni due anni la famosa partita a scacchi con personaggi viventi?",
+            options: ["Cittadella", "Marostica", "Castelfranco Veneto", "Monselice"],
+            correct: 1,
+            anecdote: "La tradizione rievoca una sfida del 1454 tra due nobili che si contendevano la mano della figlia del castellano."
+        },
+        {
+            q: "Qual è il fiume più lungo che attraversa la pianura veneta sfociando nell'Adriatico?",
+            options: ["Piave", "Adige", "Po", "Brenta"],
+            correct: 2,
+            anecdote: "Il Delta del Po, situato principalmente in provincia di Rovigo, è una delle zone umide più importanti d'Europa e riserva della biosfera."
+        },
+        {
+            q: "Quale specialità culinaria veneta consiste in fegato cotto con abbondante cipolla?",
+            options: ["Fegato alla veneziana", "Sarde in saor", "Bigoli in salsa", "Fegato alla trevigiana"],
+            correct: 0,
+            anecdote: "I veneziani sostituirono i fichi (usati dai romani per mitigare l'odore del fegato) con le cipolle, abbondanti nelle lagune."
+        },
+        {
+            q: "Quale noto esploratore veneziano scrisse 'Il Milione', raccontando il suo viaggio in Cina?",
+            options: ["Cristoforo Colombo", "Marco Polo", "Amerigo Vespucci", "Giovanni Caboto"],
+            correct: 1,
+            anecdote: "Marco Polo dettò le sue memorie a Rustichello da Pisa mentre si trovava in prigione a Genova."
+        },
+        {
+            q: "Quale città veneta è soprannominata 'Urbs Picta' per i suoi numerosi cicli di affreschi?",
+            options: ["Vicenza", "Verona", "Padova", "Treviso"],
+            correct: 2,
+            anecdote: "Padova ospita la Cappella degli Scrovegni di Giotto, capolavoro assoluto della pittura del Trecento."
         }
-    ];
+       ];
+
+    const questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 5);
 
     let currentIdx = 0;
     let score = 0;
