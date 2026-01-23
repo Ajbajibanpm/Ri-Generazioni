@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouthVoice | Il tuo territorio, la tua voce</title>
+    <title>YouthVoice | News, Bandi e Opportunità per Giovani in Veneto e Lombardia</title>
+    <meta name="description" content="Hub territoriale per giovani tra Verona, Vicenza, Padova, Belluno e Mantova. Trova eventi, spazi di coworking e bandi attivi nel tuo territorio.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -23,14 +24,15 @@
     <div id="page-wrapper">
     <header class="relative h-screen w-full flex items-center justify-start px-6 md:px-20 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1920&q=80" 
+             alt="Giovani che collaborano nel territorio di Verona e Padova"
              class="absolute inset-0 w-full h-full object-cover scale-110 blur-[2px] opacity-40">
         <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/60 to-transparent"></div>
         
         <div class="relative z-10 max-w-3xl">
-            <span class="inline-block px-4 py-1 border border-indigo-500 text-indigo-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-6 italic">Punto di contatto territoriale</span>
-            <h1 class="text-6xl md:text-8xl font-black leading-none mb-8 uppercase">Tuo il territorio, <br><span class="text-indigo-500">tua la voce.</span></h1>
+            <span class="inline-block px-4 py-1 border border-indigo-500 text-indigo-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-6 italic">Punto di contatto territoriale per giovani</span>
+            <h1 class="text-6xl md:text-8xl font-black leading-none mb-8 uppercase">Il tuo territorio, <br><span class="text-indigo-500">la tua voce.</span></h1>
             <p class="text-lg md:text-xl text-slate-300 font-medium max-w-xl leading-relaxed mb-10">
-                Verona, Vicenza, Padova, Belluno, Mantova. Uno spazio per connetterti a quello che succede e per dire la tua su cosa serve davvero qui.
+                La piattaforma dedicata ai giovani di Verona, Vicenza, Padova, Belluno e Mantova. Partecipa agli eventi locali e scopri le opportunità nel tuo comune.
             </p>
             <div class="flex gap-4">
                 <button class="px-8 py-4 bg-indigo-600 rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-2xl shadow-indigo-500/20 uppercase tracking-widest">Esplora l'area</button>
@@ -42,7 +44,7 @@
             <div class="p-8 lg:p-6 border-b border-white/10 bg-white/5 flex justify-between items-center">
                 <div class="flex items-center gap-3">
                     <div class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></div>
-                    <span class="text-sm font-bold tracking-widest uppercase text-white">Olga-Bot</span>
+                    <span class="text-sm font-bold tracking-widest uppercase text-white">Olga-Bot | Assistente Territoriale</span>
                 </div>
                 <button id="close-chat" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors" aria-label="Chiudi chat">
                     <i class="fas fa-times text-xl text-white"></i>
@@ -53,7 +55,7 @@
             </div>
             <form id="chat-form" class="p-6 bg-slate-800 lg:bg-slate-900/50">
                 <div class="relative">
-                    <input id="chat-input" type="text" placeholder="Scrivi qui..." 
+                    <input id="chat-input" type="text" placeholder="Scrivi la tua città..." 
                            class="w-full bg-white/10 border border-white/10 rounded-2xl py-4 px-6 focus:outline-none focus:border-indigo-500 text-sm transition-all text-white">
                     <button type="submit" class="absolute right-4 top-1/2 -translate-y-1/2 text-indigo-400">
                         <i class="fas fa-paper-plane"></i>
@@ -73,57 +75,54 @@
                 
                 <section>
                     <div class="mb-8">
-                        <h2 class="text-4xl font-black uppercase tracking-tighter italic">Cosa <span class="text-indigo-600">succede</span></h2>
-                        <p class="text-slate-500 text-sm font-bold uppercase tracking-wider mt-2">Eventi, spazi e iniziative locali.</p>
+                        <h2 class="text-4xl font-black uppercase tracking-tighter italic">Eventi e <span class="text-indigo-600">Iniziative Locali</span></h2>
+                        <p class="text-slate-500 text-sm font-bold uppercase tracking-wider mt-2">Cosa succede oggi nel tuo territorio.</p>
                     </div>
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="group relative aspect-[4/5] rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                        <article class="group relative aspect-[4/5] rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80" alt="Hackathon 2026 a Padova per giovani programmatori" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
                             <div class="absolute bottom-10 left-8 right-8 text-white">
                                 <span class="text-[10px] font-bold bg-indigo-600 px-3 py-1 rounded-full uppercase mb-4 inline-block tracking-widest">Padova</span>
                                 <h3 class="text-3xl font-bold leading-tight">Hackathon Territoriale 2026</h3>
                             </div>
-                        </div>
-                        <div class="group relative aspect-[4/5] rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                        </article>
+                        <article class="group relative aspect-[4/5] rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Workshop di Public Speaking a Vicenza per studenti" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
                             <div class="absolute bottom-10 left-8 right-8 text-white">
                                 <span class="text-[10px] font-bold bg-rose-600 px-3 py-1 rounded-full uppercase mb-4 inline-block tracking-widest">Vicenza</span>
                                 <h3 class="text-3xl font-bold leading-tight">Workshop: Public Speaking</h3>
                             </div>
-                        </div>
+                        </article>
                     </div>
                 </section>
 
                 <section>
                     <div class="mb-8">
-                        <h2 class="text-4xl font-black uppercase tracking-tighter italic">News <span class="text-indigo-600">& Bandi</span></h2>
-                        <p class="text-slate-500 text-sm font-bold uppercase tracking-wider mt-2">Aggiornamenti per chi vive il territorio.</p>
+                        <h2 class="text-4xl font-black uppercase tracking-tighter italic">News <span class="text-indigo-600">& Bandi Regionali</span></h2>
+                        <p class="text-slate-500 text-sm font-bold uppercase tracking-wider mt-2">Finanziamenti e aggiornamenti per giovani talenti.</p>
                     </div>
                     
-            <!--INIZIO ARTICOLI-->
             <div class="space-y-2">
-                <!--ARTICOLO 1-->
                 <a href="javascript:void(0)" onclick="GoArt1()" class="block group flex flex-col md:flex-row gap-8 p-6 rounded-[2.5rem] hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100 cursor-pointer">
                     <div class="md:w-1/3 aspect-video rounded-[2rem] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Coworking gratuiti">
+                        <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mappa dei Coworking gratuiti a Verona e Mantova">
                     </div>
                     <div class="md:w-2/3 flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold mb-3 group-hover:text-indigo-600 transition-colors">Coworking gratuiti: la mappa definitiva</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed italic">Guida agli spazi per studiare tra Verona e Mantova.</p>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-indigo-600 transition-colors">Coworking gratuiti: la mappa per Verona e Mantova</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed italic">Scopri dove studiare e lavorare gratuitamente nel tuo comune.</p>
                     </div>
                 </a>
-                <!--ARTICOLO 2-->
                 <a href="javascript:void(0)" onclick="GoArt2()" class="block group flex flex-col md:flex-row gap-8 p-6 rounded-[2.5rem] hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100 cursor-pointer">
                     <div class="md:w-1/3 aspect-video rounded-[2rem] overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1920&q=80" 
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                            alt="Rigenerazione territoriale tramite arte">
+                            alt="Rigenerazione urbana nei borghi del Veneto tramite arte">
                     </div>
                     <div class="md:w-2/3 flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold mb-3 group-hover:text-indigo-600 transition-colors">Borghi Creativi: L'Arte come Motore di Rigenerazione</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed italic">Come le residenze d'artista trasformano i piccoli centri in hub per giovani talenti.</p>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-indigo-600 transition-colors">Borghi Creativi: Rigenerazione Urbana in Veneto</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed italic">Come le residenze d'artista trasformano i piccoli centri in hub creativi.</p>
                     </div>
                 </a>
 
@@ -131,35 +130,35 @@
 
             <aside class="lg:col-span-4 space-y-8">
                 <div class="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 sticky top-28">
-                    <h3 class="text-xl font-black mb-8 border-b border-slate-200 pb-4 tracking-tighter uppercase italic text-indigo-600">Trend Topics</h3>
+                    <h3 class="text-xl font-black mb-8 border-b border-slate-200 pb-4 tracking-tighter uppercase italic text-indigo-600">Temi del Momento</h3>
                     <ul class="space-y-8">
                         <li class="flex items-start gap-4 group cursor-pointer">
                             <div class="bg-indigo-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white w-12 h-12 flex items-center justify-center rounded-2xl font-black shrink-0 transition-all">01</div>
                             <div>
-                                <h4 class="font-bold text-slate-800 uppercase text-sm">Trasporti Notturni</h4>
-                                <p class="text-[10px] text-slate-500 mt-1 uppercase font-bold tracking-widest">Padova / Vicenza</p>
+                                <h4 class="font-bold text-slate-800 uppercase text-sm">Trasporti Notturni Padova</h4>
+                                <p class="text-[10px] text-slate-500 mt-1 uppercase font-bold tracking-widest">Aggiornamenti Viabilità</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4 group cursor-pointer">
                             <div class="bg-rose-100 text-rose-600 group-hover:bg-rose-600 group-hover:text-white w-12 h-12 flex items-center justify-center rounded-2xl font-black shrink-0 transition-all">02</div>
                             <div>
-                                <h4 class="font-bold text-slate-800 uppercase text-sm">Salute Mentale</h4>
-                                <p class="text-[10px] text-slate-500 mt-1 uppercase font-bold tracking-widest">Bandi attivi</p>
+                                <h4 class="font-bold text-slate-800 uppercase text-sm">Salute Mentale Giovani</h4>
+                                <p class="text-[10px] text-slate-500 mt-1 uppercase font-bold tracking-widest">Bandi e Supporto 2026</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4 group cursor-pointer">
                             <div class="bg-emerald-100 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white w-12 h-12 flex items-center justify-center rounded-2xl font-black shrink-0 transition-all">03</div>
                             <div>
-                                <h4 class="font-bold text-slate-800 uppercase text-sm">Aree Calisthenics</h4>
-                                <p class="text-[10px] text-slate-500 mt-1 uppercase font-bold tracking-widest">Mappatura Belluno</p>
+                                <h4 class="font-bold text-slate-800 uppercase text-sm">Aree Calisthenics Belluno</h4>
+                                <p class="text-[10px] text-slate-500 mt-1 uppercase font-bold tracking-widest">Mappatura Sport Outdoor</p>
                             </div>
                         </li>
                     </ul>
                     <div class="mt-12 p-8 bg-slate-900 rounded-[2.5rem] text-white relative overflow-hidden shadow-2xl">
                         <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-indigo-500/20 rounded-full blur-2xl"></div>
-                        <h4 class="font-bold text-lg mb-2 relative z-10 italic">Quante ne sai sul tuo territorio?</h4>
-                        <p class="text-slate-400 text-xs leading-relaxed mb-6 relative z-10">Mettiti alla prova e guadagna badge digitali sul territorio.</p>
-                        <button href="javascript:void(0)" onclick="GoGIOCOQUIZ()" class="w-full py-4 bg-indigo-600 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-indigo-500 transition-all relative z-10">GIOCA</button>
+                        <h4 class="font-bold text-lg mb-2 relative z-10 italic">Quiz sul Territorio</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-6 relative z-10">Mettiti alla prova su Verona, Padova e Vicenza e guadagna badge digitali.</p>
+                        <button href="javascript:void(0)" onclick="GoGIOCOQUIZ()" class="w-full py-4 bg-indigo-600 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-indigo-500 transition-all relative z-10">PARTECIPA AL QUIZ</button>
                     </div>
                 </div>
             </aside>
@@ -168,7 +167,7 @@
 </div>
 
     <footer class="bg-slate-900 py-12 px-6 text-center border-t border-white/5">
-        <p class="text-slate-500 font-bold text-[10px] uppercase tracking-[0.4em]">YouthVoice | Progetto attivo tra Verona, Vicenza, Padova, Belluno, Mantova.</p>
+        <p class="text-slate-500 font-bold text-[10px] uppercase tracking-[0.4em]">YouthVoice 2026 | Progetto di partecipazione giovanile Verona, Vicenza, Padova, Belluno, Mantova.</p>
     </footer>
 
     <script src="script.js"></script>
