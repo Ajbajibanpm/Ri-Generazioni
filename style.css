@@ -7,19 +7,9 @@
 }
 .lg\:animate-float { animation: float 6s ease-in-out infinite; }
 
-/* Stato Chiuso */
-.chat-hidden { 
-    display: none !important; 
-    opacity: 0;
-}
+.chat-hidden { display: none !important; opacity: 0; }
+.chat-visible { display: flex !important; opacity: 1; }
 
-/* Stato Aperto */
-.chat-visible { 
-    display: flex !important;
-    opacity: 1;
-}
-
-/* Fix Mobile: Occupa schermo ma rispetta i bordi se vuoi, o full screen */
 @media (max-width: 1024px) {
     .chat-visible { 
         position: fixed;
@@ -27,10 +17,8 @@
         left: 0 !important;
         width: 100% !important;
         height: 100% !important;
-        bottom: 0 !important;
-        right: 0 !important;
         border-radius: 0 !important;
-        z-index: 1001; /* Sopra la navbar su mobile per facilità d'uso */
+        z-index: 1001; 
     }
 }
 

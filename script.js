@@ -6,18 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatInput = document.getElementById('chat-input');
     const chatContainer = document.getElementById('chat-container');
 
-    // Apre la chat
     openBtn.addEventListener('click', () => {
         aiWindow.classList.remove('chat-hidden');
         aiWindow.classList.add('chat-visible');
-        openBtn.style.display = 'none'; // Nasconde l'icona quando aperto
+        openBtn.classList.add('hidden'); // Usa tailwind hidden
     });
     
-    // Chiude la chat
     closeBtn.addEventListener('click', () => {
         aiWindow.classList.remove('chat-visible');
         aiWindow.classList.add('chat-hidden');
-        openBtn.style.display = 'flex'; // Mostra l'icona quando chiuso
+        openBtn.classList.remove('hidden');
     });
 
     function appendMessage(text, isUser = false) {
@@ -38,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appendMessage(text, true);
             chatInput.value = '';
             setTimeout(() => {
-                appendMessage("Ricevuto. Sto elaborando i dati per la mappatura territoriale.", false);
+                appendMessage("Ricevuto. Dato inserito nella mappatura.", false);
             }, 800);
         }
     });
