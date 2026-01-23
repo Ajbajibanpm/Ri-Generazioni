@@ -9,13 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     openBtn.addEventListener('click', () => {
         aiWindow.classList.remove('chat-hidden');
         aiWindow.classList.add('chat-visible');
-        openBtn.classList.add('hidden'); // Usa tailwind hidden
+        openBtn.style.display = 'none';
+        if (window.innerWidth <= 1024) document.body.style.overflow = 'hidden';
     });
     
     closeBtn.addEventListener('click', () => {
         aiWindow.classList.remove('chat-visible');
         aiWindow.classList.add('chat-hidden');
-        openBtn.classList.remove('hidden');
+        openBtn.style.display = 'flex';
+        document.body.style.overflow = '';
     });
 
     function appendMessage(text, isUser = false) {
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appendMessage(text, true);
             chatInput.value = '';
             setTimeout(() => {
-                appendMessage("Ricevuto. Dato inserito nella mappatura.", false);
+                appendMessage("Analisi completata. Dato integrato.", false);
             }, 800);
         }
     });
