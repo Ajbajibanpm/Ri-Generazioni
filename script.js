@@ -1,4 +1,68 @@
-
+//PULL DI DOMANDE per quiz
+    const allQuestions = [
+        {
+            q: "Qual è il soprannome della città di Venezia, riferito al suo storico dominio marittimo?",
+            options: ["La Superba", "La Serenissima", "La Dotta", "La Dominante"],
+            correct: 1,
+            anecdote: "Il termine 'Serenissima' deriva dal titolo spettante ai Dogi e rifletteva la stabilità e la giustizia del governo veneziano."
+        },
+        {
+            q: "In quale comune veneto si produce il celebre vino rosso 'Amarone'?",
+            options: ["Negrar di Valpolicella", "Asolo", "Soave", "Bardolino"],
+            correct: 0,
+            anecdote: "L'Amarone nasce da un errore: un produttore dimenticò una botte di Recioto (dolce), permettendo ai lieviti di fermentare tutti gli zuccheri, rendendo il vino amaro."
+        },
+        {
+            q: "Quale università veneta, fondata nel 1222, ospita il primo teatro anatomico stabile al mondo?",
+            options: ["Università di Verona", "Università di Venezia (Ca' Foscari)", "Università di Padova", "Università di Treviso"],
+            correct: 2,
+            anecdote: "Il Teatro Anatomico di Padova, costruito nel 1594, permetteva agli studenti di assistere alle autopsie da una struttura a imbuto."
+        },
+        {
+            q: "Che cos'è il 'Baccalà alla vicentina'?",
+            options: ["Merluzzo fresco fritto", "Stoccafisso essiccato e cotto a fuoco lento", "Zuppa di pesce di laguna", "Pesce spada grigliato"],
+            correct: 1,
+            anecdote: "Nonostante il nome, si usa lo stoccafisso (merluzzo essiccato) importato dalle isole Lofoten in Norvegia fin dal 1432."
+        },
+        {
+            q: "Come si chiama la maschera veneziana che viene tradizionalmente rappresentata con un lungo naso a becco?",
+            options: ["Arlecchino", "Pantalone", "Medico della Peste", "Colombina"],
+            correct: 2,
+            anecdote: "Il lungo naso a becco veniva riempito di erbe profumate per proteggere il medico dai presunti miasmi del contagio."
+        },
+        {
+            q: "In quale città si svolge ogni due anni la famosa partita a scacchi con personaggi viventi?",
+            options: ["Cittadella", "Marostica", "Castelfranco Veneto", "Monselice"],
+            correct: 1,
+            anecdote: "La tradizione rievoca una sfida del 1454 tra due nobili che si contendevano la mano della figlia del castellano."
+        },
+        {
+            q: "Qual è il fiume più lungo che attraversa la pianura veneta sfociando nell'Adriatico?",
+            options: ["Piave", "Adige", "Po", "Brenta"],
+            correct: 2,
+            anecdote: "Il Delta del Po, situato principalmente in provincia di Rovigo, è una delle zone umide più importanti d'Europa e riserva della biosfera."
+        },
+        {
+            q: "Quale specialità culinaria veneta consiste in fegato cotto con abbondante cipolla?",
+            options: ["Fegato alla veneziana", "Sarde in saor", "Bigoli in salsa", "Fegato alla trevigiana"],
+            correct: 0,
+            anecdote: "I veneziani sostituirono i fichi (usati dai romani per mitigare l'odore del fegato) con le cipolle, abbondanti nelle lagune."
+        },
+        {
+            q: "Quale noto esploratore veneziano scrisse 'Il Milione', raccontando il suo viaggio in Cina?",
+            options: ["Cristoforo Colombo", "Marco Polo", "Amerigo Vespucci", "Giovanni Caboto"],
+            correct: 1,
+            anecdote: "Marco Polo dettò le sue memorie a Rustichello da Pisa mentre si trovava in prigione a Genova."
+        },
+        {
+            q: "Quale città veneta è soprannominata 'Urbs Picta' per i suoi numerosi cicli di affreschi?",
+            options: ["Vicenza", "Verona", "Padova", "Treviso"],
+            correct: 2,
+            anecdote: "Padova ospita la Cappella degli Scrovegni di Giotto, capolavoro assoluto della pittura del Trecento."
+        }
+       ];
+       
+//codice script
 document.addEventListener('DOMContentLoaded', () => {
     const aiWindow = document.getElementById('ai-chat-window');
     const openBtn = document.getElementById('open-chat');
@@ -301,46 +365,6 @@ function GoChiSiamo() {
 }
 
 //GIOCOQUIZ
-// DATABASE GLOBALE (Inserisci qui tutte le tue 50+ domande)
-const ALL_QUESTIONS_DATABASE = [
-    {
-        q: "Qual è il soprannome della città di Venezia, riferito al suo storico dominio marittimo?",
-        options: ["La Superba", "La Serenissima", "La Dotta", "La Dominante"],
-        correct: 1,
-        anecdote: "Il termine 'Serenissima' deriva dal titolo spettante ai Dogi e rifletteva la stabilità e la giustizia del governo veneziano."
-    },
-    {
-        q: "In quale comune veneto si produce il celebre vino rosso 'Amarone'?",
-        options: ["Negrar di Valpolicella", "Asolo", "Soave", "Bardolino"],
-        correct: 0,
-        anecdote: "L'Amarone nasce da un errore: un produttore dimenticò una botte di Recioto."
-    },
-    // ... AGGIUNGI QUI TUTTE LE ALTRE DOMANDE (fino a 50 o più)
-];
-
-// STATO DEL GIOCO PERSISTENTE
-let poolDomande = [];
-
-// Funzione di rimescolamento Fisher-Yates
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-function resetToHome() {
-    const quizSection = document.getElementById('quiz-section-container');
-    if (quizSection) quizSection.remove();
-    
-    const pageWrapper = document.getElementById('page-wrapper');
-    const footer = document.querySelector('footer');
-    if (pageWrapper) pageWrapper.style.display = 'block';
-    if (footer) footer.style.display = 'block';
-    
-    window.location.hash = "";
-}
-
 function GoGIOCOQUIZ() {
     window.location.hash = "gioco-quiz";
 
@@ -352,15 +376,6 @@ function GoGIOCOQUIZ() {
     const existingQuiz = document.getElementById('quiz-section-container');
     if (existingQuiz) existingQuiz.remove();
 
-    // Gestione Pool: se vuoto o quasi, ricarica tutto dal database
-    if (poolDomande.length < 5) {
-        poolDomande = [...ALL_QUESTIONS_DATABASE];
-        shuffleArray(poolDomande);
-    }
-
-    // Estrazione di 5 domande uniche per questa sessione
-    const currentSessionQuestions = poolDomande.splice(0, 5);
-
     const quizSection = document.createElement('div');
     quizSection.id = 'quiz-section-container';
     quizSection.className = "min-h-screen w-full bg-[#F0B27A] pt-[100px] pb-12 flex items-center justify-center relative z-10 transition-colors duration-700";
@@ -370,7 +385,7 @@ function GoGIOCOQUIZ() {
             <div id="setup-screen" class="text-center">
                 <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-4 text-indigo-600">Quiz Veneto</h2>
                 <p class="text-slate-600 font-bold mb-8 uppercase text-xs tracking-widest leading-relaxed">
-                    Metti alla prova la tua conoscenza locale.<br>Sessione: 5 domande casuali senza ripetizioni.
+                    Metti alla prova la tua conoscenza locale.<br>Leggi gli aneddoti per scoprire i segreti del territorio.
                 </p>
                 <button id="start-quiz-btn" class="w-full py-4 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest hover:bg-indigo-700 transition-all shadow-lg">Inizia la sfida</button>
             </div>
@@ -396,15 +411,27 @@ function GoGIOCOQUIZ() {
                 <h3 class="text-2xl font-black mb-2 uppercase italic text-indigo-600">Completato!</h3>
                 <div id="final-score" class="text-7xl font-black mb-4 text-slate-900">0/0</div>
                 <p id="result-message" class="mb-8 font-bold text-slate-500 uppercase text-xs tracking-widest"></p>
-                <button id="home-btn" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-black uppercase tracking-widest hover:bg-indigo-600 transition-all">Torna alla Home</button>
+                <button onclick="location.reload()" class="w-full py-4 bg-slate-900 text-white rounded-2xl font-black uppercase tracking-widest hover:bg-indigo-600 transition-all">Torna alla Home</button>
             </div>
         </div>
     `;
 
     document.body.appendChild(quizSection);
 
-    let currentIdx = 0;
-    let score = 0;
+    //SORT
+    // // Algoritmo Fisher-Yates per un rimescolamento reale
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+    // All'interno di GoGIOCOQUIZ:
+    const shuffledQuestions = shuffle([...allQuestions]);
+    const questions = shuffledQuestions.slice(0, 5);
+        let currentIdx = 0;
+        let score = 0;
 
     const setupScreen = document.getElementById('setup-screen');
     const quizScreen = document.getElementById('quiz-screen');
@@ -422,14 +449,12 @@ function GoGIOCOQUIZ() {
         loadQuestion();
     };
 
-    document.getElementById('home-btn').onclick = resetToHome;
-
     function loadQuestion() {
         feedbackArea.classList.add('hidden');
         optionsContainer.innerHTML = '';
-        const q = currentSessionQuestions[currentIdx];
+        const q = questions[currentIdx];
         
-        counter.innerText = `Domanda ${currentIdx + 1}/5`;
+        counter.innerText = `Domanda ${currentIdx + 1}/${questions.length}`;
         document.getElementById('question-text').innerText = q.q;
 
         q.options.forEach((opt, i) => {
@@ -442,7 +467,7 @@ function GoGIOCOQUIZ() {
     }
 
     function checkAnswer(selected, btn) {
-        const q = currentSessionQuestions[currentIdx];
+        const q = questions[currentIdx];
         const allBtns = optionsContainer.querySelectorAll('button');
         allBtns.forEach(b => b.disabled = true);
 
@@ -463,7 +488,7 @@ function GoGIOCOQUIZ() {
 
     nextBtn.onclick = () => {
         currentIdx++;
-        if (currentIdx < currentSessionQuestions.length) {
+        if (currentIdx < questions.length) {
             loadQuestion();
         } else {
             showFinalResults();
@@ -474,8 +499,8 @@ function GoGIOCOQUIZ() {
         quizScreen.classList.add('hidden');
         resultScreen.classList.remove('hidden');
         quizSection.classList.replace('bg-[#F0B27A]', 'bg-[#A8DCD2]');
-        document.getElementById('final-score').innerText = `${score}/5`;
-        document.getElementById('result-message').innerText = score >= 3 ? "Complimenti!" : "Riprova!";
+        document.getElementById('final-score').innerText = `${score}/${questions.length}`;
+        document.getElementById('result-message').innerText = score >= 3 ? "Complimenti, conosci bene il Veneto!" : "Puoi fare di meglio, riprova!";
     }
 
     window.scrollTo(0, 0);
