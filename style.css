@@ -7,25 +7,30 @@
 }
 .lg\:animate-float { animation: float 6s ease-in-out infinite; }
 
-/* Desktop visibility */
-.lg\:chat-visible { display: flex; }
+/* Stato Chiuso */
+.chat-hidden { 
+    display: none !important; 
+    opacity: 0;
+}
 
-/* Mobile Logic */
+/* Stato Aperto */
+.chat-visible { 
+    display: flex !important;
+    opacity: 1;
+}
+
+/* Fix Mobile: Occupa schermo ma rispetta i bordi se vuoi, o full screen */
 @media (max-width: 1024px) {
-    .chat-hidden { 
-        display: none !important; 
-    }
     .chat-visible { 
-        display: flex !important;
-        position: fixed !important;
+        position: fixed;
         top: 0 !important;
         left: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        border-radius: 0 !important;
-        margin: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
         bottom: 0 !important;
         right: 0 !important;
+        border-radius: 0 !important;
+        z-index: 1001; /* Sopra la navbar su mobile per facilità d'uso */
     }
 }
 

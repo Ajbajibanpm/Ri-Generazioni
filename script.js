@@ -1,24 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const chatForm = document.getElementById('chat-form');
-    const chatInput = document.getElementById('chat-input');
-    const chatContainer = document.getElementById('chat-container');
     const aiWindow = document.getElementById('ai-chat-window');
     const openBtn = document.getElementById('open-chat');
     const closeBtn = document.getElementById('close-chat');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatContainer = document.getElementById('chat-container');
 
-    // Funzione per mostrare il bot
-    openBtn.addEventListener('click', (e) => {
-        e.preventDefault();
+    // Apre la chat
+    openBtn.addEventListener('click', () => {
         aiWindow.classList.remove('chat-hidden');
         aiWindow.classList.add('chat-visible');
+        openBtn.style.display = 'none'; // Nasconde l'icona quando aperto
     });
     
-    // Funzione per nascondere il bot
-    closeBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation(); // Previene conflitti di eventi
+    // Chiude la chat
+    closeBtn.addEventListener('click', () => {
         aiWindow.classList.remove('chat-visible');
         aiWindow.classList.add('chat-hidden');
+        openBtn.style.display = 'flex'; // Mostra l'icona quando chiuso
     });
 
     function appendMessage(text, isUser = false) {
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appendMessage(text, true);
             chatInput.value = '';
             setTimeout(() => {
-                appendMessage("Ricevuto. La segnalazione è stata caricata nel sistema.", false);
+                appendMessage("Ricevuto. Sto elaborando i dati per la mappatura territoriale.", false);
             }, 800);
         }
     });
