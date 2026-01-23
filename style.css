@@ -31,6 +31,14 @@
 .msg-user .bubble { background: #6366f1; color: white; border-bottom-right-radius: 4px; }
 .msg-bot .bubble { background: rgba(255,255,255,0.1); color: white; border-bottom-left-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
 
+/*Aggiungi margine superiore al gancio*/
+header {
+    padding-top: 100px;    /* Distanza dal bordo superiore */
+    padding-left: 80px;   /* Distanza dal bordo sinistro */
+    padding-right: 80px;  /* Distanza dal bordo destro */
+    padding-bottom: 40px; /* Distanza dal bordo inferiore */
+}
+
 /*fissa la chat*/
 #ai-chat-window {
     position: fixed !important;
