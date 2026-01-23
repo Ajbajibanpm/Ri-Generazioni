@@ -1,27 +1,21 @@
-/* Custom resets */
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Animations */
 @keyframes float {
-    0% { transform: translateY(0px); }
+    0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
 }
-.animate-float { animation: float 6s ease-in-out infinite; }
+.lg\:animate-float { animation: float 6s ease-in-out infinite; }
 
-/* Chat Bubbles */
-.msg-user, .msg-bot { display: flex; width: 100%; margin-bottom: 1rem; opacity: 0; transform: translateY(10px); animation: enter 0.3s forwards; }
+/* Responsive Visibility */
+@media (max-width: 1024px) {
+    .chat-hidden { transform: translateY(120%); opacity: 0; pointer-events: none; }
+    .chat-visible { transform: translateY(0); opacity: 1; pointer-events: auto !important; }
+}
+
+/* Chat Styles */
+.msg-user, .msg-bot { display: flex; width: 100%; margin-bottom: 1rem; }
 .msg-user { justify-content: flex-end; }
-.msg-bot { justify-content: flex-start; }
-
-.bubble { padding: 12px 18px; max-width: 85%; font-size: 0.85rem; font-weight: 500; line-height: 1.4; }
-.msg-user .bubble { background: #6366f1; color: white; border-radius: 18px 18px 4px 18px; }
-.msg-bot .bubble { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 18px 18px 18px 4px; }
-
-@keyframes enter {
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Typography refinements */
-h1 { letter-spacing: -0.05em; }
+.bubble { padding: 12px 18px; max-width: 85%; font-size: 0.85rem; border-radius: 20px; }
+.msg-user .bubble { background: #6366f1; color: white; border-bottom-right-radius: 4px; }
+.msg-bot .bubble { background: rgba(255,255,255,0.1); color: white; border-bottom-left-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
