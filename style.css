@@ -1,0 +1,41 @@
+/* Custom Utility Classes */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Layout */
+.navbar { @apply flex items-center justify-between px-6 py-4 bg-white border-b sticky top-0 z-50; }
+.container-main { @apply max-w-4xl mx-auto p-4; }
+
+/* Chat UI */
+.chat-wrapper { @apply bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200 flex flex-col; }
+.chat-body { @apply h-[400px] overflow-y-auto p-4 space-y-4 bg-slate-50; }
+.chat-input-area { @apply p-4 bg-white border-t flex gap-2; }
+#chat-input { @apply flex-1 p-3 bg-slate-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm; }
+.btn-send { @apply bg-indigo-600 text-white p-3 rounded-xl hover:bg-indigo-700 transition-colors; }
+
+/* Message Bubbles */
+.msg-user { @apply flex justify-end animate-[fadeIn_0.3s_ease-out]; }
+.msg-bot { @apply flex justify-start animate-[fadeIn_0.3s_ease-out]; }
+.msg-user .bubble { @apply bg-indigo-600 text-white p-3 rounded-2xl rounded-tr-none shadow-md max-w-[85%] text-sm; }
+.msg-bot .bubble { @apply bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border max-w-[85%] text-sm; }
+
+/* News Slider */
+.news-slider { @apply flex overflow-x-auto gap-4 pb-4 snap-x; }
+.news-card { @apply min-w-[280px] snap-center bg-white rounded-2xl overflow-hidden shadow-sm border; }
+.card-img { @apply h-32 flex items-center justify-center text-3xl opacity-40; }
+.card-content { @apply p-4; }
+.card-content h3 { @apply font-bold text-sm; }
+.card-content p { @apply text-xs text-slate-500 mt-1; }
+
+.special-card { @apply bg-indigo-900 text-white p-4 flex flex-col justify-between; }
+.btn-play { @apply mt-4 bg-white text-indigo-900 text-[10px] font-bold py-2 rounded-lg uppercase; }
+
+/* Elements */
+.badge-ai { @apply bg-indigo-100 text-indigo-600 p-2 rounded-lg text-xs font-bold mr-2; }
+.section-title { @apply text-lg font-bold mb-4 flex items-center; }
+.mobile-nav { @apply fixed bottom-0 w-full bg-white border-t flex justify-around py-3 px-2 z-50 shadow-lg; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
