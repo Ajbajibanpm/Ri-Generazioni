@@ -6,14 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const openBtn = document.getElementById('open-chat');
     const closeBtn = document.getElementById('close-chat');
 
+    // Apertura: Rimuove classe hidden, aggiunge visible
     openBtn.addEventListener('click', () => {
-        aiWindow.classList.replace('chat-hidden', 'chat-visible');
-        openBtn.style.display = 'none';
+        aiWindow.classList.remove('chat-hidden');
+        aiWindow.classList.add('chat-visible');
     });
     
+    // Chiusura: Rimuove classe visible, aggiunge hidden
     closeBtn.addEventListener('click', () => {
-        aiWindow.classList.replace('chat-visible', 'chat-hidden');
-        openBtn.style.display = 'flex';
+        aiWindow.classList.remove('chat-visible');
+        aiWindow.classList.add('chat-hidden');
     });
 
     function appendMessage(text, isUser = false) {
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appendMessage(text, true);
             chatInput.value = '';
             setTimeout(() => {
-                appendMessage("Dato ricevuto. Sto elaborando il report per il database territoriale 2026.", false);
+                appendMessage("Analisi della segnalazione completata.", false);
             }, 800);
         }
     });

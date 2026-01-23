@@ -7,13 +7,25 @@
 }
 .lg\:animate-float { animation: float 6s ease-in-out infinite; }
 
-/* Responsive Visibility */
+/* Mobile UI Fixed */
 @media (max-width: 1024px) {
-    .chat-hidden { transform: translateY(120%); opacity: 0; pointer-events: none; }
-    .chat-visible { transform: translateY(0); opacity: 1; pointer-events: auto !important; }
+    .chat-hidden { 
+        display: none !important; 
+        opacity: 0;
+    }
+    .chat-visible { 
+        display: flex !important;
+        opacity: 1;
+        position: fixed;
+        bottom: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 0 !important;
+        z-index: 999;
+    }
 }
 
-/* Chat Styles */
 .msg-user, .msg-bot { display: flex; width: 100%; margin-bottom: 1rem; }
 .msg-user { justify-content: flex-end; }
 .bubble { padding: 12px 18px; max-width: 85%; font-size: 0.85rem; border-radius: 20px; }
