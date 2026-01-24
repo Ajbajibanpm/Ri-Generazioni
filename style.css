@@ -1,7 +1,24 @@
 /*GENERALE*/
-* {box-sizing: border-box;}
-body {padding-left: 20px;
-    padding-right: 20px;}
+/* 1. Reset necessario per evitare lo scroll orizzontale */
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* 2. Elementi che devono toccare i bordi (Nav, Hero, Footer) */
+.full-width {
+    width: 100%;
+}
+/* 3. Il "cuscinetto" solo per il contenuto */
+.content-shifter {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* Opzionale: centra il contenuto se lo schermo è molto largo */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
