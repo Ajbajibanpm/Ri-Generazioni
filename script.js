@@ -651,7 +651,6 @@ function GoEvento1() {
     const nav = document.querySelector('nav');
 
     const event1HTML = `
-    <body class="bg-white text-slate-900 font-sans">
 
     <header class="relative pt-32 pb-24 overflow-hidden bg-slate-900">
         <div class="absolute inset-0 z-0">
@@ -821,7 +820,6 @@ function GoEvento1() {
             </div>
         </div>
     </main>
-</body>
     `;
 
     if (nav) {
@@ -1303,73 +1301,6 @@ function GoSond1() {
                 </p>
             </section>
         </article>
-    </main>
-
-    <div id="survey-modal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px;">
-        <div class="bg-white w-full max-w-[600px] max-h-[90vh] overflow-y-auto rounded-[24px] p-10">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-2xl font-black uppercase italic tracking-tighter">Valutazione <span class="text-indigo-600">Servizio</span></h2>
-                <button onclick="closeSurvey()" class="text-slate-400 hover:text-slate-900 transition-colors">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-
-            <form id="survey-form" class="space-y-8">
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">01. Motivi di utilizzo (più risposte ammesse)</p>
-                    <div class="grid grid-cols-1 gap-2">
-                        <div class="relative">
-                            <input type="checkbox" id="m1" name="reason" value="studio" class="sr-only peer">
-                            <label for="m1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold text-sm transition-all">Studio / Università</label>
-                        </div>
-                        <div class="relative">
-                            <input type="checkbox" id="m2" name="reason" value="lavoro" class="sr-only peer">
-                            <label for="m2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold text-sm transition-all">Lavoro</label>
-                        </div>
-                        <div class="relative">
-                            <input type="checkbox" id="m3" name="reason" value="social" class="sr-only peer">
-                            <label for="m3" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold text-sm transition-all">Tempo libero / Socialità</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">02. Grado di soddisfazione generale</p>
-                    <div class="flex justify-between gap-2">
-                        ${[1, 2, 3, 4, 5].map(n => `
-                            <div class="flex-1">
-                                <input type="radio" id="q${n}" name="satisfaction" value="${n}" class="sr-only peer" ${n === 1 ? 'required' : ''}>
-                                <label for="q${n}" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold transition-all">${n}</label>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">03. Reputi il servizio sicuro?</p>
-                    <div class="grid grid-cols-1 gap-2">
-                        <div class="relative">
-                            <input type="radio" id="s1" name="safety" value="no" class="sr-only peer" required>
-                            <label for="s1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold text-sm transition-all">No, per nulla</label>
-                        </div>
-                        <div class="relative">
-                            <input type="radio" id="s2" name="safety" value="si" class="sr-only peer">
-                            <label for="s2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold text-sm transition-all">Sì, lo reputo sicuro</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">04. Note o suggerimenti</p>
-                    <textarea name="suggestions" class="w-full border-2 border-slate-100 rounded-xl p-4 text-sm font-medium focus:border-indigo-600 outline-none transition-colors min-h-[100px]" placeholder="Come potremmo migliorare il servizio?"></textarea>
-                </div>
-
-                <button type="submit" class="w-full py-4 bg-slate-900 text-white rounded-xl font-black uppercase text-xs tracking-widest hover:bg-indigo-600 transition-all shadow-lg">
-                    Invia Valutazione
-                </button>
-            </form>
-        </div>
-    </div>
     `;
 
     // 5. Inserimento nel DOM
@@ -1493,74 +1424,8 @@ function GoSond2() {
                 </p>
             </section>
         </article>
-    </main>
 
-    <div id="survey-modal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px;">
-        <div class="bg-white w-full max-w-[600px] max-h-[90vh] overflow-y-auto rounded-[24px] p-10">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-2xl font-black uppercase italic tracking-tighter">Sondaggio <span class="text-rose-600">Benessere</span></h2>
-                <button onclick="closeSurvey()" class="text-slate-400 hover:text-slate-900 transition-colors">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-
-            <form id="survey-form" class="space-y-8">
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">01. Quali ostacoli riscontri nell'accesso alle cure? (più risposte)</p>
-                    <div class="grid grid-cols-1 gap-2">
-                        <div class="relative">
-                            <input type="checkbox" id="sm1" name="barrier" value="costi" class="sr-only peer">
-                            <label for="sm1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm transition-all">Costi elevati dei privati</label>
-                        </div>
-                        <div class="relative">
-                            <input type="checkbox" id="sm2" name="barrier" value="attesa" class="sr-only peer">
-                            <label for="sm2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm transition-all">Liste d'attesa nel pubblico</label>
-                        </div>
-                        <div class="relative">
-                            <input type="checkbox" id="sm3" name="barrier" value="stigma" class="sr-only peer">
-                            <label for="sm3" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm transition-all">Stigma sociale / paura del giudizio</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">02. Valuta la tua serenità nell'ultimo mese (1-5)</p>
-                    <div class="flex justify-between gap-2">
-                        ${[1, 2, 3, 4, 5].map(n => `
-                            <div class="flex-1">
-                                <input type="radio" id="smq${n}" name="wellbeing" value="${n}" class="sr-only peer" ${n === 1 ? 'required' : ''}>
-                                <label for="smq${n}" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold transition-all">${n}</label>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">03. Conosci i servizi gratuiti nel tuo Comune?</p>
-                    <div class="grid grid-cols-1 gap-2">
-                        <div class="relative">
-                            <input type="radio" id="kms1" name="knowledge" value="si" class="sr-only peer" required>
-                            <label for="kms1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm transition-all">Sì, so a chi rivolgermi</label>
-                        </div>
-                        <div class="relative">
-                            <input type="radio" id="kms2" name="knowledge" value="no" class="sr-only peer">
-                            <label for="kms2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm transition-all">No, non saprei dove andare</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">04. Cosa dovrebbe fare la Regione Veneto?</p>
-                    <textarea name="suggestions" class="w-full border-2 border-slate-100 rounded-xl p-4 text-sm font-medium focus:border-rose-600 outline-none transition-colors min-h-[100px]" placeholder="Più sportelli scolastici? Bonus psicologo regionale?"></textarea>
-                </div>
-
-                <button type="submit" class="w-full py-4 bg-slate-900 text-white rounded-xl font-black uppercase text-xs tracking-widest hover:bg-rose-600 transition-all shadow-lg">
-                    Invia Risposte
-                </button>
-            </form>
-        </div>
-    </div>
-    `;
+    </main>  `;
 
     // 5. Inserimento nel DOM
     const nav = document.querySelector('nav');
@@ -1682,76 +1547,6 @@ function GoSond3() {
             </section>
         </article>
     </main>
-
-    <div id="survey-modal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px;">
-        <div class="bg-white w-full max-w-[600px] max-h-[90vh] overflow-y-auto rounded-[24px] p-10">
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-2xl font-black uppercase italic tracking-tighter">Report <span class="text-orange-600">Workout</span></h2>
-                <button onclick="closeSurvey()" class="text-slate-400 hover:text-slate-900 transition-colors">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-
-            <form id="survey-form" class="space-y-8">
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">01. Quali aree frequenti maggiormente? (anche più di una)</p>
-                    <div class="grid grid-cols-1 gap-2">
-                        <div class="relative">
-                            <input type="checkbox" id="c1" name="location" value="lambioi" class="sr-only peer">
-                            <label for="c1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Lambioi</label>
-                        </div>
-                        <div class="relative">
-                            <input type="checkbox" id="c2" name="location" value="mussoi" class="sr-only peer">
-                            <label for="c2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Mussoi / Parco Città di Bologna</label>
-                        </div>
-                        <div class="relative">
-                            <input type="checkbox" id="c3" name="location" value="provincia" class="sr-only peer">
-                            <label for="c3" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Fuori Comune (Provincia)</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">02. Qualità delle attrezzature attuali</p>
-                    <div class="flex justify-between gap-2">
-                        ${[1, 2, 3, 4, 5].map(n => `
-                            <div class="flex-1">
-                                <input type="radio" id="cq${n}" name="quality" value="${n}" class="sr-only peer" ${n === 1 ? 'required' : ''}>
-                                <label for="cq${n}" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold transition-all">${n}</label>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">03. Cosa manca di più nelle aree esistenti?</p>
-                    <div class="grid grid-cols-1 gap-2">
-                        <div class="relative">
-                            <input type="radio" id="cf1" name="missing" value="parallele" class="sr-only peer" required>
-                            <label for="cf1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Parallele più alte / larghe</label>
-                        </div>
-                        <div class="relative">
-                            <input type="radio" id="cf2" name="missing" value="pavimento" class="sr-only peer">
-                            <label for="cf2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Pavimentazione antitrauma</label>
-                        </div>
-                        <div class="relative">
-                            <input type="radio" id="cf3" name="missing" value="luce" class="sr-only peer">
-                            <label for="cf3" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Illuminazione notturna</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">04. Suggerisci una posizione per una nuova area</p>
-                    <textarea name="new_spot" class="w-full border-2 border-slate-100 rounded-xl p-4 text-sm font-medium focus:border-orange-600 outline-none transition-colors min-h-[100px]" placeholder="Esempio: Vicino al campo sportivo di..."></textarea>
-                </div>
-
-                <button type="submit" class="w-full py-4 bg-slate-900 text-white rounded-xl font-black uppercase text-xs tracking-widest hover:bg-orange-600 transition-all shadow-lg">
-                    Invia Report
-                </button>
-            </form>
-        </div>
-    </div>
     `;
 
     // 5. Inserimento nel DOM
@@ -1860,20 +1655,17 @@ function GoChiSiamo() {
     }
 }
 
-//CHI SIAMO
+//OPPORTUNITà
 function GoOpportunity() {
-    // Cambia l'URL in modo che se ricarichi rimanga qui
     window.location.hash = "opportunità";
 
     const currentHeader = document.querySelector('header');
     const currentMain = document.querySelector('main');
 
     if (currentHeader && currentMain) {
-        // Rimuove la Home
         currentHeader.remove();
         currentMain.remove();
 
-        // Inserisce il contenuto "Chi Siamo" ottimizzato
         const OpportunityHTML = `
         
     <header class="relative pt-24 pb-20 overflow-hidden bg-slate-900">
@@ -1940,7 +1732,7 @@ function GoOpportunity() {
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 lg:sticky lg:top-8">
+                <div class="lg:col-span-5 relative !static">
                     <div class="p-8 bg-slate-900 rounded-2xl text-white shadow-lg">
                         <h4 class="text-xl font-bold mb-6 tracking-tight">Programmi Civici</h4>
                         <ul class="space-y-6">
@@ -1960,34 +1752,42 @@ function GoOpportunity() {
                 </div>
             </div>
 
-            <section class="mt-32 pt-16 border-t border-slate-100">
-                <div class="mb-12">
-                    <h2 class="text-4xl font-black uppercase tracking-tighter italic">Eventi e <span class="text-indigo-600">Iniziative Locali</span></h2>
-                    <p class="text-slate-500 text-sm font-bold uppercase tracking-wider mt-2">Cosa succede oggi nel tuo territorio.</p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <article href="javascript:void(0)" onclick="GoEvento1()" class="group relative aspect-[4/5] rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80" alt="Hackathon 2026 a Padova" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
-                        <div class="absolute bottom-10 left-8 right-8 text-white">
-                            <span class="text-[10px] font-bold bg-indigo-600 px-3 py-1 rounded-full uppercase mb-4 inline-block tracking-widest">Padova</span>
-                            <h3 class="text-3xl font-bold leading-tight tracking-tight">Hackathon Territoriale 2026</h3>
-                        </div>
-                    </article>
-                    <article href="javascript:void(0)" onclick="GoEvento2()" class="group relative aspect-[4/5] rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Workshop Public Speaking" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
-                        <div class="absolute bottom-10 left-8 right-8 text-white">
-                            <span class="text-[10px] font-bold bg-rose-600 px-3 py-1 rounded-full uppercase mb-4 inline-block tracking-widest">Vicenza</span>
-                            <h3 class="text-3xl font-bold leading-tight tracking-tight">Workshop: Public Speaking</h3>
-                        </div>
-                    </article>
-                </div>
-            </section>
+            <section>
+                            <div class="mb-8">
+                                <h2 class="text-3xl font-black uppercase tracking-tighter italic"><span class="text-indigo-600">Eventi e Iniziative Locali</span></h2>
+                                <p class="text-slate-500 text-[12px] font-bold uppercase tracking-wider mt-1">Cosa succede oggi nel tuo territorio.</p>
+                            </div>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <article href="javascript:void(0)" onclick="GoEvento1()" class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
+                                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                                        <span class="text-[9px] font-bold bg-indigo-600 px-2 py-1 rounded-full uppercase mb-2 inline-block tracking-widest">Padova</span>
+                                        <h3 class="text-xl font-bold leading-tight">Hackathon Territoriale 2026</h3>
+                                    </div>
+                                </article>
+                                <article href="javascript:void(0)" onclick="GoEvento2()" class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
+                                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                                        <span class="text-[9px] font-bold bg-rose-600 px-2 py-1 rounded-full uppercase mb-2 inline-block tracking-widest">Vicenza</span>
+                                        <h3 class="text-xl font-bold leading-tight">Workshop: Public Speaking</h3>
+                                    </div>
+                                </article>
+                                <article href="javascript:void(0)" onclick="GoEvento3()" class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
+                                    <img src="https://plus.unsplash.com/premium_photo-1677048147637-c2a5f668fe56?q=80&w=387&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                                        <span class="text-[9px] font-bold bg-indigo-600 px-2 py-1 rounded-full uppercase mb-2 inline-block tracking-widest">Padova</span>
+                                        <h3 class="text-xl font-bold leading-tight">Passeggiate patrimoniali Vicenza</h3>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+
         </div>
     </main>`;
 
-        // Inserisce tutto dopo la navigazione che resta fissa
         document.querySelector('nav').insertAdjacentHTML('afterend', OpportunityHTML);
         window.scrollTo(0, 0);
     }
