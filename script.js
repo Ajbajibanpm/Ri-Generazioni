@@ -821,13 +821,6 @@ function GoEvento1() {
             </div>
         </div>
     </main>
-
-    <footer class="bg-slate-900 py-16 text-center border-t border-white/5">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-white font-black text-3xl italic tracking-tighter mb-4">RI-GENERAZIONI<span class="text-indigo-500">.</span></div>
-            <p class="text-slate-500 text-[10px] font-bold tracking-[0.4em] uppercase italic">Padova Territory Lab • 2026</p>
-        </div>
-    </footer>
 </body>
     `;
 
@@ -1310,18 +1303,6 @@ function GoSond1() {
                 </p>
             </section>
         </article>
-
-        <footer class="bg-slate-900 rounded-[40px] p-10 md:p-16 text-center text-white relative overflow-hidden">
-            <div class="relative z-10">
-                <h3 class="text-4xl font-black uppercase italic tracking-tighter mb-6 leading-none">
-                    Che ne pensi?
-                </h3>
-                <button onclick="openSurvey()" class="inline-flex items-center gap-4 px-12 py-5 bg-indigo-600 text-white rounded-2xl font-black uppercase tracking-widest transition-all hover:scale-105 shadow-2xl">
-                    Inizia il sondaggio
-                    <i class="fas fa-comment-dots"></i>
-                </button>
-            </div>
-        </footer>
     </main>
 
     <div id="survey-modal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px;">
@@ -1512,18 +1493,6 @@ function GoSond2() {
                 </p>
             </section>
         </article>
-
-        <footer class="bg-slate-900 rounded-[40px] p-10 md:p-16 text-center text-white relative overflow-hidden">
-            <div class="relative z-10">
-                <h3 class="text-4xl font-black uppercase italic tracking-tighter mb-6 leading-none">
-                    La tua voce è<br><span class="text-rose-400">fondamentale.</span>
-                </h3>
-                <button onclick="openSurvey()" class="inline-flex items-center gap-4 px-12 py-5 bg-rose-600 text-white rounded-2xl font-black uppercase tracking-widest transition-all hover:scale-105 shadow-2xl">
-                    Apri Sondaggio
-                    <i class="fas fa-clipboard-list"></i>
-                </button>
-            </div>
-        </footer>
     </main>
 
     <div id="survey-modal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px;">
@@ -1712,18 +1681,6 @@ function GoSond3() {
                 </p>
             </section>
         </article>
-
-        <footer class="bg-slate-900 rounded-[40px] p-10 md:p-16 text-center text-white relative overflow-hidden">
-            <div class="relative z-10">
-                <h3 class="text-4xl font-black uppercase italic tracking-tighter mb-6 leading-none">
-                    Dove vorresti la<br><span class="text-orange-400">prossima sbarra?</span>
-                </h3>
-                <button onclick="openSurvey()" class="inline-flex items-center gap-4 px-12 py-5 bg-orange-600 text-white rounded-2xl font-black uppercase tracking-widest transition-all hover:scale-105 shadow-2xl">
-                    Dì la tua
-                    <i class="fas fa-map-marker-alt"></i>
-                </button>
-            </div>
-        </footer>
     </main>
 
     <div id="survey-modal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px;">
