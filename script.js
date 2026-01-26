@@ -2,7 +2,7 @@
 // Gestore della navigazione basato su hash
 function handleRouting() {
     const currentHash = window.location.hash;
-    if (currentHash === "#articolo-gio-biondo") {
+    if (currentHash === "#articolo-intervista-gio-biondo") {
         GoArt3();
     } 
     else if (currentHash === "#articolo-arte-rigenerazione") {
@@ -10,6 +10,9 @@ function handleRouting() {
     } 
     else if (currentHash === "#articolo-coworking") {
         GoArt1();
+    }
+    else if (currentHash === "#articolo-pianta-abbandonata-sul-bus") {
+        GoArt4();
     }
     else if (currentHash === "#gioco-quiz") {
         GoGIOCOQUIZ();
@@ -19,6 +22,9 @@ function handleRouting() {
     }
     else if (currentHash === "#workshop-public-speaking-2026") {
         GoEvento2();
+    }   
+    else if (currentHash === "#passeggiate-patrimoniali-vicenza") {
+        GoEvento3();
     }    
     else if (currentHash === "#chi-siamo") {
         GoChiSiamo();
@@ -50,6 +56,7 @@ window.addEventListener('hashchange', () => {
     }
 });
 
+//olga-bot
 //PULL DI DOMANDE per quiz
 const allQuestions = [ { q: "Quale celebre cocktail a base di Prosecco e Aperol (o Bitter) è nato in Veneto?", options: ["Negroni", "Spritz", "Bellini", "Americano"], correct: 1, anecdote: "Il nome deriva probabilmente dal termine tedesco 'spritzen' (spruzzare), l'usanza dei soldati austriaci di allungare il vino veneto con acqua frizzante." }, { q: "In quale città veneta è ambientata la tragedia di Romeo e Giulietta di Shakespeare?", options: ["Treviso", "Venezia", "Verona", "Rovigo"], correct: 2, anecdote: "Ogni anno migliaia di turisti visitano il celebre balcone di Giulietta, anche se la storia è frutto della letteratura." }, { q: "Quale di questi dolci al cucchiaio, oggi diffuso in tutto il mondo, ha origini contese tra Treviso e Tolmezzo?", options: ["Panna cotta", "Tiramisù", "Zuppa inglese", "Bonet"], correct: 1, anecdote: "La ricetta originale trevigiana sembra sia nata presso il ristorante 'Le Beccherie' verso la fine degli anni '60." }, { q: "Qual è il nome della tipica imbarcazione a remi che simboleggia la città di Venezia?", options: ["Vaporetto", "Gondola", "Traghetto", "Burchiello"], correct: 1, anecdote: "Le gondole sono composte da 280 pezzi di legno diversi e sono rigorosamente colorate di nero per un decreto del XVII secolo contro l'ostentazione del lusso." }, { q: "Come si chiama il ponte coperto in legno progettato da Andrea Palladio che attraversa il fiume Brenta?", options: ["Ponte degli Scalzi", "Ponte degli Alpini", "Ponte di Rialto", "Ponte della Libertà"], correct: 1, anecdote: "Situato a Bassano del Grappa, il ponte è stato distrutto e ricostruito più volte, l'ultima delle quali dopo la Seconda Guerra Mondiale per mano degli Alpini." }, { q: "Quale città veneta è nota per avere la piazza più grande d'Italia (Prato della Valle)?", options: ["Padova", "Vicenza", "Verona", "Belluno"], correct: 0, anecdote: "Prato della Valle misura quasi 90.000 metri quadrati ed è caratterizzata da un'isola centrale circondata da un canale e 78 statue." }, { q: "Qual è l'animale simbolo della Regione Veneto, presente anche sulla sua bandiera?", options: ["L'aquila", "Il cavallo", "Il leone alato", "Il lupo"], correct: 2, anecdote: "Rappresenta il Leone di San Marco, simbolo di maestà e potenza della storica Repubblica di Venezia." }, { q: "Quale gruppo montuoso, Patrimonio UNESCO, caratterizza il panorama della parte settentrionale del Veneto?", options: ["Appennini", "Dolomiti", "Alpi Cozie", "Madonie"], correct: 1, anecdote: "Le Dolomiti prendono il nome dal geologo francese Déodat de Dolomieu, che per primo ne studiò la particolare composizione rocciosa." }, { q: "Quale di questi vini bianchi frizzanti è prodotto principalmente nell'area di Conegliano e Valdobbiadene?", options: ["Franciacorta", "Prosecco", "Lambrusco", "Chianti"], correct: 1, anecdote: "Le colline del Prosecco di Conegliano e Valdobbiadene sono state dichiarate Patrimonio dell'Umanità UNESCO per il loro paesaggio agricolo unico." }, { q: "Cosa indossa tipicamente una persona che partecipa al Carnevale di Venezia per nascondere la propria identità?", options: ["Un elmo", "Una maschera", "Un velo", "Un cappuccio"], correct: 1, anecdote: "Le maschere permettevano ai veneziani di annullare temporaneamente le differenze di classe sociale e di genere." }, { q: "Qual è il soprannome della città di Venezia, riferito al suo storico dominio marittimo?", options: ["La Superba", "La Serenissima", "La Dotta", "La Dominante"], correct: 1, anecdote: "Il termine 'Serenissima' deriva dal titolo spettante ai Dogi e rifletteva la stabilità e la giustizia del governo veneziano." }, { q: "In quale comune veneto si produce il celebre vino rosso 'Amarone'?", options: ["Negrar di Valpolicella", "Asolo", "Soave", "Bardolino"], correct: 0, anecdote: "L'Amarone nasce da un errore: un produttore dimenticò una botte di Recioto (dolce), permettendo ai lieviti di fermentare tutti gli zuccheri, rendendo il vino amaro." }, { q: "Quale università veneta, fondata nel 1222, ospita il primo teatro anatomico stabile al mondo?", options: ["Università di Verona", "Università di Venezia (Ca' Foscari)", "Università di Padova", "Università di Treviso"], correct: 2, anecdote: "Il Teatro Anatomico di Padova, costruito nel 1594, permetteva agli studenti di assistere alle autopsie da una struttura a imbuto." }, { q: "Che cos'è il 'Baccalà alla vicentina'?", options: ["Merluzzo fresco fritto", "Stoccafisso essiccato e cotto a fuoco lento", "Zuppa di pesce di laguna", "Pesce spada grigliato"], correct: 1, anecdote: "Nonostante il nome, si usa lo stoccafisso (merluzzo essiccato) importato dalle isole Lofoten in Norvegia fin dal 1432." }, { q: "Come si chiama la maschera veneziana che viene tradizionalmente rappresentata con un lungo becco a punta?", options: ["Arlecchino", "Pantalone", "Medico della Peste", "Colombina"], correct: 2, anecdote: "Il lungo naso a becco veniva riempito di erbe profumate per proteggere il medico dai presunti miasmi del contagio." }, { q: "In quale città si svolge ogni due anni la famosa partita a scacchi con personaggi viventi?", options: ["Cittadella", "Marostica", "Castelfranco Veneto", "Monselice"], correct: 1, anecdote: "La tradizione rievoca una sfida del 1454 tra due nobili che si contendevano la mano della figlia del castellano." }, { q: "Qual è il fiume più lungo che attraversa la pianura veneta sfociando nell'Adriatico?", options: ["Piave", "Adige", "Po", "Brenta"], correct: 2, anecdote: "Il Delta del Po, situato principalmente in provincia di Rovigo, è una delle zone umide più importanti d'Europa e riserva della biosfera." }, { q: "Quale specialità culinaria veneta consiste in fegato cotto con abbondante cipolla?", options: ["Fegato alla veneziana", "Sarde in saor", "Bigoli in salsa", "Fegato alla trevigiana"], correct: 0, anecdote: "I veneziani sostituirono i fichi (usati dai romani per mitigare l'odore del fegato) con le cipolle, abbondanti nelle lagune." }, { q: "Quale noto esploratore veneziano scrisse 'Il Milione', raccontando il suo viaggio in Cina?", options: ["Cristoforo Colombo", "Marco Polo", "Amerigo Vespucci", "Giovanni Caboto"], correct: 1, anecdote: "Marco Polo dettò le sue memorie a Rustichello da Pisa mentre si trovava in prigione a Genova." }, { q: "Quale città veneta è soprannominata 'Urbs Picta' per i suoi numerosi cicli di affreschi?", options: ["Vicenza", "Verona", "Padova", "Treviso"], correct: 2, anecdote: "Padova ospita la Cappella degli Scrovegni di Giotto, capolavoro assoluto della pittura del Trecento." }, { q: "Quale città veneta è storicamente legata alla produzione della Grappa e ospita un celebre Museo ad essa dedicato?", options: ["Bassano del Grappa", "Conegliano", "Soave", "Adria"], correct: 0, anecdote: "La distilleria Nardini, situata all'ingresso del Ponte degli Alpini, è la più antica d'Italia, fondata nel 1779." }, { q: "In quale città si trova lo storico 'Caffè Pedrocchi', noto come il caffè senza porte?", options: ["Venezia", "Vicenza", "Padova", "Treviso"], correct: 2, anecdote: "Era chiamato 'senza porte' perché fino al 1916 rimaneva aperto giorno e notte, accogliendo intellettuali e studenti." }, { q: "Qual è il nome del tipico piatto veneto a base di pasta fresca lunga e ruvida, condita spesso con salsa d'anatra o sarde?", options: ["Orecchiette", "Bigoli", "Tagliolini", "Passatelli"], correct: 1, anecdote: "Il nome deriva dal termine dialettale 'bigat' (bruco), per via della forma ottenuta storicamente con un torchio manuale chiamato 'torcio'." }, { q: "Quale celebre opera lirica inaugura tradizionalmente la stagione all'Arena di Verona?", options: ["La Traviata", "Tosca", "Aida", "Turandot"], correct: 2, anecdote: "L'Aida di Verdi è l'opera simbolo dell'Arena, rappresentata per la prima volta nell'anfiteatro nel 1913 per celebrare il centenario della nascita del compositore." }, { q: "Quale di queste isole veneziane è famosa in tutto il mondo per la lavorazione artigianale del vetro soffiato?", options: ["Burano", "Murano", "Torcello", "Pellestrina"], correct: 1, anecdote: "Nel 1291, per decreto della Repubblica, tutte le fornaci di Venezia furono spostate a Murano per prevenire incendi in città." }, { q: "Quale città veneta è cinta da mura medievali perfettamente conservate e percorribili a piedi sulla sommità?", options: ["Cittadella", "Rovigo", "Belluno", "Portogruaro"], correct: 0, anecdote: "Il camminamento di ronda di Cittadella è uno dei pochi in Europa a essere rimasto integro e interamente percorribile." }, { q: "Cosa si intende in Veneto con il termine 'Ombra' quando ci si riferisce a un'abitudine sociale?", options: ["Un piccolo panino", "Un bicchiere di vino", "Un caffè macchiato", "Un riposo pomeridiano"], correct: 1, anecdote: "Il nome deriva dall'antica abitudine dei mercanti di Venezia di posizionare i banchi del vino all'ombra del campanile di San Marco per tenerlo fresco." }, { q: "Quale isola della laguna di Venezia è celebre per le sue case coloratissime e la produzione di merletti?", options: ["Murano", "Burano", "Lido", "Giudecca"], correct: 1, anecdote: "Si dice che i colori vivaci servissero ai pescatori per riconoscere la propria casa anche in presenza di fitta nebbia." }, { q: "In quale mese si svolge solitamente lo storico Carnevale di Venezia?", options: ["Gennaio", "Febbraio", "Marzo", "Aprile"], correct: 1, anecdote: "Le date variano ogni anno in base alla Pasqua, ma il periodo principale cade sempre nel mese di febbraio." }, { q: "Qual è il nome del fiume che attraversa la città di Verona formando una caratteristica ansa a forma di S?", options: ["Brenta", "Sile", "Adige", "Livenza"], correct: 2, anecdote: "L'Adige è il secondo fiume più lungo d'Italia dopo il Po e ha modellato urbanisticamente il centro storico veronese." }, { q: "Qual è il nome dell'antipasto veneziano a base di sarde fritte, cipolle agrodolci, pinoli e uvetta?", options: ["Sarde in saor", "Sarde scottadito", "Baccalà mantecato", "Alici marinate"], correct: 0, anecdote: "Il 'saor' era nato come metodo di conservazione dei pescatori: l'aceto e la cipolla permettevano di preservare il pesce per diversi giorni a bordo delle barche." }, { q: "Quale famoso seduttore e scrittore nacque a Venezia nel 1725?", options: ["Giacomo Casanova", "Carlo Goldoni", "Antonio Vivaldi", "Lord Byron"], correct: 0, anecdote: "Casanova fu l'unico a riuscire a evadere dal carcere dei Piombi, situato nel sottotetto di Palazzo Ducale." }, { q: "Come si chiama la tipica imbarcazione da trasporto che percorreva il fiume Brenta tra Padova e Venezia?", options: ["Vaporetto", "Burchiello", "Gondola", "Bragozzo"], correct: 1, anecdote: "Il Burchiello era una lussuosa imbarcazione per il trasporto di nobili che volevano raggiungere le proprie ville in terraferma." }, { q: "Qual è il nome del formaggio DOP tipico dell'altopiano dei Sette Comuni in provincia di Vicenza?", options: ["Montasio", "Piave", "Asiago", "Taleggio"], correct: 2, anecdote: "Originariamente l'Asiago veniva prodotto solo con latte di pecora; la produzione con latte vaccino iniziò nel 1500." }, { q: "Quale compositore veneziano, soprannominato il 'Prete Rosso', scrisse il concerto 'Le quattro stagioni'?", options: ["Giuseppe Verdi", "Antonio Vivaldi", "Tomaso Albinoni", "Claudio Monteverdi"], correct: 1, anecdote: "Vivaldi era chiamato 'Prete Rosso' per il colore naturale della sua chioma." }, { q: "Quale ortaggio rosso di forma allungata o a palla è tipico della zona di Treviso?", options: ["Radicchio", "Pomodoro", "Cipolla", "Peperone"], correct: 0, anecdote: "Il Radicchio Rosso di Treviso IGP 'Tardivo' viene lavorato con una tecnica di imbianchimento in acqua risorgiva." }, { q: "Quale provincia veneta è la più settentrionale e interamente montana?", options: ["Vicenza", "Belluno", "Treviso", "Verona"], correct: 1, anecdote: "Belluno è l'unico capoluogo di provincia italiano il cui territorio comunale rientra interamente in un Parco Nazionale (Dolomiti Bellunesi)." }, { q: "Che cos'è lo 'Spritz' nel suo formato più tradizionale e antico?", options: ["Prosecco e Aperol", "Vino bianco e acqua frizzante", "Vino rosso e gassosa", "Prosecco e Gin"], correct: 1, anecdote: "Lo spritz originale non prevedeva liquori colorati, ma solo l'aggiunta di acqua per 'allungare' i vini troppo forti." }, { q: "Qual è il termine dialettale veneto usato per indicare una persona un po' tonta o goffa?", options: ["Fante", "Mona", "Toso", "Putìno"], correct: 1, anecdote: "Sebbene in origine avesse un significato anatomico, nel linguaggio colloquiale moderno è usato per descrivere una persona che si comporta in modo stupido." }, { q: "Come viene chiamato colloquialmente un ragazzo giovane in molte zone del Veneto?", options: ["Bocia", "Toso", "Fio", "Tutte le precedenti"], correct: 3, anecdote: "A seconda della provincia si preferisce 'Toso' (Vicenza/Treviso), 'Fio' (Venezia) o 'Bocia' (Verona/Padova)." }, { q: "Quale città veneta è nota per la leggenda studentesca legata al Prato della Valle?", options: ["Verona", "Padova", "Venezia", "Rovigo"], correct: 1, anecdote: "La leggenda universitaria padovana vuole che chi attraversa il centro di Prato della Valle o guarda negli occhi le statue non riuscirà a laurearsi." }, { q: "In quale città veneta si trova il parco divertimenti Gardaland?", options: ["Castelnuovo del Garda", "Jesolo", "Abano Terme", "Cortina d'Ampezzo"], correct: 0, anecdote: "Gardaland ha aperto nel 1975 ed è oggi uno dei parchi a tema più visitati d'Europa." }, { q: "Quale località balneare veneziana è nota per la sua lunghissima isola pedonale e la vita notturna?", options: ["Bibione", "Caorle", "Jesolo", "Rosolina Mare"], correct: 2, anecdote: "Jesolo è nota per via Bafile, una delle isole pedonali più lunghe d'Europa, centro della vita notturna tra discoteche e beach club." }, { q: "Cosa significa l'espressione veneta 'Fare baggy'?", options: ["Andare a fare shopping", "Andare a ballare", "Fare filone a scuola", "Studiare insieme"], correct: 2, anecdote: "È il termine gergale per indicare l'assenza ingiustificata da scuola (marinare)." }, { q: "Quale bevanda analcolica gassata, nata a Venezia nel 1949, è tipicamente rossa e speziata?", options: ["Chinotto", "Cedrata", "Ginger (Spuma)", "MoleCola"], correct: 2, anecdote: "Il Ginger veneto veniva storicamente mescolato al vino bianco per creare lo spritz analcolico per i più piccoli." }, { q: "Quale artista vicentino ha fuso lo slang americano con quello veneto nella musica trap?", options: ["Myss Keta", "Madame", "MamboLosco", "Sangiovanni"], correct: 2, anecdote: "MamboLosco ha reso virali espressioni come 'Sugoso', unendo l'immaginario veneto alla trap." }, { q: "In Veneto, cosa si intende solitamente se si dà del 'mago' a qualcuno in senso ironico?", options: ["Che è bravissimo", "Che è un tipo strano o imbranato", "Che sa fare i trucchi", "Che è molto intelligente"], correct: 1, anecdote: "È un classico esempio di antifrasi veneta: dare del 'mago' a qualcuno che ha appena commesso un errore banale." }, { q: "Quale calzatura è diventata un simbolo ironico d'appartenenza nelle zone rurali del Veneto?", options: ["Mocassino", "Stivale di gomma", "Scarpa antinfortunistica", "Pantofola di velluto"], correct: 1, anecdote: "Lo stivale di gomma verde è un'icona delle sagre e dei 'party ignoranti' in agricampeggio." } ];
 
@@ -117,66 +124,114 @@ function esploraAreaVeneto() {
 document.addEventListener('DOMContentLoaded', () => {
     const aiWindow = document.getElementById('ai-chat-window');
     const openBtn = document.getElementById('open-chat');
-    const triggerBtn = document.getElementById('trigger-Olga-Bot');
     const closeBtn = document.getElementById('close-chat');
     const chatForm = document.getElementById('chat-form');
     const chatInput = document.getElementById('chat-input');
     const chatContainer = document.getElementById('chat-container');
 
-    let step = 0;
-    const flow = [
-        "Se potessi attivare un servizio o uno spazio che oggi non c'è, a cosa penseresti?",
-        "Cosa renderebbe più semplice vivere la tua città ogni giorno?",
-        "Messaggio ricevuto. Questi dati servono a definire i bisogni della nostra generazione in Veneto."
-    ];
+    // Sostituisci con la tua chiave sk-or-v1-... ottenuta da OpenRouter
+    const OPENROUTER_API_KEY = "xxxxxxx";
 
+    // Funzione per gestire l'apertura della chat
     const openChat = () => {
-        aiWindow.classList.remove('chat-hidden');
-        aiWindow.classList.add('chat-visible');
-        openBtn.style.display = 'none';
-        if (window.innerWidth <= 1024) document.body.style.overflow = 'hidden';
+        if (aiWindow) {
+            aiWindow.style.display = 'flex';
+            aiWindow.classList.remove('chat-hidden');
+            aiWindow.classList.add('chat-visible');
+            if (openBtn) openBtn.style.display = 'none';
+        }
     };
 
+    // Funzione per gestire la chiusura della chat
     const closeChat = () => {
-        aiWindow.classList.remove('chat-visible');
-        aiWindow.classList.add('chat-hidden');
-        openBtn.style.display = 'flex';
-        document.body.style.overflow = '';
+        if (aiWindow) {
+            aiWindow.classList.remove('chat-visible');
+            aiWindow.classList.add('chat-hidden');
+            aiWindow.style.display = 'none';
+            if (openBtn) openBtn.style.display = 'flex';
+        }
     };
 
-    openBtn.addEventListener('click', openChat);
-    triggerBtn.addEventListener('click', openChat);
-    closeBtn.addEventListener('click', closeChat);
+    if (openBtn) openBtn.addEventListener('click', openChat);
+    if (closeBtn) closeBtn.addEventListener('click', closeChat);
 
+    // Funzione per aggiungere messaggi grafici al container
     function appendMessage(text, isUser = false) {
         const wrapper = document.createElement('div');
-        wrapper.className = isUser ? 'msg-user' : 'msg-bot';
+        wrapper.className = isUser ? 'msg-user flex justify-end mb-4' : 'msg-bot mb-4';
+        
         const bubble = document.createElement('div');
         bubble.className = 'bubble';
+        
+        const userStyle = 'background-color: #4f46e5 !important; color: white !important; padding: 12px 16px; border-radius: 1.5rem 1.5rem 0 1.5rem; max-width: 85%; font-size: 14px; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.2);';
+        const botStyle = 'background-color: rgba(255,255,255,0.05); color: white; padding: 12px 16px; border-radius: 1.5rem 1.5rem 1.5rem 0; border: 1px solid rgba(255,255,255,0.1); max-width: 85%; font-size: 14px;';
+        
+        bubble.setAttribute('style', isUser ? userStyle : botStyle);
         bubble.textContent = text;
+        
         wrapper.appendChild(bubble);
         chatContainer.appendChild(wrapper);
         chatContainer.scrollTop = chatContainer.scrollHeight;
+        return wrapper; // Restituiamo il wrapper per poterlo rimuovere se serve (es. loading)
     }
 
-    chatForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const text = chatInput.value.trim();
-        if (text) {
-            appendMessage(text, true);
+    // Gestione invio modulo e chiamata IA
+    if (chatForm) {
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const userInput = chatInput.value.trim();
+            if (!userInput) return;
+
+            // 1. Mostra messaggio dell'utente
+            appendMessage(userInput, true);
             chatInput.value = '';
-            
-            if (step < flow.length) {
-                setTimeout(() => {
-                    appendMessage(flow[step], false);
-                    step++;
-                }, 800);
+
+            // 2. Mostra indicatore di caricamento
+            const loadingMsg = appendMessage("Olga sta scrivendo...", false);
+
+            try {
+                // 3. Chiamata API a Llama 3.3 70B (Versione Gratuita)
+                const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+                        "Content-Type": "application/json",
+                        "HTTP-Referer": window.location.origin,
+                        "X-Title": "Olga Bot"
+                    },
+                    body: JSON.stringify({
+                        "model": "meta-llama/llama-3.3-70b-instruct:free",
+                        "messages": [
+                            {
+                                "role": "system", 
+                                "content": "Sei Olga-bot, l'assistente di Ri-Generazioni. Il tuo compito è connettere utenti under 30 con opportunità di lavoro, formazione e attivismo attraverso messaggi brevi e discorsivi, simulando una conversazione naturale in chat. Scrivi in modo esclusivamente narrativo: non usare mai elenchi puntati, grassetti, titoli o schemi. Evita saluti cerimoniosi, preamboli o commenti inutili. Segui il flusso del discorso in modo fluido e non fare mai più di una domanda alla volta. Inizia sempre la prima interazione chiedendo all'utente in cosa puoi aiutarlo. Se l'utente risponde con un interesse specifico o accetta una tua proposta, rimani focalizzato su quel tema fino a esaurimento delle informazioni. Non tornare a fare domande generali (come 'cosa cerchi?'') se la conversazione è già centrata su un evento o un'opportunità specifica. Solo dopo aver inquadrato l'interesse, chiedi un dato alla volta (come l'età o la città) se necessario per proseguire. Quando trasmetti informazioni su bandi o corsi, inseriscile direttamente nel testo del messaggio in modo discorsivo, indicando cosa fare e le scadenze. Mantieni un tono asciutto e pragmatico, evitando di saltare da un argomento all'altro se l'utente ha già espresso una preferenza."
+                            },
+                            { "role": "user", "content": userInput }
+                        ],
+                        "temperature": 0.7
+                    })
+                });
+
+                const data = await response.json();
+                
+                // Rimuovi il messaggio di caricamento
+                chatContainer.removeChild(loadingMsg);
+
+                if (data.choices && data.choices[0]) {
+                    const aiText = data.choices[0].message.content;
+                    appendMessage(aiText, false);
+                } else {
+                    appendMessage("Al momento non riesco a risponderti. Riprova tra poco!", false);
+                }
+
+            } catch (error) {
+                if (loadingMsg) chatContainer.removeChild(loadingMsg);
+                appendMessage("Errore di connessione. Controlla la tua chiave API.", false);
+                console.error("Errore API:", error);
             }
-        }
-    });
+        });
+    }
 });
-
-
 //ARTICOLO 1
 function GoArt1() {
     // 1. Cambia l'URL aggiungendo l'identificativo dell'articolo
@@ -256,6 +311,7 @@ function GoArt1() {
         window.scrollTo(0, 0);
     }
 }
+
 //ARTICOLO 2
 function GoArt2() {
     // 1. Identificativo URL specifico per l'articolo 2
@@ -334,6 +390,251 @@ function GoArt2() {
             nav.insertAdjacentHTML('afterend', articleHTML);
         } else {
             document.body.insertAdjacentHTML('afterbegin', articleHTML);
+        }
+        
+        window.scrollTo(0, 0);
+    }
+}
+
+//ARTICOLO 3
+function GoArt3() {
+    // 1. Identificativo URL specifico per l'articolo 2
+    window.location.hash = "articolo-intervista-gio-biondo";
+
+    const currentHeader = document.querySelector('header');
+    const currentMain = document.querySelector('main');
+    const nav = document.querySelector('nav');
+
+    if (currentHeader && currentMain) {
+        currentHeader.remove();
+        currentMain.remove();
+
+        const article3HTML = `<header class="relative h-[60vh] w-full flex items-center justify-start px-6 md:px-20 overflow-hidden pt-20">
+    <img src="https://images.unsplash.com/photo-1587355760421-b9de3226a046?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+         class="absolute inset-0 w-full h-full object-cover opacity-40">
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+    <div class="relative z-10 max-w-4xl pt-20">
+        <span class="inline-block px-4 py-1 border border-indigo-500 text-indigo-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-6 italic">Innovazione Sociale</span>
+        <h1 class="text-4xl md:text-7xl font-black leading-tight mb-6 uppercase text-white">Mappare i bisogni: <br><span class="text-indigo-500">L'intervista a Gio Biondo.</span></h1>
+    </div>
+</header>
+
+<main class="w-full bg-white text-slate-900 py-20 px-6 md:px-20 relative z-20">
+    <div class="max-w-4xl mx-auto">
+        <p class="text-xl md:text-2xl font-medium text-slate-600 mb-12 leading-relaxed italic border-l-4 border-indigo-500 pl-6">
+            Il protagonismo giovanile non è un'opzione, ma il motore per rigenerare il sociale attraverso l'ascolto attivo degli under 30.
+        </p>
+
+        <div class="prose prose-slate lg:prose-xl max-w-none text-slate-800">
+            <p>
+                Secondo Gio Biondo, progettare per il sociale senza mappare i desideri di chi il territorio lo vive è un errore metodologico che le amministrazioni non possono più permettersi. "Dobbiamo passare dal fare <em>per</em> i giovani al fare <em>con</em> i giovani," spiega. Il concetto di protagonismo giovanile deve tradursi in azioni concrete: non basta fornire spazi, serve che siano i ragazzi a definirne le funzioni.
+            </p>
+
+            <p>
+                "Spesso le istituzioni offrono risposte a domande che i giovani non hanno mai posto," continua Biondo. "Mappare i bisogni significa mappare le lacune del sistema." Questo processo richiede strumenti di indagine moderni: non solo questionari, ma workshop di co-progettazione e tavoli tecnici dove il voto di un ventenne pesa quanto quello di un assessore.
+            </p>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Esempi Concreti di Protagonismo</h3>
+            <p>
+                La teoria si trasforma in pratica attraverso modelli di gestione innovativi che vedono i giovani al centro della catena decisionale:
+            </p>
+            <ul class="list-disc pl-6 mb-6">
+                <li><strong>Urban Lab autogestiti:</strong> Spazi in cui gli under 30 mappano i vuoti urbani per trasformarli in sale prova, studi di registrazione o laboratori di stampa 3D gestiti in autonomia.</li>
+                <li><strong>Bilanci Partecipativi Under 30:</strong> Quote di fondi comunali assegnate a progetti ideati, votati e realizzati direttamente da gruppi informali di ragazzi.</li>
+                <li><strong>Hub di Servizi Ibridi:</strong> Nelle aree tra Verona e Mantova, ex scuole rurali diventano punti di riferimento dove il bisogno di mobilità (car pooling) si fonde con la socialità.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 mb-4">Perché puntare sugli Under 30?</h3>
+            <p>
+                Il protagonismo non è una concessione, ma una necessità strategica. I giovani possiedono:
+            </p>
+            <ul class="list-disc pl-6 mb-6">
+                <li><strong>Competenza Digitale:</strong> Capacità di utilizzare le tecnologie per semplificare l'accesso ai servizi territoriali.</li>
+                <li><strong>Sensibilità Sociale:</strong> Una visione aggiornata su temi critici come la salute mentale e la precarietà abitativa.</li>
+                <li><strong>Visione a Lungo Termine:</strong> L'interesse diretto nel costruire un territorio sostenibile in cui voler restare a vivere.</li>
+            </ul>
+
+            <p>
+                Solo partendo dai dati reali sui bisogni — dalla mobilità notturna al supporto psicologico — si possono costruire servizi che non restino cattedrali nel deserto. Il territorio deve imparare a valorizzare il tempo e le idee di chi rappresenta il futuro presente della comunità.
+            </p>
+        </div>
+
+        <div class="mt-12 text-center">
+            <button onclick="window.history.back()" class="text-slate-400 font-bold text-xs uppercase tracking-[0.2em] hover:text-indigo-600">
+                <i class="fas fa-arrow-left mr-2"></i> Torna alla home
+            </button>
+        </div>
+    </div>
+</main>
+`;
+
+        if (nav) {
+            nav.insertAdjacentHTML('afterend', article3HTML);
+        } else {
+            document.body.insertAdjacentHTML('afterbegin', article3HTML);
+        }
+        
+        window.scrollTo(0, 0);
+    }
+}
+
+//ARTICOLO 4
+function GoArt4() {
+    // 1. Identificativo URL specifico per l'articolo 2
+    window.location.hash = "articolo-pianta-abbandonata-sul-bus";
+
+    const currentHeader = document.querySelector('header');
+    const currentMain = document.querySelector('main');
+    const nav = document.querySelector('nav');
+
+    if (currentHeader && currentMain) {
+        currentHeader.remove();
+        currentMain.remove();
+
+        const article4HTML = `<header class="relative pt-32 pb-24 overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 z-0">
+            <img src="https://plus.unsplash.com/premium_photo-1677419807538-4438f71414e5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                 class="w-full h-full object-cover opacity-30" 
+                 alt="Urban Resilience">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/90 to-slate-900"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-600 text-white text-[10px] font-black uppercase tracking-widest mb-8 shadow-xl">
+                Società & Rigenerazione • Case Study
+            </span>
+            <h1 class="text-6xl md:text-8xl font-black text-white leading-none mb-4 drop-shadow-2xl italic uppercase tracking-tighter">
+                Dimenticata sul bus<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">per un mese</span>
+            </h1>
+
+            <div class="text-2xl md:text-3xl font-black text-emerald-400 uppercase italic tracking-widest mb-10">
+                La storia della pianta che ha sconfitto il vandalismo
+            </div>
+
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed mb-10">
+                A Verona, un piccolo vaso abbandonato ha innescato una reazione a catena psicologica: dove regna la cura, il degrado si ferma.
+            </p>
+            
+            <a href="#articolo" class="inline-flex items-center gap-3 px-10 py-4 bg-white text-emerald-900 hover:bg-emerald-600 hover:text-white rounded-2xl font-black uppercase tracking-widest transition-all shadow-2xl group">
+                Leggi l'Analisi
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <div class="relative z-20 -mt-10 max-w-4xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-50 p-8 rounded-[32px] shadow-2xl border border-white">
+            <div class="text-center border-r border-slate-200">
+                <div class="text-3xl font-black text-emerald-600 italic">-85%</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Atti Vandalici</div>
+            </div>
+            <div class="text-center md:border-r border-slate-200">
+                <div class="text-3xl font-black text-slate-900 italic">720h</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Sopravvivenza</div>
+            </div>
+            <div class="text-center border-r border-slate-200">
+                <div class="text-3xl font-black text-slate-900 italic">Zero</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Reclami</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-black text-slate-900 italic">INF.</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Valore Sociale</div>
+            </div>
+        </div>
+    </div>
+
+    <main id="articolo" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-32">
+                
+                <div class="lg:col-span-7 flex flex-col">
+                    <h2 class="text-4xl font-black text-slate-900 uppercase italic mb-8 tracking-tighter">L'Effetto "Foglia di Vetro"</h2>
+                    <div class="prose prose-slate max-w-none text-slate-600 font-medium leading-relaxed space-y-6 text-justify">
+                        <p>
+                            È noto in sociologia come la "Teoria delle finestre rotte": se un ambiente è degradato, attira ulteriore degrado. A Verona, la <strong>Sansevieria della Linea 11</strong> ha dimostrato l'esatto contrario. Lasciata per errore su un sedile, la pianta è diventata un esperimento sociale involontario.
+                        </p>
+                        <p>
+                            Mentre i giorni passavano, accadeva l'inimmaginabile: i passeggeri non solo evitavano di danneggiarla, ma proteggevano lo spazio circostante. Le scritte sui sedili sono cessate, i rifiuti non venivano più abbandonati a terra. La pianta ha imposto una <strong>gentilezza autoritaria</strong>: la sua fragilità ha risvegliato il senso civico anche dei viaggiatori più distratti o irruenti.
+                        </p>
+                        <p>
+                            Dopo 30 giorni di circolazione ininterrotta, il bilancio è sorprendente. L'autobus n. 402 ha registrato un calo dei costi di manutenzione straordinaria pari all'85%. Il segreto? La creazione di un <strong>legame affettivo tra l'utente e il bene pubblico</strong>, mediato dalla presenza viva della pianta.
+                        </p>
+                        <div class="p-8 bg-slate-900 rounded-[32px] text-white">
+                            <h4 class="text-emerald-400 font-black uppercase text-sm mb-4 tracking-widest italic">La Conclusione dell'Esperimento</h4>
+                            <p class="text-sm text-slate-400 m-0 leading-relaxed">
+                                Oggi la "pianta del bus" è stata trapiantata nel giardino comune della sede ATV, ma la sua missione continua. È nato un movimento cittadino che vede nel verde urbano non solo decoro, ma un vero e proprio strumento di difesa contro l'inciviltà.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 lg:sticky lg:top-8">
+                    <div class="p-10 bg-emerald-600 rounded-[48px] shadow-2xl text-white">
+                        <div class="flex items-center gap-4 mb-8 border-b border-white/20 pb-6">
+                            <h4 class="text-3xl font-black uppercase italic tracking-tighter text-white">I Risultati</h4>
+                        </div>
+                        
+                        <ul class="space-y-8">
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-hand-holding-heart text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold uppercase text-xs tracking-widest text-emerald-100">Cura Collettiva</h5>
+                                    <p class="text-white text-sm mt-1 leading-relaxed">Passeggeri che si prendono cura del bene comune spontaneamente.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-hammer text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold uppercase text-xs tracking-widest text-emerald-100">Stop Vandali</h5>
+                                    <p class="text-white text-sm mt-1 leading-relaxed">La bellezza agisce come deterrente psicologico naturale.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-smile text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold uppercase text-xs tracking-widest text-emerald-100">Benessere Mentale</h5>
+                                    <p class="text-white text-sm mt-1 leading-relaxed">Riduzione dello stress percepito durante il tragitto casa-lavoro.</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="mt-10 pt-8 border-t border-white/20">
+                            <div class="text-[10px] font-black uppercase tracking-[0.2em] mb-4">Progetto "Verde a Bordo" 2026</div>
+                            <a href="#" class="block w-full py-4 bg-white text-emerald-600 text-center rounded-2xl font-black uppercase tracking-widest hover:scale-105 transition-all">Sostieni l'Iniziativa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-[48px] p-12 text-center text-white relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 pointer-events-none tracking-tighter font-black text-[10vw] leading-none select-none uppercase italic">
+                    STOP VANDALISMO
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-4xl font-black uppercase italic tracking-tighter mb-4">La tua città è un giardino</h3>
+                    <p class="text-slate-400 mb-10 max-w-xl mx-auto font-medium text-lg italic">Unisciti a noi per trasformare ogni angolo di Verona in un luogo di cura condivisa.</p>
+                    <a href="#" target="_blank" class="inline-flex items-center gap-4 px-12 py-5 bg-emerald-600 text-white rounded-2xl font-black uppercase tracking-widest transition-all hover:scale-105 shadow-2xl">
+                        Diventa un Volontario Verde
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+`;
+
+        if (nav) {
+            nav.insertAdjacentHTML('afterend', article4HTML);
+        } else {
+            document.body.insertAdjacentHTML('afterbegin', article4HTML);
         }
         
         window.scrollTo(0, 0);
@@ -728,6 +1029,195 @@ function GoEvento2() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+//EVENTO 3
+function GoEvento3() {
+    window.location.hash = "passeggiate-patrimoniali-vicenza";
+
+    const elementsToRemove = ['header', 'main', 'footer', '#ai-chat-window'];
+    elementsToRemove.forEach(selector => document.querySelector(selector)?.remove());
+    
+    const nav = document.querySelector('nav');
+
+    const event3HTML = `     <header class="relative pt-32 pb-24 overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 z-0">
+            <img src="https://plus.unsplash.com/premium_photo-1677048147637-c2a5f668fe56?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                 class="w-full h-full object-cover opacity-30" 
+                 alt="Vicenza Patrimonio">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/90 to-slate-900"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-600 text-white text-[10px] font-black uppercase tracking-widest mb-8 shadow-xl">
+                Cultura & Partecipazione • Evento Gratuito
+            </span>
+            <h1 class="text-6xl md:text-8xl font-black text-white leading-none mb-4 drop-shadow-2xl italic uppercase tracking-tighter">
+                Passeggiate<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Patrimoniali 2026</span>
+            </h1>
+
+            <div class="text-3xl md:text-4xl font-black text-emerald-400 uppercase italic tracking-widest mb-10">
+                09-10 Maggio 2026
+            </div>
+
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed mb-10">
+                Scopri la Vicenza invisibile. Un percorso guidato dalle nuove generazioni per riscoprire luoghi dimenticati e trasformare ogni cittadino in custode attivo della bellezza locale.
+            </p>
+            
+            <a href="#" target="_blank" class="inline-flex items-center gap-3 px-10 py-4 bg-white text-emerald-900 hover:bg-emerald-600 hover:text-white rounded-2xl font-black uppercase tracking-widest transition-all shadow-2xl group">
+                Prenota Posto
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <div class="relative z-20 -mt-10 max-w-4xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-50 p-8 rounded-[32px] shadow-2xl border border-white">
+            <div class="text-center border-r border-slate-200">
+                <div class="text-3xl font-black text-emerald-600 italic">FREE</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Accesso</div>
+            </div>
+            <div class="text-center md:border-r border-slate-200">
+                <div class="text-3xl font-black text-slate-900 italic">12</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Giovani Guide</div>
+            </div>
+            <div class="text-center border-r border-slate-200">
+                <div class="text-3xl font-black text-slate-900 italic">5km</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Percorso</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-black text-slate-900 italic">4+</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Workshop</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-32">
+                
+                <div class="lg:col-span-7 flex flex-col">
+                    <h2 class="text-4xl font-black text-slate-900 uppercase italic mb-8 tracking-tighter">Oltre la Basilica: narrare l'anima urbana</h2>
+                    <div class="prose prose-slate max-w-none text-slate-600 font-medium leading-relaxed space-y-6 text-justify">
+                        <p>
+                            Le Passeggiate Patrimoniali 2026 non sono tour turistici convenzionali, ma atti di <strong>appropriazione culturale</strong>. Ispirate alla Convenzione di Faro, mettono al centro le persone e il loro legame emotivo con il territorio.
+                        </p>
+                        <p>
+                            Il focus è la <strong>Narrazione Collettiva</strong>. Gruppi di giovani facilitatori accompagneranno i partecipanti attraverso cortili nascosti, archeologie industriali e spazi di quartiere, stimolando la condivisione di memorie e visioni future.
+                        </p>
+                        <p>
+                            Utilizzeremo tecniche di <strong>Storytelling Itinerante</strong> per trasformare l'osservatore passivo in un "narratore del territorio". L'evento mira a creare una mappa vivente di Vicenza, dove il patrimonio non è solo pietra, ma l'insieme delle storie che lo abitano.
+                        </p>
+                        <div class="p-8 bg-slate-900 rounded-[32px] text-white">
+                            <h4 class="text-emerald-400 font-black uppercase text-sm mb-4 tracking-widest italic">Modalità di Partecipazione</h4>
+                            <p class="text-sm text-slate-400 m-0 leading-relaxed">
+                                L'evento è gratuito e aperto a tutti. Si consigliano calzature comode. Il punto di ritrovo verrà comunicato via email 48 ore prima dell'inizio. La prenotazione è obbligatoria per garantire la qualità dell'interazione nei gruppi ristretti.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 lg:sticky lg:top-8">
+                    <div class="p-10 bg-emerald-600 rounded-[48px] shadow-2xl text-white">
+                        <div class="flex items-center gap-4 mb-8 border-b border-white/20 pb-6">
+                            <h4 class="text-3xl font-black uppercase italic tracking-tighter text-white">L'esperienza</h4>
+                        </div>
+                        
+                        <ul class="space-y-8">
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-eye text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold uppercase text-xs tracking-widest text-emerald-100">Sguardo Inedito</h5>
+                                    <p class="text-white text-sm mt-1 leading-relaxed">Accedi a luoghi solitamente chiusi al pubblico o ignorati dai flussi turistici.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-users text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold uppercase text-xs tracking-widest text-emerald-100">Community Building</h5>
+                                    <p class="text-white text-sm mt-1 leading-relaxed">Incontra altri cittadini e scambia prospettive sulla gestione dei beni comuni.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marked-alt text-xs"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold uppercase text-xs tracking-widest text-emerald-100">Mappatura Emozionale</h5>
+                                    <p class="text-white text-sm mt-1 leading-relaxed">Contribuisci alla creazione del primo archivio orale digitale della città.</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="mt-10 pt-8 border-t border-white/20">
+                            <div class="text-[10px] font-black uppercase tracking-[0.2em] mb-4">Prenotazioni entro il 05 Maggio</div>
+                            <a href="#" class="block w-full py-4 bg-white text-emerald-600 text-center rounded-2xl font-black uppercase tracking-widest hover:scale-105 transition-all">Riserva il Posto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-32">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black text-slate-900 uppercase italic mb-2 tracking-tighter">I Coordinatori</h2>
+                    <p class="text-slate-400 font-medium italic">Esperti di patrimonio e partecipazione che guidano i giovani narratori.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="group p-8 rounded-[40px] bg-slate-50 border border-transparent hover:border-emerald-600 transition-all duration-300">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center font-black text-emerald-600 text-2xl italic mb-6 shadow-sm">EM</div>
+                        <h5 class="font-black text-slate-900 uppercase italic text-lg mb-1">Elena Martini</h5>
+                        <p class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-4">Curatrice Culturale</p>
+                        <p class="text-sm text-slate-500 leading-relaxed font-medium">Specialista in gestione partecipata del patrimonio. Coordina la ricerca storica sui luoghi meno noti.</p>
+                    </div>
+                    
+                    <div class="group p-8 rounded-[40px] bg-slate-50 border border-transparent hover:border-teal-600 transition-all duration-300">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center font-black text-teal-600 text-2xl italic mb-6 shadow-sm">GL</div>
+                        <h5 class="font-black text-slate-900 uppercase italic text-lg mb-1">Giulio Lanza</h5>
+                        <p class="text-[10px] font-bold text-teal-600 uppercase tracking-widest mb-4">Storyteller</p>
+                        <p class="text-sm text-slate-500 leading-relaxed font-medium">Esperto di narrazione transmediale. Guida i giovani nella trasformazione dei dati storici in racconti avvincenti.</p>
+                    </div>
+                    
+                    <div class="group p-8 rounded-[40px] bg-slate-50 border border-transparent hover:border-slate-900 transition-all duration-300">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center font-black text-slate-900 text-2xl italic mb-6 shadow-sm">SP</div>
+                        <h5 class="font-black text-slate-900 uppercase italic text-lg mb-1">Sara Perin</h5>
+                        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Urbanista Sociale</p>
+                        <p class="text-sm text-slate-500 leading-relaxed font-medium">Focus sulla rigenerazione sociale dei quartieri. Cura il coinvolgimento delle comunità locali nel percorso.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 rounded-[48px] p-12 text-center text-white relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 pointer-events-none tracking-tighter font-black text-[10vw] leading-none select-none uppercase italic">
+                    PATRIMONIO VIVA
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-4xl font-black uppercase italic tracking-tighter mb-4">Diventa un narratore</h3>
+                    <p class="text-slate-400 mb-10 max-w-xl mx-auto font-medium text-lg italic">Riscrivi la storia di Vicenza insieme a noi. La partecipazione è il primo passo verso la tutela.</p>
+                    <a href="#" target="_blank" class="inline-flex items-center gap-4 px-12 py-5 bg-emerald-600 text-white rounded-2xl font-black uppercase tracking-widest transition-all hover:scale-105 shadow-2xl">
+                        Iscriviti alla Passeggiata
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    `;
+
+    if (nav) {
+        nav.insertAdjacentHTML('afterend', event3HTML);
+    } else {
+        document.body.insertAdjacentHTML('afterbegin', event3HTML);
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 //SONDAGGIO 1
 function GoSond1() {
     window.location.hash = "sondaggio-trasporti-notturni";
@@ -783,21 +1273,40 @@ function GoSond1() {
         </section>
 
         <article class="space-y-24 mb-32">
-            <section id="pratica" class="scroll-mt-10">
+            <section id="funzionamento" class="scroll-mt-10">
                 <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
-                    <span class="text-indigo-600 text-4xl">1.</span> Come si sale a bordo?
+                    <span class="text-indigo-600 text-4xl">1.</span> Logistica e Modelli
                 </h2>
-                <div class="prose prose-slate text-slate-600 font-medium">
-                    <p>Il sistema principale è il <strong>Night Bus</strong>: un servizio a chiamata che crea il percorso in base alle prenotazioni tramite app.</p>
+                <div class="prose prose-slate text-slate-600 font-medium max-w-none">
+                    <p class="mb-4">Il trasporto notturno copre solitamente la fascia oraria tra la mezzanotte e le 5:00 del mattino. Non è un semplice prolungamento delle linee diurne: spesso i percorsi vengono ridisegnati per collegare i principali hub della vita notturna con i quartieri residenziali.</p>
+                    
+                    <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-indigo-600 my-6 italic text-sm">
+                        "Esistono modelli radiali (dal centro verso l'esterno) o servizi a chiamata, dove il percorso si adatta in tempo reale alle prenotazioni degli utenti."
+                    </div>
+
+                    <p>A Padova, il sistema principale è il <strong>Night Bus</strong>. È un servizio flessibile che non segue orari fissi in ogni fermata, ma viene generato da un algoritmo in base a chi prenota tramite l'app ufficiale.</p>
                 </div>
             </section>
 
-            <section id="mappa" class="scroll-mt-10">
+            <section id="sicurezza" class="scroll-mt-10">
                 <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
-                    <span class="text-indigo-600 text-4xl">2.</span> Zone e Orari
+                    <span class="text-indigo-600 text-4xl">2.</span> Sicurezza e Percezione
+                </h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-4">
+                    La qualità di un servizio notturno non si misura solo in "minuti di attesa". Entrano in gioco fattori come l'illuminazione delle fermate, la presenza di telecamere a bordo e la facilità di raggiungere la destinazione finale a piedi una volta scesi dal mezzo.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 italic text-xs uppercase tracking-wider text-slate-400 font-black">
+                    <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-indigo-600"></i> Protocolli di emergenza</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-lightbulb text-indigo-600"></i> Infrastruttura urbana</div>
+                </div>
+            </section>
+
+            <section id="costi" class="scroll-mt-10">
+                <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
+                    <span class="text-indigo-600 text-4xl">3.</span> Gestione Economica
                 </h2>
                 <p class="text-slate-600 font-medium leading-relaxed">
-                    Copertura nel Comune di Padova e prima cintura. Servizio attivo fino alle 3:00 del mattino il venerdì e sabato.
+                    Mantenere i bus attivi di notte ha costi operativi superiori al giorno: indennità per il personale, manutenzione straordinaria e gestione delle piattaforme digitali. Questi costi possono essere sostenuti dalla bigliettazione, da fondi comunali o da sponsorizzazioni esterne legate ai grandi eventi.
                 </p>
             </section>
         </article>
@@ -965,22 +1474,41 @@ function GoSond2() {
             </button>
         </section>
 
-        <article class="space-y-24 mb-32">
-            <section id="servizi" class="scroll-mt-10">
+                <article class="space-y-24 mb-32">
+            <section id="risorse" class="scroll-mt-10">
                 <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
-                    <span class="text-rose-600 text-4xl">1.</span> Psicologo di Base
+                    <span class="text-indigo-600 text-4xl">1.</span> Gli strumenti attuali
                 </h2>
-                <div class="prose prose-slate text-slate-600 font-medium">
-                    <p>In Veneto è stata approvata la figura dello <strong>Psicologo di Cure Primarie</strong>. Un primo filtro gratuito per intercettare il malessere prima che diventi cronico.</p>
+                <div class="prose prose-slate text-slate-600 font-medium max-w-none">
+                    <p class="mb-4">Il supporto psicologico in Veneto si divide principalmente tra il servizio pubblico (ULSS), i consultori familiari e i progetti sperimentali legati alle politiche giovanili regionali.</p>
+                    
+                    <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-indigo-600 my-6 italic text-sm">
+                        "Dal Bonus Psicologo nazionale ai voucher regionali, le misure economiche cercano di abbattere la barriera del costo, ma l'accesso resta spesso mediato da lunghe liste d'attesa."
+                    </div>
+
+                    <p>Accanto ai canali istituzionali, stanno nascendo sportelli di ascolto nelle università e nelle scuole superiori, pensati per offrire un primo orientamento immediato e meno burocratizzato.</p>
                 </div>
             </section>
 
-            <section id="accessibilita" class="scroll-mt-10">
+            <section id="territorio" class="scroll-mt-10">
                 <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
-                    <span class="text-rose-600 text-4xl">2.</span> I tempi di attesa
+                    <span class="text-indigo-600 text-4xl">2.</span> Accessibilità e Distanza
+                </h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-4">
+                    La distribuzione dei centri di salute mentale (CSM) non è uniforme. Mentre i capoluoghi offrono più opzioni, le aree periferiche o montane del Veneto soffrono spesso di una carenza di presidi, costringendo gli utenti a spostamenti significativi o alla scelta del privato online.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 italic text-xs uppercase tracking-wider text-slate-400 font-black">
+                    <div class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-indigo-600"></i> Prossimità dei servizi</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-laptop text-indigo-600"></i> Digitalizzazione del supporto</div>
+                </div>
+            </section>
+
+            <section id="prevenzione" class="scroll-mt-10">
+                <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
+                    <span class="text-indigo-600 text-4xl">3.</span> Cultura della Prevenzione
                 </h2>
                 <p class="text-slate-600 font-medium leading-relaxed">
-                    L'accesso ai consultori e ai CSM (Centri Salute Mentale) presenta spesso sfide legate alle liste d'attesa e alla carenza di personale specializzato.
+                    Un sistema efficiente non interviene solo nella crisi. La prevenzione passa per l'educazione emotiva, la riduzione dello stigma sociale e la creazione di spazi di aggregazione sicuri. Analizzare l'impatto di bandi regionali e iniziative locali è fondamentale per costruire una rete che sia davvero di supporto e non solo di emergenza.
                 </p>
             </section>
         </article>
@@ -1148,22 +1676,39 @@ function GoSond3() {
             </button>
         </section>
 
-        <article class="space-y-24 mb-32">
-            <section id="parchi" class="scroll-mt-10">
+                <article class="space-y-24 mb-32">
+            <section id="movimento" class="scroll-mt-10">
                 <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
-                    <span class="text-orange-600 text-4xl">1.</span> Punti di forza
+                    <span class="text-indigo-600 text-4xl">1.</span> Cos'è il Calisthenics?
                 </h2>
-                <div class="prose prose-slate text-slate-600 font-medium">
-                    <p>Belluno offre spazi naturali incredibili, ma le strutture specifiche per l'allenamento a corpo libero sono spesso datate o distribuite in modo non omogeneo sul territorio.</p>
+                <div class="prose prose-slate text-slate-600 font-medium max-w-none">
+                    <p class="mb-4">È una disciplina basata sull'allenamento a corpo libero che sfrutta sbarre, parallele e il peso del proprio corpo. La sua forza sta nell'accessibilità: non servono abbonamenti in palestra, basta uno spazio attrezzato e la voglia di mettersi in gioco.</p>
+                    
+                    <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-indigo-600 my-6 italic text-sm">
+                        "Un parco Calisthenics non è solo un insieme di tubi d'acciaio; è un punto di aggregazione generazionale che promuove salute e socialità a costo zero per l'utente."
+                    </div>
                 </div>
             </section>
 
-            <section id="manutenzione" class="scroll-mt-10">
+            <section id="dotazione" class="scroll-mt-10">
                 <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
-                    <span class="text-orange-600 text-4xl">2.</span> Sicurezza e Grip
+                    <span class="text-indigo-600 text-4xl">2.</span> Stato delle Aree a Belluno
+                </h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-4">
+                    Al momento, la disponibilità di aree specifiche nel bellunese è frammentata. Molti sportivi si adattano a strutture nate per il gioco dei bambini o a percorsi vita datati, che spesso non garantiscono gli standard di sicurezza o la varietà di attrezzi necessari per un allenamento completo.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 italic text-xs uppercase tracking-wider text-slate-400 font-black">
+                    <div class="flex items-center gap-2"><i class="fas fa-dumbbell text-indigo-600"></i> Attrezzatura professionale</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-cloud-sun text-indigo-600"></i> Manutenzione parchi</div>
+                </div>
+            </section>
+
+            <section id="prospettive" class="scroll-mt-10">
+                <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
+                    <span class="text-indigo-600 text-4xl">3.</span> Perché investire nello sport outdoor?
                 </h2>
                 <p class="text-slate-600 font-medium leading-relaxed">
-                    La manutenzione delle sbarre e la scelta dei materiali (acciaio inox vs ferro verniciato) sono fondamentali per garantire allenamenti sicuri tutto l'anno, anche con le temperature montane.
+                    Investire in parchi calisthenics significa ridurre il degrado urbano e offrire alternative sane al tempo libero dei giovani. In un territorio come quello di Belluno, integrare lo sport outdoor con il paesaggio naturale rappresenta un'opportunità di valorizzazione turistica e sociale unica nel suo genere.
                 </p>
             </section>
         </article>
