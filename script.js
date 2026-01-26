@@ -32,7 +32,9 @@ function handleRouting() {
     else if (currentHash === "#sondaggio-calisthenics-belluno") {
         GoSond3();
     }
-    
+    else if (currentHash === "#opportunità") {
+        GoOpportunity();
+    }
 }
 
 // Esegui al caricamento della pagina
@@ -1352,6 +1354,139 @@ function GoChiSiamo() {
 
         // Inserisce tutto dopo la navigazione che resta fissa
         document.querySelector('nav').insertAdjacentHTML('afterend', chiSiamoHTML);
+        window.scrollTo(0, 0);
+    }
+}
+
+//CHI SIAMO
+function GoOpportunity() {
+    // Cambia l'URL in modo che se ricarichi rimanga qui
+    window.location.hash = "opportunità";
+
+    const currentHeader = document.querySelector('header');
+    const currentMain = document.querySelector('main');
+
+    if (currentHeader && currentMain) {
+        // Rimuove la Home
+        currentHeader.remove();
+        currentMain.remove();
+
+        // Inserisce il contenuto "Chi Siamo" ottimizzato
+        const OpportunityHTML = `
+        
+    <header class="relative pt-24 pb-20 overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
+                 class="w-full h-full object-cover opacity-10" 
+                 alt="Veneto Youth">
+            <div class="absolute inset-0 bg-slate-900/80"></div>
+        </div>
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <span class="inline-flex items-center px-3 py-1 rounded-md bg-slate-800 text-indigo-400 text-[10px] font-bold uppercase tracking-widest mb-6">
+                Risorse 2026
+            </span>
+            <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6 tracking-tight">
+                Opportunità sul territorio
+            </h1>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed">
+                Guida alle agevolazioni regionali, formazione professionale e programmi di inserimento lavorativo per giovani in Veneto.
+            </p>
+        </div>
+    </header>
+
+    <div class="relative z-20 -mt-8 max-w-4xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
+            <div class="text-center border-r border-slate-100">
+                <div class="text-2xl font-bold text-slate-900">7</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Province</div>
+            </div>
+            <div class="text-center md:border-r border-slate-100">
+                <div class="text-2xl font-bold text-slate-900">100%</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Finanziato</div>
+            </div>
+            <div class="text-center border-r border-slate-100">
+                <div class="text-2xl font-bold text-slate-900">20+</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">ITS Academy</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold text-slate-900">18-30</div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Target Età</div>
+            </div>
+        </div>
+    </div>
+
+    <main class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-24">
+                <div class="lg:col-span-7 flex flex-col">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-8 border-b border-slate-100 pb-4 tracking-tight">Percorsi e Formazione</h2>
+                    <div class="space-y-10">
+                        <div class="group">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">Programma GOL (Garanzia Occupabilità)</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Percorsi personalizzati di riqualificazione professionale e inserimento lavorativo finanziati dal PNRR per disoccupati e profili fragili.</p>
+                            <div class="mt-3 flex gap-2 text-[9px] font-bold uppercase tracking-tight text-slate-400"><span>Regione Veneto</span> • <span>Lavoro</span></div>
+                        </div>
+                        <div class="group">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">ITS Academy Veneto</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">Scuole di alta tecnologia post-diploma. Formazione biennale pratica in settori come meccatronica, ICT, moda e agroalimentare.</p>
+                            <div class="mt-3 flex gap-2 text-[9px] font-bold uppercase tracking-tight text-slate-400"><span>Alta Formazione</span> • <span>Skills</span></div>
+                        </div>
+                        <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+                            <h4 class="text-xs font-bold uppercase text-indigo-600 mb-2">Agevolazioni Imprese</h4>
+                            <p class="text-sm text-slate-600 m-0">Bandi regionali per l'imprenditoria giovanile Under 35 con contributi a fondo perduto per acquisto attrezzature e digitalizzazione.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 lg:sticky lg:top-8">
+                    <div class="p-8 bg-slate-900 rounded-2xl text-white shadow-lg">
+                        <h4 class="text-xl font-bold mb-6 tracking-tight">Programmi Civici</h4>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded bg-indigo-500/20 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-[10px] text-indigo-400"></i></div>
+                                <div><h5 class="font-bold text-sm text-white">Servizio Civile Universale</h5><p class="text-slate-400 text-xs mt-1">Impegno di 12 mesi con assegno mensile garantito.</p></div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded bg-indigo-500/20 flex items-center justify-center flex-shrink-0"><i class="fas fa-check text-[10px] text-indigo-400"></i></div>
+                                <div><h5 class="font-bold text-sm text-white">ESC - Volontariato Europeo</h5><p class="text-slate-400 text-xs mt-1">Esperienze all'estero con costi di vitto e alloggio coperti.</p></div>
+                            </li>
+                        </ul>
+                        <div class="mt-8 pt-6 border-t border-white/10 text-center">
+                            <a href="https://bandi.regione.veneto.it" target="_blank" class="inline-block w-full py-3 bg-indigo-600 text-white text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-indigo-700 transition-colors">Portale Bandi Veneto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="mt-32 pt-16 border-t border-slate-100">
+                <div class="mb-12">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter italic">Eventi e <span class="text-indigo-600">Iniziative Locali</span></h2>
+                    <p class="text-slate-500 text-sm font-bold uppercase tracking-wider mt-2">Cosa succede oggi nel tuo territorio.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <article href="javascript:void(0)" onclick="GoEvento1()" class="group relative aspect-[4/5] rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80" alt="Hackathon 2026 a Padova" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                        <div class="absolute bottom-10 left-8 right-8 text-white">
+                            <span class="text-[10px] font-bold bg-indigo-600 px-3 py-1 rounded-full uppercase mb-4 inline-block tracking-widest">Padova</span>
+                            <h3 class="text-3xl font-bold leading-tight tracking-tight">Hackathon Territoriale 2026</h3>
+                        </div>
+                    </article>
+                    <article href="javascript:void(0)" onclick="GoEvento2()" class="group relative aspect-[4/5] rounded-[3rem] overflow-hidden cursor-pointer shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Workshop Public Speaking" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                        <div class="absolute bottom-10 left-8 right-8 text-white">
+                            <span class="text-[10px] font-bold bg-rose-600 px-3 py-1 rounded-full uppercase mb-4 inline-block tracking-widest">Vicenza</span>
+                            <h3 class="text-3xl font-bold leading-tight tracking-tight">Workshop: Public Speaking</h3>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>`;
+
+        // Inserisce tutto dopo la navigazione che resta fissa
+        document.querySelector('nav').insertAdjacentHTML('afterend', OpportunityHTML);
         window.scrollTo(0, 0);
     }
 }
