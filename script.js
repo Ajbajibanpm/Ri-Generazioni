@@ -1301,6 +1301,73 @@ function GoSond1() {
                 </p>
             </section>
         </article>
+
+        <div id="survey-modal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px;">
+        <div class="bg-white w-full max-w-[600px] max-h-[90vh] overflow-y-auto rounded-[24px] p-10">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-black uppercase italic tracking-tighter">Valutazione <span class="text-indigo-600">Servizio</span></h2>
+                <button onclick="closeSurvey()" class="text-slate-400 hover:text-slate-900 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <form id="survey-form" class="space-y-8">
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">01. Motivi di utilizzo (più risposte ammesse)</p>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="relative">
+                            <input type="checkbox" id="m1" name="reason" value="studio" class="sr-only peer">
+                            <label for="m1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold text-sm transition-all">Studio / Università</label>
+                        </div>
+                        <div class="relative">
+                            <input type="checkbox" id="m2" name="reason" value="lavoro" class="sr-only peer">
+                            <label for="m2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold text-sm transition-all">Lavoro</label>
+                        </div>
+                        <div class="relative">
+                            <input type="checkbox" id="m3" name="reason" value="social" class="sr-only peer">
+                            <label for="m3" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold text-sm transition-all">Tempo libero / Socialità</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">02. Grado di soddisfazione generale</p>
+                    <div class="flex justify-between gap-2">
+                        ${[1, 2, 3, 4, 5].map(n => `
+                            <div class="flex-1">
+                                <input type="radio" id="q${n}" name="satisfaction" value="${n}" class="sr-only peer" ${n === 1 ? 'required' : ''}>
+                                <label for="q${n}" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold transition-all">${n}</label>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">03. Reputi il servizio sicuro?</p>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="relative">
+                            <input type="radio" id="s1" name="safety" value="no" class="sr-only peer" required>
+                            <label for="s1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold text-sm transition-all">No, per nulla</label>
+                        </div>
+                        <div class="relative">
+                            <input type="radio" id="s2" name="safety" value="si" class="sr-only peer">
+                            <label for="s2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-indigo-600 peer-checked:bg-indigo-50 font-bold text-sm transition-all">Sì, lo reputo sicuro</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">04. Note o suggerimenti</p>
+                    <textarea name="suggestions" class="w-full border-2 border-slate-100 rounded-xl p-4 text-sm font-medium focus:border-indigo-600 outline-none transition-colors min-h-[100px]" placeholder="Come potremmo migliorare il servizio?"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-slate-900 text-white rounded-xl font-black uppercase text-xs tracking-widest hover:bg-indigo-600 transition-all shadow-lg">
+                    Invia Valutazione
+                </button>
+            </form>
+        </div>
+    </div>
+    
     `;
 
     // 5. Inserimento nel DOM
@@ -1425,7 +1492,73 @@ function GoSond2() {
             </section>
         </article>
 
-    </main>  `;
+    </main>  
+    
+    <div id="survey-modal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px;">
+        <div class="bg-white w-full max-w-[600px] max-h-[90vh] overflow-y-auto rounded-[24px] p-10">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-black uppercase italic tracking-tighter">Sondaggio <span class="text-rose-600">Benessere</span></h2>
+                <button onclick="closeSurvey()" class="text-slate-400 hover:text-slate-900 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <form id="survey-form" class="space-y-8">
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">01. Quali ostacoli riscontri nell'accesso alle cure? (più risposte)</p>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="relative">
+                            <input type="checkbox" id="sm1" name="barrier" value="costi" class="sr-only peer">
+                            <label for="sm1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm transition-all">Costi elevati dei privati</label>
+                        </div>
+                        <div class="relative">
+                            <input type="checkbox" id="sm2" name="barrier" value="attesa" class="sr-only peer">
+                            <label for="sm2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm transition-all">Liste d'attesa nel pubblico</label>
+                        </div>
+                        <div class="relative">
+                            <input type="checkbox" id="sm3" name="barrier" value="stigma" class="sr-only peer">
+                            <label for="sm3" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm transition-all">Stigma sociale / paura del giudizio</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">02. Valuta la tua serenità nell'ultimo mese (1-5)</p>
+                    <div class="flex justify-between gap-2">
+                        ${[1, 2, 3, 4, 5].map(n => `
+                            <div class="flex-1">
+                                <input type="radio" id="smq${n}" name="wellbeing" value="${n}" class="sr-only peer" ${n === 1 ? 'required' : ''}>
+                                <label for="smq${n}" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold transition-all">${n}</label>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">03. Conosci i servizi gratuiti nel tuo Comune?</p>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="relative">
+                            <input type="radio" id="kms1" name="knowledge" value="si" class="sr-only peer" required>
+                            <label for="kms1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm transition-all">Sì, so a chi rivolgermi</label>
+                        </div>
+                        <div class="relative">
+                            <input type="radio" id="kms2" name="knowledge" value="no" class="sr-only peer">
+                            <label for="kms2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm transition-all">No, non saprei dove andare</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">04. Cosa dovrebbe fare la Regione Veneto?</p>
+                    <textarea name="suggestions" class="w-full border-2 border-slate-100 rounded-xl p-4 text-sm font-medium focus:border-rose-600 outline-none transition-colors min-h-[100px]" placeholder="Più sportelli scolastici? Bonus psicologo regionale?"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-slate-900 text-white rounded-xl font-black uppercase text-xs tracking-widest hover:bg-rose-600 transition-all shadow-lg">
+                    Invia Risposte
+                </button>
+            </form>
+        </div>
+    </div>`;
 
     // 5. Inserimento nel DOM
     const nav = document.querySelector('nav');
@@ -1547,6 +1680,77 @@ function GoSond3() {
             </section>
         </article>
     </main>
+
+    <div id="survey-modal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px;">
+        <div class="bg-white w-full max-w-[600px] max-h-[90vh] overflow-y-auto rounded-[24px] p-10">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-black uppercase italic tracking-tighter">Report <span class="text-orange-600">Workout</span></h2>
+                <button onclick="closeSurvey()" class="text-slate-400 hover:text-slate-900 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <form id="survey-form" class="space-y-8">
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">01. Quali aree frequenti maggiormente? (anche più di una)</p>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="relative">
+                            <input type="checkbox" id="c1" name="location" value="lambioi" class="sr-only peer">
+                            <label for="c1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Lambioi</label>
+                        </div>
+                        <div class="relative">
+                            <input type="checkbox" id="c2" name="location" value="mussoi" class="sr-only peer">
+                            <label for="c2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Mussoi / Parco Città di Bologna</label>
+                        </div>
+                        <div class="relative">
+                            <input type="checkbox" id="c3" name="location" value="provincia" class="sr-only peer">
+                            <label for="c3" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Fuori Comune (Provincia)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">02. Qualità delle attrezzature attuali</p>
+                    <div class="flex justify-between gap-2">
+                        ${[1, 2, 3, 4, 5].map(n => `
+                            <div class="flex-1">
+                                <input type="radio" id="cq${n}" name="quality" value="${n}" class="sr-only peer" ${n === 1 ? 'required' : ''}>
+                                <label for="cq${n}" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold transition-all">${n}</label>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">03. Cosa manca di più nelle aree esistenti?</p>
+                    <div class="grid grid-cols-1 gap-2">
+                        <div class="relative">
+                            <input type="radio" id="cf1" name="missing" value="parallele" class="sr-only peer" required>
+                            <label for="cf1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Parallele più alte / larghe</label>
+                        </div>
+                        <div class="relative">
+                            <input type="radio" id="cf2" name="missing" value="pavimento" class="sr-only peer">
+                            <label for="cf2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Pavimentazione antitrauma</label>
+                        </div>
+                        <div class="relative">
+                            <input type="radio" id="cf3" name="missing" value="luce" class="sr-only peer">
+                            <label for="cf3" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-orange-600 peer-checked:bg-orange-50 font-bold text-sm transition-all">Illuminazione notturna</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">04. Suggerisci una posizione per una nuova area</p>
+                    <textarea name="new_spot" class="w-full border-2 border-slate-100 rounded-xl p-4 text-sm font-medium focus:border-orange-600 outline-none transition-colors min-h-[100px]" placeholder="Esempio: Vicino al campo sportivo di..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-slate-900 text-white rounded-xl font-black uppercase text-xs tracking-widest hover:bg-orange-600 transition-all shadow-lg">
+                    Invia Report
+                </button>
+            </form>
+        </div>
+    </div>
+    
     `;
 
     // 5. Inserimento nel DOM
