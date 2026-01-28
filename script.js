@@ -1814,106 +1814,152 @@ function GoOperatori() {
     };
 
     // 4. Template HTML
-    const OPERATORIHTML = `<header class="relative h-[60vh] w-full flex items-center justify-start px-6 md:px-20 overflow-hidden pt-20">
-    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80" 
-         class="absolute inset-0 w-full h-full object-cover opacity-40">
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
-    <div class="relative z-10 max-w-4xl pt-20">
-        <span class="inline-block px-4 py-1 border border-indigo-500 text-indigo-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-6 italic">Networking & Community</span>
-        <h1 class="text-4xl md:text-7xl font-black leading-tight mb-6 uppercase text-white">Eventi dal vivo: <br><span class="text-indigo-500">Connettiti ora.</span></h1>
+    const OPERATORIHTML = `<header class="relative bg-slate-900 pt-32 pb-20 px-6 md:px-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover">
+    </div>
+    
+    <div class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+        <div class="relative">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-indigo-500 overflow-hidden bg-white shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80" alt="Avatar" class="w-full h-full object-cover">
+            </div>
+            <button class="absolute bottom-2 right-2 bg-indigo-600 text-white p-2 rounded-full hover:bg-indigo-700 transition-colors">
+                <i class="fas fa-camera text-xs"></i>
+            </button>
+        </div>
+        
+        <div class="text-center md:text-left">
+            <span class="text-indigo-400 text-[10px] font-black uppercase tracking-[0.3em]">Membro Community</span>
+            <h1 class="text-4xl md:text-5xl font-black text-white uppercase mt-2">Marco Rossi</h1>
+            <p class="text-slate-400 mt-2 font-medium italic">"Freelance Designer & Sognatore Seriale"</p>
+        </div>
+
+        <div class="md:ml-auto flex gap-4">
+            <div class="text-center px-6 py-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
+                <span class="block text-2xl font-black text-white">12</span>
+                <span class="text-[9px] uppercase font-bold text-slate-400 tracking-widest">Eventi Seguiti</span>
+            </div>
+            <div class="text-center px-6 py-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
+                <span class="block text-2xl font-black text-white">3</span>
+                <span class="text-[9px] uppercase font-bold text-slate-400 tracking-widest">Organizzati</span>
+            </div>
+        </div>
     </div>
 </header>
 
-<main class="w-full bg-white text-slate-900 py-20 px-6 md:px-20 relative z-20">
-    <div class="max-w-6xl mx-auto">
+<main class="max-w-6xl mx-auto py-16 px-6 md:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         
-        <section class="mb-24">
-            <div class="mb-8">
-                <h2 class="text-3xl font-black uppercase tracking-tighter italic">Eventi e <span class="text-indigo-600">Iniziative Locali</span></h2>
-                <p class="text-slate-500 text-[12px] font-bold uppercase tracking-wider mt-1">Cosa succede oggi nel tuo territorio.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <article href="javascript:void(0)" onclick="GoEvento1()" class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <span class="text-[9px] font-bold bg-indigo-600 px-2 py-1 rounded-full uppercase mb-2 inline-block tracking-widest">Padova</span>
-                        <h3 class="text-xl font-bold leading-tight">Hackathon Territoriale 2026</h3>
-                    </div>
-                </article>
-                <article href="javascript:void(0)" onclick="GoEvento2()" class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <span class="text-[9px] font-bold bg-rose-600 px-2 py-1 rounded-full uppercase mb-2 inline-block tracking-widest">Vicenza</span>
-                        <h3 class="text-xl font-bold leading-tight">Workshop: Public Speaking</h3>
-                    </div>
-                </article>
-                <article href="javascript:void(0)" onclick="GoEvento3()" class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
-                    <img src="https://plus.unsplash.com/premium_photo-1677048147637-c2a5f668fe56?q=80&w=387&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <span class="text-[9px] font-bold bg-indigo-600 px-2 py-1 rounded-full uppercase mb-2 inline-block tracking-widest">Padova</span>
-                        <h3 class="text-xl font-bold leading-tight">Passeggiate patrimoniali Vicenza</h3>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="max-w-4xl mx-auto bg-slate-50 p-8 md:p-12 border border-slate-100">
-            <div class="mb-10">
-                <h2 class="text-3xl font-black uppercase mb-2">Proponi un evento</h2>
-                <p class="text-slate-500 uppercase text-xs font-bold tracking-widest">Organizza un incontro in persona con la community</p>
-            </div>
-
-            <form class="space-y-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="lg:col-span-2 space-y-16">
+            
+            <section>
+                <div class="flex justify-between items-end mb-8">
                     <div>
-                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Titolo dell'evento</label>
-                        <input type="text" placeholder="Es. Workshop Design Thinking" class="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:outline-none focus:border-indigo-500 transition-colors">
+                        <h2 class="text-2xl font-black uppercase italic">Iniziative <span class="text-indigo-600">Per Te</span></h2>
+                        <p class="text-slate-500 text-[11px] font-bold uppercase tracking-wider">In base ai tuoi interessi e posizione.</p>
                     </div>
-                    <div>
-                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Target / Destinatari</label>
-                        <input type="text" placeholder="Es. Studenti, Freelance under 30" class="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:outline-none focus:border-indigo-500 transition-colors">
-                    </div>
+                    <a href="#" class="text-[10px] font-black uppercase border-b-2 border-indigo-600 pb-1">Vedi tutti</a>
                 </div>
 
-                <div>
-                    <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Descrizione breve (Sottotitolo)</label>
-                    <input type="text" placeholder="Una frase d'impatto per attirare l'attenzione" class="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:outline-none focus:border-indigo-500 transition-colors">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <article onclick="GoEvento1()" class="group relative aspect-square rounded-[2rem] overflow-hidden cursor-pointer shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <span class="text-[8px] font-bold bg-indigo-600 px-2 py-1 rounded-full uppercase mb-2 inline-block">Padova</span>
+                            <h3 class="text-lg font-bold leading-tight">Hackathon 2026</h3>
+                        </div>
+                    </article>
+
+                    <article onclick="GoEvento2()" class="group relative aspect-square rounded-[2rem] overflow-hidden cursor-pointer shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <span class="text-[8px] font-bold bg-rose-600 px-2 py-1 rounded-full uppercase mb-2 inline-block">Vicenza</span>
+                            <h3 class="text-lg font-bold leading-tight">Workshop Public Speaking</h3>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-slate-100">
+                <div class="mb-10">
+                    <h2 class="text-2xl font-black uppercase mb-2 italic">Proponi <span class="text-indigo-600">Nuovo Evento</span></h2>
+                    <p class="text-slate-500 uppercase text-[10px] font-bold tracking-[0.2em]">Diventa protagonista della community</p>
                 </div>
 
-                <div>
-                    <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Dettagli dell'evento (Corpo del testo)</label>
-                    <textarea rows="4" placeholder="Spiega cosa succederà, l'agenda e il valore aggiunto dell'incontro" class="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:outline-none focus:border-indigo-500 transition-colors resize-none"></textarea>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Link Form Iscrizione</label>
-                        <input type="url" placeholder="https://forms.gle/..." class="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:outline-none focus:border-indigo-500 transition-colors">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="TITOLO EVENTO" class="w-full bg-slate-50 border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-indigo-500 font-bold text-xs uppercase">
+                        <input type="text" placeholder="TARGET (ES: STUDENTI)" class="w-full bg-slate-50 border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-indigo-500 font-bold text-xs uppercase">
                     </div>
-                    <div>
-                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Carica Immagine Copertina</label>
-                        <input type="file" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-[10px] file:font-black file:uppercase file:bg-slate-900 file:text-white hover:file:bg-indigo-600 transition-all">
+                    <input type="text" placeholder="DESCRIZIONE BREVE" class="w-full bg-slate-50 border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-indigo-500 font-bold text-xs uppercase">
+                    <textarea rows="3" placeholder="CORPO DEL TESTO E DETTAGLI" class="w-full bg-slate-50 border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-indigo-500 font-bold text-xs uppercase resize-none"></textarea>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="url" placeholder="LINK ISCRIZIONI (FORM)" class="w-full bg-slate-50 border-none rounded-xl py-4 px-6 focus:ring-2 focus:ring-indigo-500 font-bold text-xs uppercase">
+                        <div class="relative">
+                            <input type="file" class="hidden" id="file-upload">
+                            <label for="file-upload" class="flex items-center justify-center w-full bg-slate-900 text-white rounded-xl py-4 px-6 cursor-pointer hover:bg-indigo-600 transition-colors text-[10px] font-black uppercase tracking-widest">
+                                <i class="fas fa-image mr-2"></i> Carica Foto
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="pt-6">
-                    <button type="submit" class="w-full md:w-auto px-12 py-4 bg-indigo-600 text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-slate-900 transition-colors">
-                        Invia proposta evento
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-5 rounded-xl text-xs font-black uppercase tracking-[0.3em] hover:shadow-xl hover:-translate-y-1 transition-all">
+                        Pubblica Proposta
                     </button>
-                </div>
-            </form>
-        </section>
-
-        <div class="mt-20 text-center">
-            <button onclick="window.history.back();" class="text-slate-400 font-bold text-xs uppercase tracking-[0.2em] hover:text-indigo-600">
-                <i class="fas fa-arrow-left mr-2"></i> Torna alla home
-            </button>
+                </form>
+            </section>
         </div>
+
+        <aside class="space-y-8">
+            <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100">
+                <h3 class="text-sm font-black uppercase tracking-widest mb-6 border-b pb-2">I miei tag</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded-full uppercase tracking-tighter hover:bg-indigo-100 cursor-pointer">#Startup</span>
+                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[10px] font-bold rounded-full uppercase tracking-tighter">#DesignThinking</span>
+                    <span class="px-3 py-1 bg-slate-50 text-slate-500 text-[10px] font-bold rounded-full uppercase tracking-tighter">#Verona</span>
+                    <span class="px-3 py-1 bg-rose-50 text-rose-600 text-[10px] font-bold rounded-full uppercase tracking-tighter">#Networking</span>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 text-white p-8 rounded-[2rem] shadow-xl">
+                <h3 class="text-sm font-black uppercase tracking-widest mb-6 text-indigo-400">Prossimi Eventi</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-indigo-600 p-2 rounded-lg text-center min-w-[45px]">
+                            <span class="block text-xs font-black italic uppercase leading-none">Feb</span>
+                            <span class="text-lg font-black leading-none">12</span>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase leading-tight">Meeting Co-working Verona</h4>
+                            <p class="text-[10px] text-slate-400 mt-1 uppercase">Ore 18:30 • Polo Zanotto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <button class="w-full flex items-center justify-between p-4 bg-white hover:bg-indigo-600 hover:text-white transition-all rounded-2xl group">
+                    <span class="text-[10px] font-black uppercase tracking-widest italic">Modifica Profilo</span>
+                    <i class="fas fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
+                </button>
+                <button class="w-full flex items-center justify-between p-4 bg-white hover:bg-rose-600 hover:text-white transition-all rounded-2xl group text-rose-600">
+                    <span class="text-[10px] font-black uppercase tracking-widest italic">Logout</span>
+                    <i class="fas fa-sign-out-alt text-xs"></i>
+                </button>
+            </div>
+        </aside>
+
     </div>
 </main>
+
+<script>
+    function GoEvento1() { console.log("Navigazione Evento 1"); }
+    function GoEvento2() { console.log("Navigazione Evento 2"); }
+</script>
 
 
        
