@@ -1782,6 +1782,172 @@ function GoSond3() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+//OPERATORI
+function GoOperatori() {
+    window.location.hash = "spazio-operatori";
+
+    // 1. Pulizia elementi esistenti
+    const elementsToRemove = ['header', 'main', 'footer', '#ai-chat-window', '#survey-modal'];
+    elementsToRemove.forEach(selector => document.querySelector(selector)?.remove());
+    
+    // 2. Reset stile body
+    document.body.className = "bg-[#fdfdfd] text-slate-900 selection:bg-orange-100 antialiased";
+    document.body.style.overflow = "auto";
+
+    // 3. Logica Modal
+    window.openSurvey = function() {
+        const modal = document.getElementById('survey-modal');
+        if (modal) {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    window.closeSurvey = function() {
+        if (confirm("Le tue preferenze non sono state salvate. Chiudere?")) {
+            const modal = document.getElementById('survey-modal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    };
+
+    // 4. Template HTML
+    const OPERATORIHTML = `<header class="relative h-[60vh] w-full flex items-center justify-start px-6 md:px-20 overflow-hidden pt-20">
+    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80" 
+         class="absolute inset-0 w-full h-full object-cover opacity-40">
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+    <div class="relative z-10 max-w-4xl pt-20">
+        <span class="inline-block px-4 py-1 border border-indigo-500 text-indigo-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-6 italic">Networking & Community</span>
+        <h1 class="text-4xl md:text-7xl font-black leading-tight mb-6 uppercase text-white">Eventi dal vivo: <br><span class="text-indigo-500">Connettiti ora.</span></h1>
+    </div>
+</header>
+
+<main class="w-full bg-white text-slate-900 py-20 px-6 md:px-20 relative z-20">
+    <div class="max-w-6xl mx-auto">
+        
+        <section class="mb-24">
+            <div class="mb-8">
+                <h2 class="text-3xl font-black uppercase tracking-tighter italic">Eventi e <span class="text-indigo-600">Iniziative Locali</span></h2>
+                <p class="text-slate-500 text-[12px] font-bold uppercase tracking-wider mt-1">Cosa succede oggi nel tuo territorio.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <article href="javascript:void(0)" onclick="GoEvento1()" class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <span class="text-[9px] font-bold bg-indigo-600 px-2 py-1 rounded-full uppercase mb-2 inline-block tracking-widest">Padova</span>
+                        <h3 class="text-xl font-bold leading-tight">Hackathon Territoriale 2026</h3>
+                    </div>
+                </article>
+                <article href="javascript:void(0)" onclick="GoEvento2()" class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <span class="text-[9px] font-bold bg-rose-600 px-2 py-1 rounded-full uppercase mb-2 inline-block tracking-widest">Vicenza</span>
+                        <h3 class="text-xl font-bold leading-tight">Workshop: Public Speaking</h3>
+                    </div>
+                </article>
+                <article href="javascript:void(0)" onclick="GoEvento3()" class="group relative aspect-[4/5] rounded-[2rem] overflow-hidden cursor-pointer shadow-xl">
+                    <img src="https://plus.unsplash.com/premium_photo-1677048147637-c2a5f668fe56?q=80&w=387&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-white">
+                        <span class="text-[9px] font-bold bg-indigo-600 px-2 py-1 rounded-full uppercase mb-2 inline-block tracking-widest">Padova</span>
+                        <h3 class="text-xl font-bold leading-tight">Passeggiate patrimoniali Vicenza</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto bg-slate-50 p-8 md:p-12 border border-slate-100">
+            <div class="mb-10">
+                <h2 class="text-3xl font-black uppercase mb-2">Proponi un evento</h2>
+                <p class="text-slate-500 uppercase text-xs font-bold tracking-widest">Organizza un incontro in persona con la community</p>
+            </div>
+
+            <form class="space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Titolo dell'evento</label>
+                        <input type="text" placeholder="Es. Workshop Design Thinking" class="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:outline-none focus:border-indigo-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Target / Destinatari</label>
+                        <input type="text" placeholder="Es. Studenti, Freelance under 30" class="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:outline-none focus:border-indigo-500 transition-colors">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Descrizione breve (Sottotitolo)</label>
+                    <input type="text" placeholder="Una frase d'impatto per attirare l'attenzione" class="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:outline-none focus:border-indigo-500 transition-colors">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Dettagli dell'evento (Corpo del testo)</label>
+                    <textarea rows="4" placeholder="Spiega cosa succederà, l'agenda e il valore aggiunto dell'incontro" class="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:outline-none focus:border-indigo-500 transition-colors resize-none"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Link Form Iscrizione</label>
+                        <input type="url" placeholder="https://forms.gle/..." class="w-full bg-transparent border-b-2 border-slate-200 py-3 focus:outline-none focus:border-indigo-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Carica Immagine Copertina</label>
+                        <input type="file" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-[10px] file:font-black file:uppercase file:bg-slate-900 file:text-white hover:file:bg-indigo-600 transition-all">
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <button type="submit" class="w-full md:w-auto px-12 py-4 bg-indigo-600 text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-slate-900 transition-colors">
+                        Invia proposta evento
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <div class="mt-20 text-center">
+            <button onclick="window.history.back();" class="text-slate-400 font-bold text-xs uppercase tracking-[0.2em] hover:text-indigo-600">
+                <i class="fas fa-arrow-left mr-2"></i> Torna alla home
+            </button>
+        </div>
+    </div>
+</main>
+
+
+       
+    `;
+
+    // 5. Inserimento nel DOM
+    const nav = document.querySelector('nav');
+    if (nav) {
+        nav.insertAdjacentHTML('afterend', OPERATORIHTML);
+    } else {
+        document.body.insertAdjacentHTML('afterbegin', OPERATORIHTML);
+    }
+
+    // 6. Gestione invio Form
+    document.getElementById('survey-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const data = {
+            locations: formData.getAll('location'),
+            equipment_quality: formData.get('quality'),
+            missing_features: formData.get('missing'),
+            suggested_spot: formData.get('new_spot')
+        };
+        console.log("Calisthenics Belluno - Dati:", data);
+        
+        alert('Richiesta inviata. Continuiamo ad allenarci!');
+        this.reset();
+        document.getElementById('survey-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 //CHI SIAMO
 function GoChiSiamo() {
     // Cambia l'URL in modo che se ricarichi rimanga qui
@@ -2141,3 +2307,152 @@ function GoGIOCOQUIZ() {
 
     window.scrollTo(0, 0);
 }
+
+//ACCEDI
+/**
+ * GESTIONE HUB YOUTHVOICE - CODICE DEFINITIVO
+ */
+
+// --- 1. GESTIONE MODAL (APERTURA/CHIUSURA) ---
+
+function toggleLoginModal() {
+    const modal = document.getElementById('login-modal');
+    if (!modal) return;
+    const isHidden = modal.classList.toggle('hidden');
+    document.body.style.overflow = isHidden ? 'auto' : 'hidden';
+}
+
+function toggleRegisterModal() {
+    const regModal = document.getElementById('register-modal');
+    if (!regModal) return;
+    const isHidden = regModal.classList.toggle('hidden');
+    document.body.style.overflow = isHidden ? 'auto' : 'hidden';
+}
+
+function toggleLogoutModal() {
+    const modal = document.getElementById('logout-confirm-modal');
+    if (!modal) return;
+    const isHidden = modal.classList.toggle('hidden');
+    document.body.style.overflow = isHidden ? 'auto' : 'hidden';
+}
+
+// Chiude il login se clicchi fuori dal box
+window.addEventListener('click', (event) => {
+    const modal = document.getElementById('login-modal');
+    if (event.target === modal) toggleLoginModal();
+});
+
+// Mostra/Nasconde il campo Nome Ente nella registrazione
+function toggleEntityField(show) {
+    const container = document.getElementById('entity-name-container');
+    const input = document.getElementById('reg-ente'); // Allineato con l'ID del form registration
+    if (container && input) {
+        if (show) {
+            container.classList.remove('hidden');
+            input.required = true;
+        } else {
+            container.classList.add('hidden');
+            input.required = false;
+            input.value = "";
+        }
+    }
+}
+
+// --- 2. LOGICA REALE DI REGISTRAZIONE ---
+function gestisciRegistrazione(e) {
+    e.preventDefault();
+    
+    const emailInput = document.getElementById('reg-email').value.toLowerCase().trim();
+    const pass = document.getElementById('reg-pass').value;
+    const confirmPass = document.getElementById('reg-pass-confirm').value;
+
+    // Controllo coincidenza password
+    if (pass !== confirmPass) {
+        alert("Le password non coincidono!");
+        return;
+    }
+
+    // Recupera utenti dal localStorage
+    let users = JSON.parse(localStorage.getItem('hub_users')) || [];
+
+    // Controllo se l'email esiste già
+    if (users.some(user => user.email === emailInput)) {
+        alert("Questa email è già in uso!");
+        return;
+    }
+
+    // Creazione utente
+    const newUser = {
+        nome: document.getElementById('reg-nome').value,
+        cognome: document.getElementById('reg-cognome').value,
+        email: emailInput,
+        password: pass,
+        provincia: document.getElementById('reg-provincia').value,
+        tipo: document.querySelector('input[name="u-type"]:checked').value,
+        ente: document.getElementById('reg-ente') ? document.getElementById('reg-ente').value : ""
+    };
+
+    users.push(newUser);
+    localStorage.setItem('hub_users', JSON.stringify(users));
+    
+    alert("Registrazione completata! Ora effettua l'accesso.");
+    toggleRegisterModal();
+    toggleLoginModal();
+}
+
+// --- 3. LOGICA REALE DI LOGIN (ACCESSO NEGATO SE DATI ERRATI) ---
+
+// Funzione per controllare se c'è un utente già loggato in sessione
+function controllaSessione() {
+    const sessionUser = JSON.parse(localStorage.getItem('user_session'));
+
+    if (sessionUser) {
+        // Mostra interfaccia loggata
+        document.getElementById('btn-login').classList.add('hidden');
+        document.getElementById('user-profile').classList.remove('hidden');
+        document.querySelector('#user-profile span').innerText = sessionUser.nome + " " + sessionUser.cognome;
+
+        // Mostra tasto Operatori se ente
+        if (sessionUser.tipo === 'ente') {
+            document.getElementById('nav-operatori').classList.remove('hidden');
+        }
+    }
+}
+
+// Modifica il tuo login per salvare la sessione
+function gestisciLogin(e) {
+    e.preventDefault();
+    const emailInput = e.target.querySelector('input[type="email"]').value.toLowerCase().trim();
+    const passInput = e.target.querySelector('input[type="password"]').value;
+    
+    const users = JSON.parse(localStorage.getItem('hub_users')) || [];
+    const validUser = users.find(u => u.email === emailInput && u.password === passInput);
+
+    if (validUser) {
+        // SALVA LA SESSIONE (così al refresh resta loggato)
+        localStorage.setItem('user_session', JSON.stringify(validUser));
+        
+        // Applica cambiamenti grafici
+        controllaSessione();
+        toggleLoginModal();
+        e.target.reset();
+    } else {
+        alert("Email o Password errati.");
+    }
+}
+
+// Pulisci sessione al logout
+function confirmLogoutAction() {
+    localStorage.removeItem('user_session'); // Rimuove la sessione attiva
+    location.reload(); // Ricarica la pagina per resettare tutto pulito
+}
+
+// AGGIORNA IL TUO DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    controllaSessione(); // <--- Controlla subito se l'utente era già dentro
+    
+    const regForm = document.getElementById('hub-register-form');
+    const loginForm = document.getElementById('hub-login-form');
+    if (regForm) regForm.addEventListener('submit', gestisciRegistrazione);
+    if (loginForm) loginForm.addEventListener('submit', gestisciLogin);
+});
