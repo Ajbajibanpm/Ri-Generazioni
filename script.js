@@ -14,6 +14,9 @@ function handleRouting() {
     else if (currentHash === "#articolo-pianta-abbandonata-sul-bus") {
         GoArt4();
     }
+else if (currentHash === "#articolo-chi-offre-la-pizza") {
+        GoArt5();
+    }
     else if (currentHash === "#gioco-quiz") {
         GoGIOCOQUIZ();
     }
