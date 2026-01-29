@@ -232,6 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 //ARTICOLO 1
 function GoArt1() {
     // 1. Cambia l'URL aggiungendo l'identificativo dell'articolo
@@ -1785,69 +1786,33 @@ function GoSond3() {
 //OPERATORI
 function GoOperatori() {
     window.location.hash = "spazio-operatori";
-
-    // 1. Pulizia elementi esistenti
     const elementsToRemove = ['header', 'main', 'footer', '#ai-chat-window', '#survey-modal'];
-    elementsToRemove.forEach(selector => document.querySelector(selector)?.remove());
+    elementsToRemove.forEach(s => document.querySelector(s)?.remove());
     
-    // 2. Reset stile body
     document.body.className = "bg-[#fdfdfd] text-slate-900 selection:bg-orange-100 antialiased";
-    document.body.style.overflow = "auto";
-
-    // 3. Logica Modal
-    window.openSurvey = function() {
-        const modal = document.getElementById('survey-modal');
-        if (modal) {
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-    };
-
-    window.closeSurvey = function() {
-        if (confirm("Le tue preferenze non sono state salvate. Chiudere?")) {
-            const modal = document.getElementById('survey-modal');
-            if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-    };
-
-    // 4. Template HTML
-    const OPERATORIHTML = `<header class="relative bg-slate-900 pt-32 pb-20 px-6 md:px-20 overflow-hidden">
+    
+    const OPERATORIHTML = `
+<header class="relative bg-slate-900 pt-32 pb-20 px-6 md:px-20 overflow-hidden">
     <div class="absolute inset-0 opacity-20">
         <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover">
     </div>
-    
     <div class="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
         <div class="relative">
             <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-indigo-500 overflow-hidden bg-white shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80" alt="Avatar" class="w-full h-full object-cover">
+                <img id="profile-img-display" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover">
             </div>
-            <button class="absolute bottom-2 right-2 bg-indigo-600 text-white p-2 rounded-full hover:bg-indigo-700 transition-colors">
+            <input type="file" id="profile-file-input" class="hidden" accept="image/*">
+            <button onclick="document.getElementById('profile-file-input').click()" class="absolute bottom-2 right-2 bg-indigo-600 text-white p-2 rounded-full hover:bg-indigo-700">
                 <i class="fas fa-camera text-xs"></i>
             </button>
         </div>
-        
         <div class="text-center md:text-left">
-            <span class="text-indigo-400 text-[10px] font-black uppercase tracking-[0.3em]">Membro Community</span>
-            <h1 class="text-4xl md:text-5xl font-black text-white uppercase mt-2">Marco Rossi</h1>
-            <p class="text-slate-400 mt-2 font-medium italic">"Freelance Designer & Sognatore Seriale"</p>
-        </div>
-
-        <div class="md:ml-auto flex gap-4">
-            <div class="text-center px-6 py-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
-                <span class="block text-2xl font-black text-white">12</span>
-                <span class="text-[9px] uppercase font-bold text-slate-400 tracking-widest">Eventi Seguiti</span>
-            </div>
-            <div class="text-center px-6 py-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
-                <span class="block text-2xl font-black text-white">3</span>
-                <span class="text-[9px] uppercase font-bold text-slate-400 tracking-widest">Organizzati</span>
-            </div>
+            <span class="text-indigo-400 text-[10px] font-black uppercase tracking-[0.3em]">Profilo Operatore</span>
+            <h1 id="user-full-name" class="text-4xl md:text-5xl font-black text-white uppercase mt-2 italic">Caricamento...</h1>
+            <p id="user-role-desc" class="text-slate-400 mt-2 font-medium italic">"..."</p>
         </div>
     </div>
 </header>
-
 <main class="max-w-6xl mx-auto py-16 px-6 md:px-20">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
         
@@ -1946,7 +1911,7 @@ function GoOperatori() {
                     <span class="text-[10px] font-black uppercase tracking-widest italic">Modifica Profilo</span>
                     <i class="fas fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
                 </button>
-                <button class="w-full flex items-center justify-between p-4 bg-white hover:bg-rose-600 hover:text-white transition-all rounded-2xl group text-rose-600">
+                <button onclick="handleLogout()" class="w-full flex items-center justify-between p-4 bg-white hover:bg-rose-600 hover:text-white transition-all rounded-2xl group text-rose-600">
                     <span class="text-[10px] font-black uppercase tracking-widest italic">Logout</span>
                     <i class="fas fa-sign-out-alt text-xs"></i>
                 </button>
@@ -1960,37 +1925,14 @@ function GoOperatori() {
     function GoEvento1() { console.log("Navigazione Evento 1"); }
     function GoEvento2() { console.log("Navigazione Evento 2"); }
 </script>
+`;
 
-
-       
-    `;
-
-    // 5. Inserimento nel DOM
     const nav = document.querySelector('nav');
-    if (nav) {
-        nav.insertAdjacentHTML('afterend', OPERATORIHTML);
-    } else {
-        document.body.insertAdjacentHTML('afterbegin', OPERATORIHTML);
-    }
+    if (nav) nav.insertAdjacentHTML('afterend', OPERATORIHTML);
+    else document.body.insertAdjacentHTML('afterbegin', OPERATORIHTML);
 
-    // 6. Gestione invio Form
-    document.getElementById('survey-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(this);
-        const data = {
-            locations: formData.getAll('location'),
-            equipment_quality: formData.get('quality'),
-            missing_features: formData.get('missing'),
-            suggested_spot: formData.get('new_spot')
-        };
-        console.log("Calisthenics Belluno - Dati:", data);
-        
-        alert('Richiesta inviata. Continuiamo ad allenarci!');
-        this.reset();
-        document.getElementById('survey-modal').style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
-
+    controllaSessione();
+    setupProfilePicture();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -2354,80 +2296,140 @@ function GoGIOCOQUIZ() {
     window.scrollTo(0, 0);
 }
 
-//ACCEDI
 /**
- * GESTIONE HUB YOUTHVOICE - CODICE DEFINITIVO
+ * GESTIONE HUB YOUTHVOICE - CODICE INTEGRATO
  */
 
-// --- 1. GESTIONE MODAL (APERTURA/CHIUSURA) ---
+// --- 1. GESTIONE MODAL ---
 
 function toggleLoginModal() {
     const modal = document.getElementById('login-modal');
-    if (!modal) return;
-    const isHidden = modal.classList.toggle('hidden');
-    document.body.style.overflow = isHidden ? 'auto' : 'hidden';
+    if (modal) {
+        const isHidden = modal.classList.toggle('hidden');
+        document.body.style.overflow = isHidden ? 'auto' : 'hidden';
+    }
 }
 
 function toggleRegisterModal() {
     const regModal = document.getElementById('register-modal');
-    if (!regModal) return;
-    const isHidden = regModal.classList.toggle('hidden');
-    document.body.style.overflow = isHidden ? 'auto' : 'hidden';
+    if (regModal) {
+        const isHidden = regModal.classList.toggle('hidden');
+        document.body.style.overflow = isHidden ? 'auto' : 'hidden';
+    }
 }
 
 function toggleLogoutModal() {
     const modal = document.getElementById('logout-confirm-modal');
-    if (!modal) return;
-    const isHidden = modal.classList.toggle('hidden');
-    document.body.style.overflow = isHidden ? 'auto' : 'hidden';
-}
-
-// Chiude il login se clicchi fuori dal box
-window.addEventListener('click', (event) => {
-    const modal = document.getElementById('login-modal');
-    if (event.target === modal) toggleLoginModal();
-});
-
-// Mostra/Nasconde il campo Nome Ente nella registrazione
-function toggleEntityField(show) {
-    const container = document.getElementById('entity-name-container');
-    const input = document.getElementById('reg-ente'); // Allineato con l'ID del form registration
-    if (container && input) {
-        if (show) {
-            container.classList.remove('hidden');
-            input.required = true;
-        } else {
-            container.classList.add('hidden');
-            input.required = false;
-            input.value = "";
-        }
+    if (modal) {
+        const isHidden = modal.classList.toggle('hidden');
+        document.body.style.overflow = isHidden ? 'auto' : 'hidden';
     }
 }
 
-// --- 2. LOGICA REALE DI REGISTRAZIONE ---
+function toggleEntityField(show) {
+    const container = document.getElementById('entity-name-container');
+    const input = document.getElementById('reg-ente');
+    if (container && input) {
+        container.classList.toggle('hidden', !show);
+        input.required = show;
+        if (!show) input.value = "";
+    }
+}
+
+// --- 2. LOGICA SESSIONE E INTERFACCIA ---
+
+function controllaSessione() {
+    const sessionUser = JSON.parse(localStorage.getItem('user_session'));
+    if (!sessionUser) return;
+
+    // Navbar
+    const btnLogin = document.getElementById('btn-login');
+    const userProfile = document.getElementById('user-profile');
+    const navName = document.querySelector('#user-profile span');
+    const navOp = document.getElementById('nav-operatori');
+    const navAvatar = document.querySelector('#user-profile img');
+
+    if (btnLogin) btnLogin.classList.add('hidden');
+    if (userProfile) userProfile.classList.remove('hidden');
+    if (navName) navName.innerText = sessionUser.nome + " " + sessionUser.cognome;
+    
+    // Carica foto nella navbar se esiste
+    if (navAvatar && sessionUser.profilePic) {
+        navAvatar.src = sessionUser.profilePic;
+    }
+
+    if (navOp) {
+        navOp.classList.toggle('hidden', sessionUser.tipo !== 'ente');
+    }
+
+    // Sezione Personale (Pagina/Operatori)
+    const nameDisplays = document.querySelectorAll('#user-full-name');
+    const descDisplays = document.querySelectorAll('#user-role-desc');
+    const profileImg = document.getElementById('profile-img-display');
+
+    nameDisplays.forEach(el => el.innerText = sessionUser.nome + " " + sessionUser.cognome);
+    descDisplays.forEach(el => {
+        el.innerText = (sessionUser.tipo === 'ente' && sessionUser.ente) 
+            ? "Operatore di " + sessionUser.ente 
+            : "Membro attivo della community";
+    });
+
+    if (profileImg && sessionUser.profilePic) {
+        profileImg.src = sessionUser.profilePic;
+    }
+}
+
+// --- 3. GESTIONE FOTO PROFILO ---
+
+function setupProfilePicture() {
+    const fileInput = document.getElementById('profile-file-input');
+    const displayImg = document.getElementById('profile-img-display');
+    const navAvatar = document.querySelector('#user-profile img');
+    let sessionUser = JSON.parse(localStorage.getItem('user_session'));
+
+    if (!fileInput || !displayImg || !sessionUser) return;
+
+    fileInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Image = e.target.result;
+                
+                // Aggiorna UI
+                displayImg.src = base64Image;
+                if (navAvatar) navAvatar.src = base64Image;
+                
+                // Salva in Sessione
+                sessionUser.profilePic = base64Image;
+                localStorage.setItem('user_session', JSON.stringify(sessionUser));
+                
+                // Salva nel Database Utenti Globale
+                let users = JSON.parse(localStorage.getItem('hub_users')) || [];
+                const idx = users.findIndex(u => u.email === sessionUser.email);
+                if (idx !== -1) {
+                    users[idx].profilePic = base64Image;
+                    localStorage.setItem('hub_users', JSON.stringify(users));
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+}
+
+// --- 4. LOGIN E REGISTRAZIONE ---
+
 function gestisciRegistrazione(e) {
     e.preventDefault();
-    
     const emailInput = document.getElementById('reg-email').value.toLowerCase().trim();
     const pass = document.getElementById('reg-pass').value;
     const confirmPass = document.getElementById('reg-pass-confirm').value;
 
-    // Controllo coincidenza password
-    if (pass !== confirmPass) {
-        alert("Le password non coincidono!");
-        return;
-    }
+    if (pass !== confirmPass) { alert("Le password non coincidono!"); return; }
 
-    // Recupera utenti dal localStorage
     let users = JSON.parse(localStorage.getItem('hub_users')) || [];
+    if (users.some(u => u.email === emailInput)) { alert("Email già in uso!"); return; }
 
-    // Controllo se l'email esiste già
-    if (users.some(user => user.email === emailInput)) {
-        alert("Questa email è già in uso!");
-        return;
-    }
-
-    // Creazione utente
     const newUser = {
         nome: document.getElementById('reg-nome').value,
         cognome: document.getElementById('reg-cognome').value,
@@ -2435,37 +2437,17 @@ function gestisciRegistrazione(e) {
         password: pass,
         provincia: document.getElementById('reg-provincia').value,
         tipo: document.querySelector('input[name="u-type"]:checked').value,
-        ente: document.getElementById('reg-ente') ? document.getElementById('reg-ente').value : ""
+        ente: document.getElementById('reg-ente')?.value || "",
+        profilePic: null
     };
 
     users.push(newUser);
     localStorage.setItem('hub_users', JSON.stringify(users));
-    
-    alert("Registrazione completata! Ora effettua l'accesso.");
+    alert("Registrazione completata!");
     toggleRegisterModal();
     toggleLoginModal();
 }
 
-// --- 3. LOGICA REALE DI LOGIN (ACCESSO NEGATO SE DATI ERRATI) ---
-
-// Funzione per controllare se c'è un utente già loggato in sessione
-function controllaSessione() {
-    const sessionUser = JSON.parse(localStorage.getItem('user_session'));
-
-    if (sessionUser) {
-        // Mostra interfaccia loggata
-        document.getElementById('btn-login').classList.add('hidden');
-        document.getElementById('user-profile').classList.remove('hidden');
-        document.querySelector('#user-profile span').innerText = sessionUser.nome + " " + sessionUser.cognome;
-
-        // Mostra tasto Operatori se ente
-        if (sessionUser.tipo === 'ente') {
-            document.getElementById('nav-operatori').classList.remove('hidden');
-        }
-    }
-}
-
-// Modifica il tuo login per salvare la sessione
 function gestisciLogin(e) {
     e.preventDefault();
     const emailInput = e.target.querySelector('input[type="email"]').value.toLowerCase().trim();
@@ -2475,28 +2457,27 @@ function gestisciLogin(e) {
     const validUser = users.find(u => u.email === emailInput && u.password === passInput);
 
     if (validUser) {
-        // SALVA LA SESSIONE (così al refresh resta loggato)
         localStorage.setItem('user_session', JSON.stringify(validUser));
-        
-        // Applica cambiamenti grafici
         controllaSessione();
         toggleLoginModal();
         e.target.reset();
     } else {
-        alert("Email o Password errati.");
+        alert("Credenziali errate.");
     }
 }
 
-// Pulisci sessione al logout
+function handleLogout() { toggleLogoutModal(); }
+
 function confirmLogoutAction() {
-    localStorage.removeItem('user_session'); // Rimuove la sessione attiva
-    location.reload(); // Ricarica la pagina per resettare tutto pulito
+    localStorage.removeItem('user_session');
+    window.location.reload();
 }
 
-// AGGIORNA IL TUO DOMContentLoaded
+
+// --- 5. INIT ---
+
 document.addEventListener('DOMContentLoaded', () => {
-    controllaSessione(); // <--- Controlla subito se l'utente era già dentro
-    
+    setTimeout(controllaSessione, 100);
     const regForm = document.getElementById('hub-register-form');
     const loginForm = document.getElementById('hub-login-form');
     if (regForm) regForm.addEventListener('submit', gestisciRegistrazione);
