@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Veneto - Cartoon Edition</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@400;700&display=swap');
+
+        :root {
+            --bg-start: #87CEEB; /* Sky blue */
+            --bg-quiz: #F0B27A;  /* Orange-ish for quiz */
+            --bg-results: #A8DCD2; /* Green-ish for results */
+            --card: #ffffff;
+            --primary: #FF6F61; /* Coral */
+            --success: #6BDE7D; /* Light Green */
+            --error: #FF4F4F;   /* Red */
+            --text: #333333;
+            --header-font: 'Fredoka One', cursive;
+            --body-font: 'Open Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Hide overflow for clouds */
+            position: relative;
+            transition: background-color 0.8s ease-in-out;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="-.1em" font-family="sans-serif" font-size="200" text-anchor="middle" x="50" style="fill:rgba(255,255,255,.1)">☁️</text></svg>');
+            background-size: 15%;
+            background-repeat: repeat;
+        }
+
+        /* Background Illustrations */
+        #bg-illustration {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 300px; /* Adjust height as needed */
+            background-size: cover;
+            background-position: center bottom;
+            transition: background-image 0.8s ease-in-out;
+            pointer-events: none; /* Make it non-interactive */
+            z-index: 0;
+        }
+
+        /* Animated Clouds */
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: moveClouds linear infinite;
+        }
+        .cloud:nth-child(1) { width: 100px; height: 60px; top: 10%; left: -15%; animation-duration: 30s; }
+        .cloud:nth-child(2) { width: 150px; height: 80px; top: 20%; left: -25%; animation-duration: 45s; animation-delay: 5s;}
+        .cloud:nth-child(3) { width: 80px; height: 50px; top: 5%; left: -5%; animation-duration: 25s; animation-delay: 10s;}
+        .cloud:nth-child(4) { width: 120px; height: 70px; top: 30%; left: -30%; animation-duration: 40s; animation-delay: 15s;}
+
+        @keyframes moveClouds {
+            0% { transform: translateX(0vw); }
+            100% { transform: translateX(110vw); }
+        }
+
+
+        #quiz-container {
+            background: var(--card);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px -5px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Keep content above background */
+        }
+
+        h1, h2 {
+            font-family: var(--header-font);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hidden { display: none; }
+
+        .option-btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            margin: 0.7rem 0;
+            border: none;
+            border-radius: 10px;
+            background: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            text-align: left;
+            font-size: 1.1rem;
+            font-family: var(--body-font);
+            font-weight: 700;
+            color: var(--text);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: #e0e0e0;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+
+        .correct {
+            background: var(--success) !important;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .wrong {
+            background: var(--error) !important;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        #question-text {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            color: var(--text);
+            min-height: 80px; /* Ensure consistent height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #feedback {
+            margin-top: 1.5rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            min-height: 30px; /* Ensure consistent height */
+        }
+
+        #score-display {
+            font-weight: bold;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        #start-btn {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem 2rem;
+            font-size: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease-in-out;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        #start-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            background: #e5655a; /* Slightly darker coral */
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white font-sans overflow-x-hidden">
+<div id="nav-placeholder"></div>
+
+<div class="cloud"></div>
+<div class="cloud"></div>
+<div class="cloud"></div>
+<div class="cloud"></div>
+
+<div id="bg-illustration"></div>
+
+<div id="quiz-container">
+    <div id="setup-screen">
+        <h1>Benvenuto nel Quiz Veneto!</h1>
+        <p style="margin-bottom: 2rem;">Metti alla prova la tua conoscenza sulla splendida regione del Veneto con aneddoti e curiosità!</p>
+        <button id="start-btn" class="option-btn">Inizia Partita</button>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+        <div id="question-text"></div>
+        <div id="options-container"></div>
+        <p id="feedback"></p>
+    </div>
+
+    <div id="result-screen" class="hidden">
+        <h2>Quiz Completato!</h2>
+        <p id="score-display"></p>
+        <button onclick="location.reload()" class="option-btn" style="background: var(--primary); color: white; text-align:center; margin-top: 2rem;">Riprova</button>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        {
+            q: "Qual è il nome del famoso ponte che attraversa il Canal Grande a Venezia, noto per le sue botteghe?",
+            options: ["Ponte degli Scalzi", "Ponte dell'Accademia", "Ponte di Rialto", "Ponte dei Sospiri"],
+            correct: 2,
+            anecdote: "Il Ponte di Rialto è uno dei quattro ponti che attraversano il Canal Grande. Fu l'unico per molti secoli, unendo le due parti più importanti della città fin dal XII secolo, prima in legno e poi in pietra!"
+        },
+        {
+            q: "Quale città veneta è famosa per la Basilica di Sant'Antonio e per il suo Orto Botanico, il più antico del mondo universitario?",
+            options: ["Verona", "Padova", "Vicenza", "Treviso"],
+            correct: 1,
+            anecdote: "Padova è la città del Santo (Sant'Antonio) e vanta un Orto Botanico istituito nel 1545, Patrimonio UNESCO, che ha svolto un ruolo fondamentale nello sviluppo della medicina e della botanica."
+        },
+        {
+            q: "Qual è il piatto tipico veneto a base di riso e radicchio rosso?",
+            options: ["Risotto al nero di seppia", "Risi e Bisi", "Risotto al radicchio di Treviso", "Pasta e fagioli"],
+            correct: 2,
+            anecdote: "Il radicchio rosso di Treviso è un'eccellenza veneta e ingrediente chiave di risotti saporiti. La sua amarognola nota si sposa perfettamente con la dolcezza del riso."
+        },
+        {
+            q: "In quale lago veneto si affaccia la città di Peschiera del Garda?",
+            options: ["Lago di Garda", "Lago di Como", "Lago Maggiore", "Lago d'Iseo"],
+            correct: 0,
+            anecdote: "Peschiera del Garda è una delle località più affascinanti del Lago di Garda, con le sue mura veneziane, anch'esse Patrimonio UNESCO, e un incantevole centro storico."
+        },
+        {
+            q: "Quale vino bianco veneto è famoso in tutto il mondo per le sue bollicine?",
+            options: ["Amarone", "Prosecco", "Soave", "Bardolino"],
+            correct: 1,
+            anecdote: "Il Prosecco, prodotto principalmente tra Conegliano e Valdobbiadene, è diventato uno degli spumanti più apprezzati a livello internazionale, simbolo di convivialità e festa."
+        },
+        {
+            q: "Quale città veneta ospita ogni anno il famoso Festival del Cinema?",
+            options: ["Verona", "Venezia", "Vicenza", "Belluno"],
+            correct: 1,
+            anecdote: "La Mostra Internazionale d'Arte Cinematografica di Venezia è uno dei festival cinematografici più antichi e prestigiosi al mondo, che si svolge ogni anno al Lido di Venezia."
+        },
+        {
+            q: "Qual è il nome della pianura che costituisce gran parte del territorio veneto?",
+            options: ["Pianura Padana", "Pianura Friulana", "Pianura Costiera", "Pianura Polesana"],
+            correct: 0,
+            anecdote: "La Pianura Padana è una delle più vaste pianure d'Europa e comprende gran parte del Veneto, rendendola una regione fertile e agricola."
+        },
+        {
+            q: "Quale dolce tipico veronese viene tradizionalmente preparato a Natale?",
+            options: ["Tiramisù", "Pandoro", "Fugassa", "Pinza"],
+            correct: 1,
+            anecdote: "Il Pandoro, con la sua caratteristica forma a stella, è un'icona del Natale italiano e ha origine a Verona. Spesso viene spolverato con zucchero a velo che ricorda la neve."
+        },
+        {
+            q: "Chi era l'architetto rinascimentale vicentino le cui opere hanno influenzato l'architettura mondiale?",
+            options: ["Donatello", "Brunelleschi", "Andrea Palladio", "Leon Battista Alberti"],
+            correct: 2,
+            anecdote: "Andrea Palladio, maestro del Rinascimento, ha lasciato a Vicenza e nel Veneto un'eredità architettonica straordinaria, dalle ville venete alla Basilica Palladiana, che hanno ispirato architetti in tutto il mondo."
+        },
+        {
+            q: "Qual è il nome della festa storica che si tiene a Venezia ogni anno, con cortei in costume e regate?",
+            options: ["Carnevale di Venezia", "Festa del Redentore", "Regata Storica", "Festa della Sensa"],
+            correct: 2,
+            anecdote: "La Regata Storica, che si svolge ogni prima domenica di settembre, rievoca la storia della Serenissima con un magnifico corteo acqueo e competizioni tra i migliori vogatori."
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    const startBtn = document.getElementById('start-btn');
+    const setupScreen = document.getElementById('setup-screen');
+    const quizScreen = document.getElementById('quiz-screen');
+    const resultScreen = document.getElementById('result-screen');
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const feedbackText = document.getElementById('feedback');
+    const scoreDisplay = document.getElementById('score-display');
+    const body = document.body;
+    const bgIllustration = document.getElementById('bg-illustration');
+
+    // Illustrations for each screen
+    const illustrations = {
+        start: 'url("https://i.ibb.co/C0wV0g1/start-illustration.png")', // Placeholder image for start screen (e.g., Venice canal or vineyard)
+        quiz: 'url("https://i.ibb.co/VMyh26j/quiz-illustration.png")',   // Placeholder image for quiz screen (e.g., Dolomiti or typical Venetian street)
+        results: 'url("https://i.ibb.co/m0f2m21/results-illustration.png")' // Placeholder image for results screen (e.g., Celebration or gondola)
+    };
+
+    // Set initial background illustration and color
+    body.style.backgroundColor = 'var(--bg-start)';
+    bgIllustration.style.backgroundImage = illustrations.start;
+
+
+    startBtn.addEventListener('click', startQuiz);
+
+    function startQuiz() {
+        setupScreen.classList.add('hidden');
+        quizScreen.classList.remove('hidden');
+        body.style.backgroundColor = 'var(--bg-quiz)'; // Change background color for quiz
+        bgIllustration.style.backgroundImage = illustrations.quiz; // Change illustration for quiz
+        showQuestion();
+    }
+
+    function showQuestion() {
+        const currentQ = questions[currentQuestionIndex];
+        questionText.innerText = currentQ.q;
+        optionsContainer.innerHTML = '';
+        feedbackText.innerText = ''; // Clear previous feedback
+
+        currentQ.options.forEach((opt, index) => {
+            const btn = document.createElement('button');
+            btn.innerText = opt;
+            btn.classList.add('option-btn');
+            btn.onclick = () => checkAnswer(index, btn);
+            optionsContainer.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(selectedIndex, btn) {
+        const currentQ = questions[currentQuestionIndex];
+        const correctIndex = currentQ.correct;
+        const buttons = optionsContainer.querySelectorAll('.option-btn');
+        
+        buttons.forEach(b => b.disabled = true); // Disable all buttons
+
+        if (selectedIndex === correctIndex) {
+            score++;
+            btn.classList.add('correct');
+            feedbackText.innerText = "Corretto! 😊 " + currentQ.anecdote;
+            feedbackText.style.color = 'var(--success)';
+        } else {
+            btn.classList.add('wrong');
+            buttons[correctIndex].classList.add('correct'); // Highlight correct answer
+            feedbackText.innerText = "Sbagliato! 😔 La risposta giusta era: " + currentQ.options[correctIndex] + ". " + currentQ.anecdote;
+            feedbackText.style.color = 'var(--error)';
+        }
+
+        setTimeout(() => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }, 3000); // Increased delay to read anecdote
+    }
+
+    function showResults() {
+        quizScreen.classList.add('hidden');
+        resultScreen.classList.remove('hidden');
+        body.style.backgroundColor = 'var(--bg-results)'; // Change background color for results
+        bgIllustration.style.backgroundImage = illustrations.results; // Change illustration for results
+        scoreDisplay.innerText = `Hai totalizzato ${score} punti su ${questions.length}!`;
+    }
+</script>
+
+<div id="footer-placeholder"></div>
+</body>
+<script src="script.js"></script>
+</html>

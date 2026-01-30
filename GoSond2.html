@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sondaggio Salute Mentale Veneto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-white text-slate-900 selection:bg-rose-100 antialiased">
+<div id="nav-placeholder"></div>
+
+    <main class="max-w-3xl mx-auto px-6 py-20">
+        <header class="mb-20">
+            <h1 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter leading-[0.85] mb-10">
+                Chiedere aiuto è un<br>
+                <span class="text-rose-600">atto di coraggio.</span>
+            </h1>
+        </header>
+
+        <section class="mb-12">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-rose-600 text-white text-[10px] font-black uppercase tracking-widest mb-6">
+                Focus Regione Veneto
+            </div>
+            <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                Esploriamo lo stato del benessere psicologico tra i giovani. Dallo psicologo di base ai servizi territoriali: la tua esperienza conta per mappare i bisogni reali.
+            </p>
+            <button onclick="openSurvey()" class="inline-flex items-center gap-4 px-8 py-4 bg-slate-900 text-white rounded-xl font-black uppercase text-xs tracking-[0.2em] hover:bg-rose-600 transition-all shadow-xl group">
+                Partecipa all'indagine
+                <i class="fas fa-heart group-hover:scale-110 transition-transform"></i>
+            </button>
+        </section>
+
+        <article class="space-y-24 mb-32">
+            <section id="risorse" class="scroll-mt-10">
+                <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
+                    <span class="text-indigo-600 text-4xl">1.</span> Gli strumenti attuali
+                </h2>
+                <div class="prose prose-slate text-slate-600 font-medium max-w-none">
+                    <p class="mb-4">Il supporto psicologico in Veneto si divide principalmente tra il servizio pubblico (ULSS), i consultori familiari e i progetti sperimentali legati alle politiche giovanili regionali.</p>
+                    <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-indigo-600 my-6 italic text-sm">
+                        "Dal Bonus Psicologo nazionale ai voucher regionali, le misure economiche cercano di abbattere la barriera del costo, ma l'accesso resta spesso mediato da lunghe liste d'attesa."
+                    </div>
+                </div>
+            </section>
+
+            <section id="territorio" class="scroll-mt-10">
+                <h2 class="text-2xl font-black uppercase italic tracking-tighter mb-6 flex items-center gap-3">
+                    <span class="text-indigo-600 text-4xl">2.</span> Accessibilità e Distanza
+                </h2>
+                <p class="text-slate-600 font-medium leading-relaxed mb-4">
+                    La distribuzione dei centri di salute mentale (CSM) non è uniforme. Le aree periferiche o montane soffrono spesso di una carenza di presidi, costringendo gli utenti a spostamenti significativi.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8 italic text-xs uppercase tracking-wider text-slate-400 font-black">
+                    <div class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-indigo-600"></i> Prossimità dei servizi</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-laptop text-indigo-600"></i> Digitalizzazione del supporto</div>
+                </div>
+            </section>
+        </article>
+
+        <div id="survey-modal" style="display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 20px;">
+            <div class="bg-white w-full max-w-[600px] max-h-[90vh] overflow-y-auto rounded-[24px] p-10 shadow-2xl">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-black uppercase italic tracking-tighter">Sondaggio <span class="text-rose-600">Benessere</span></h2>
+                    <button onclick="closeSurvey()" class="text-slate-400 hover:text-slate-900 transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <form id="survey-form" class="space-y-8">
+                    <div>
+                        <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">01. Quali ostacoli riscontri nell'accesso alle cure?</p>
+                        <div class="grid grid-cols-1 gap-2">
+                            <div class="relative">
+                                <input type="checkbox" id="sm1" name="barrier" value="costi" class="sr-only peer">
+                                <label for="sm1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm text-black transition-all">Costi elevati dei privati</label>
+                            </div>
+                            <div class="relative">
+                                <input type="checkbox" id="sm2" name="barrier" value="attesa" class="sr-only peer">
+                                <label for="sm2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm text-black transition-all">Liste d'attesa nel pubblico</label>
+                            </div>
+                            <div class="relative">
+                                <input type="checkbox" id="sm3" name="barrier" value="stigma" class="sr-only peer">
+                                <label for="sm3" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm text-black transition-all">Stigma sociale / paura del giudizio</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">02. Valuta la tua serenità nell'ultimo mese (1-5)</p>
+                        <div class="flex justify-between gap-2">
+                            <div class="flex-1">
+                                <input type="radio" id="smq1" name="wellbeing" value="1" class="sr-only peer" required>
+                                <label for="smq1" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-black transition-all">1</label>
+                            </div>
+                            <div class="flex-1">
+                                <input type="radio" id="smq2" name="wellbeing" value="2" class="sr-only peer">
+                                <label for="smq2" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-black transition-all">2</label>
+                            </div>
+                            <div class="flex-1">
+                                <input type="radio" id="smq3" name="wellbeing" value="3" class="sr-only peer">
+                                <label for="smq3" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-black transition-all">3</label>
+                            </div>
+                            <div class="flex-1">
+                                <input type="radio" id="smq4" name="wellbeing" value="4" class="sr-only peer">
+                                <label for="smq4" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-black transition-all">4</label>
+                            </div>
+                            <div class="flex-1">
+                                <input type="radio" id="smq5" name="wellbeing" value="5" class="sr-only peer">
+                                <label for="smq5" class="block text-center p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-black transition-all">5</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">03. Conosci i servizi gratuiti nel tuo Comune?</p>
+                        <div class="grid grid-cols-1 gap-2">
+                            <div class="relative">
+                                <input type="radio" id="kms1" name="knowledge" value="si" class="sr-only peer" required>
+                                <label for="kms1" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm text-black transition-all">Sì, so a chi rivolgermi</label>
+                            </div>
+                            <div class="relative">
+                                <input type="radio" id="kms2" name="knowledge" value="no" class="sr-only peer">
+                                <label for="kms2" class="block p-4 border-2 border-slate-100 rounded-xl cursor-pointer peer-checked:border-rose-600 peer-checked:bg-rose-50 font-bold text-sm text-black transition-all">No, non saprei dove andare</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="font-black uppercase text-xs tracking-widest text-slate-400 mb-4">04. Cosa dovrebbe fare la Regione Veneto?</p>
+                        <textarea name="suggestions" class="w-full border-2 border-slate-100 rounded-xl p-4 text-sm font-medium text-black focus:border-rose-600 outline-none transition-colors min-h-[100px]" placeholder="Più sportelli scolastici? Bonus psicologo regionale?"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-slate-900 text-white rounded-xl font-black uppercase text-xs tracking-widest hover:bg-rose-600 transition-all shadow-lg">
+                        Invia Risposte
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function openSurvey() {
+            document.getElementById('survey-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSurvey() {
+            if (confirm("Le risposte non inviate andranno perse. Chiudere?")) {
+                document.getElementById('survey-modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.getElementById('survey-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = {
+                barriers: formData.getAll('barrier'),
+                wellbeing_score: formData.get('wellbeing'),
+                is_informed: formData.get('knowledge'),
+                proposals: formData.get('suggestions')
+            };
+            console.log("Salute Mentale - Dati raccolti:", data);
+            
+            alert('Contributo registrato. Grazie per la tua sincerità.');
+            this.reset();
+            document.getElementById('survey-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    </script>
+    <div id="footer-placeholder"></div>
+</body>
+<script src="script.js"></script>
+</html>

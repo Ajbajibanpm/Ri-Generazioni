@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Personale Utente | YouthVoice</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-white font-sans overflow-x-hidden">
+<div id="nav-placeholder"></div>
+
+<header class="relative bg-indigo-600 pt-32 pb-12 px-6 md:px-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-15">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover">
+    </div>
+    <div class="relative z-10 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+            <div class="relative">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white overflow-hidden bg-white shadow-2xl">
+                    <img id="user-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover">
+                </div>
+                <button onclick="document.getElementById('avatar-input').click()" class="absolute bottom-2 right-2 bg-slate-900 text-white p-2 rounded-full hover:bg-indigo-900 transition-all shadow-lg">
+                    <i class="fas fa-camera text-[10px]"></i>
+                </button>
+                <input type="file" id="avatar-input" class="hidden" accept="image/*">
+            </div>
+            <div class="text-center md:text-left text-white">
+                <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[9px] font-black uppercase tracking-widest mb-3 italic">Community Explorer</span>
+                <h1 class="text-4xl md:text-5xl font-black uppercase italic tracking-tighter text-white">Luca Bianchi</h1>
+                <p class="text-[11px] font-bold uppercase tracking-wider mt-2 opacity-90 text-white">
+                    <i class="fas fa-map-marker-alt mr-1 text-indigo-200"></i> Verona, IT • Membro Pro
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 md:gap-6 max-w-3xl mx-auto md:mx-0">
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-5 md:p-6 rounded-[2.5rem] text-center text-white shadow-xl">
+                <span class="block text-3xl md:text-4xl font-black italic mb-1">3</span>
+                <span class="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] opacity-80 leading-none">Iscrizioni Attive</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-5 md:p-6 rounded-[2.5rem] text-center text-white shadow-xl">
+                <span class="block text-3xl md:text-4xl font-black italic mb-1">120</span>
+                <span class="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] opacity-80 leading-none">Punti Skill</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-5 md:p-6 rounded-[2.5rem] text-center text-white shadow-xl">
+                <span class="block text-3xl md:text-4xl font-black italic mb-1">2</span>
+                <span class="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] opacity-80 leading-none">Certificati</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-6xl mx-auto py-12 px-6 md:px-20">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        
+        <div class="lg:col-span-2 space-y-16">
+            
+            <section class="bg-white p-8 md:p-10 rounded-[3rem] shadow-sm border border-slate-100">
+                <div class="flex justify-between items-center mb-10">
+                    <div>
+                        <h2 class="text-2xl font-black uppercase italic tracking-tight text-indigo-600">I Tuoi Badge</h2>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Status della partecipazione</p>
+                    </div>
+                    <span class="bg-slate-100 px-4 py-2 rounded-full text-[10px] font-black text-slate-500 uppercase tracking-tighter">4/12 Sbloccati</span>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-slate-900">
+                    <div class="flex flex-col items-center group cursor-help">
+                        <div class="w-20 h-20 bg-indigo-50 text-indigo-600 rounded-3xl flex items-center justify-center text-3xl mb-4 shadow-sm transform group-hover:rotate-12 transition-transform">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <span class="text-[10px] font-black uppercase tracking-tighter text-center">First Steps</span>
+                    </div>
+                    <div class="flex flex-col items-center group cursor-help text-amber-500">
+                        <div class="w-20 h-20 bg-amber-50 rounded-3xl flex items-center justify-center text-3xl mb-4 shadow-sm transform group-hover:rotate-12 transition-transform">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <span class="text-[10px] font-black uppercase tracking-tighter text-center">Active Daily</span>
+                    </div>
+                    <div class="flex flex-col items-center opacity-25 grayscale cursor-not-allowed">
+                        <div class="w-20 h-20 bg-slate-100 text-slate-400 rounded-3xl flex items-center justify-center text-3xl mb-4 border-2 border-dashed border-slate-300">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <span class="text-[10px] font-black uppercase tracking-tighter text-center text-slate-900">Speaker</span>
+                    </div>
+                    <div class="flex flex-col items-center opacity-25 grayscale cursor-not-allowed">
+                        <div class="w-20 h-20 bg-slate-100 text-slate-400 rounded-3xl flex items-center justify-center text-3xl mb-4 border-2 border-dashed border-slate-300">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <span class="text-[10px] font-black uppercase tracking-tighter text-center text-slate-900">Winner</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-slate-100">
+                <div class="flex flex-col xl:flex-row gap-10 mb-12 items-start xl:items-center justify-between">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl font-black uppercase mb-3 italic tracking-tight text-slate-900 leading-none">Proponi un <span class="text-indigo-600">Incontro</span></h2>
+                        <p class="text-slate-500 uppercase text-[10px] font-bold tracking-[0.3em]">Hai un'idea per la community? Scrivici qui sotto e falla diventare realtà!</p>
+                    </div>
+
+                    <div class="w-full xl:w-auto p-4 bg-slate-900 rounded-[2rem] border border-white/5 flex items-center gap-6 shadow-2xl shrink-0">
+                        <div class="hidden md:flex items-center gap-4 px-4 border-r border-white/10">
+                            <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="whitespace-nowrap">
+                                <p class="text-[9px] font-black uppercase tracking-widest text-white leading-tight">Supporto AI</p>
+                                <p class="text-[8px] text-slate-400 italic">Olga-Bot</p>
+                            </div>
+                        </div>
+                        <button id="trigger-Olga-Bot-User" onclick="askOlga()" class="flex-grow xl:flex-none px-10 py-5 bg-white/10 backdrop-blur-md rounded-2xl font-bold hover:bg-white/20 transition-all border border-white/10 uppercase tracking-[0.15em] text-[10px] text-white whitespace-nowrap active:scale-95">
+                            Parla con Olga-Bot
+                        </button>
+                    </div>
+                </div>
+
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-8" onsubmit="event.preventDefault(); alert('Proposta inviata!');">
+                    <div class="md:col-span-1">
+                        <label class="block text-[10px] font-black uppercase text-slate-400 mb-3 ml-2 tracking-widest italic">Cosa hai in mente?</label>
+                        <input type="text" id="idea-title" placeholder="ES: WORKSHOP DI CODING" class="w-full bg-slate-50 border-none rounded-2xl py-6 px-8 focus:ring-2 focus:ring-indigo-500 font-bold text-[11px] uppercase outline-none shadow-inner">
+                    </div>
+                    <div class="md:col-span-1">
+                        <label class="block text-[10px] font-black uppercase text-slate-400 mb-3 ml-2 tracking-widest italic">A chi è rivolto?</label>
+                        <input type="text" id="idea-target" placeholder="ES: STUDENTI UNIVERSITARI" class="w-full bg-slate-50 border-none rounded-2xl py-6 px-8 focus:ring-2 focus:ring-indigo-500 font-bold text-[11px] uppercase outline-none shadow-inner">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-[10px] font-black uppercase text-slate-400 mb-3 ml-2 tracking-widest italic">Raccontaci i dettagli</label>
+                        <textarea id="idea-desc" rows="5" placeholder="SCRIVI QUI LA TUA PROPOSTA..." class="w-full bg-slate-50 border-none rounded-[2rem] py-8 px-8 focus:ring-2 focus:ring-indigo-500 font-bold text-[11px] uppercase resize-none outline-none shadow-inner"></textarea>
+                    </div>
+                    <button type="submit" class="md:col-span-2 bg-indigo-600 text-white py-8 rounded-[2rem] text-[12px] font-black uppercase tracking-[0.4em] hover:bg-slate-900 transition-all shadow-2xl active:scale-[0.98]">
+                        Invia Proposta Spontanea <i class="fas fa-paper-plane ml-3"></i>
+                    </button>
+                </form>
+            </section>
+        </div>
+
+        <aside class="space-y-8">
+            <div class="bg-slate-900 text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                <h3 class="text-[10px] font-black uppercase tracking-[0.2em] mb-10 text-indigo-400 italic">Agenda</h3>
+                <div class="space-y-10">
+                    <div class="relative pl-6 border-l-2 border-indigo-500">
+                        <span class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest">Oggi, 16:30</span>
+                        <h4 class="text-sm font-black uppercase mt-1 tracking-tight">Review Portfolio</h4>
+                        <p class="text-[10px] text-indigo-300 mt-2 italic underline cursor-pointer">Unisciti</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <button class="w-full flex items-center justify-between p-6 bg-white hover:bg-indigo-600 hover:text-white transition-all rounded-[2rem] group shadow-sm border border-slate-100">
+                    <span class="text-[10px] font-black uppercase tracking-widest italic">Profilo</span>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+                <button onclick="handleLogout()" class="w-full flex items-center justify-between p-6 bg-white hover:bg-rose-600 hover:text-white transition-all rounded-[2rem] group text-rose-600 shadow-sm border border-slate-100">
+                    <span class="text-[10px] font-black uppercase tracking-widest italic">Logout</span>
+                    <i class="fas fa-power-off text-xs"></i>
+                </button>
+            </div>
+        </aside>
+
+    </div>
+</main>
+
+<script>
+    const avatarInput = document.getElementById('avatar-input');
+    const userAvatar = document.getElementById('user-avatar');
+    avatarInput.addEventListener('change', function() {
+        if (this.files && this.files[0]) {
+            const reader = new FileReader();
+            reader.onload = (e) => userAvatar.src = e.target.result;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+
+    function askOlga() {
+        const aiuto = confirm("Ciao! Sono Olga-bot. Vuoi una mano a scrivere questa idea?");
+        if(aiuto) {
+            document.getElementById('idea-title').value = "CAFFÈ DIGITALE: AI & CREATIVITÀ";
+            document.getElementById('idea-target').value = "GIOVANI CREATIVI VERONESI";
+            document.getElementById('idea-desc').value = "Incontro informale per discutere di come l'IA cambierà il design nel 2026.";
+            alert("Bozza inserita!");
+        }
+    }
+
+    function handleLogout() {
+        if(confirm("Disconnettersi?")) window.location.reload();
+    }
+</script>
+
+<div id="footer-placeholder"></div>
+</body>
+<script src="script.js"></script>
+</html>
