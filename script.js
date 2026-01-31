@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //GIOCOQUIZ
-function GoGIOCOQUIZ() {
+function GIOCOQUIZ() {
     window.location.hash = "gioco-quiz";
 
     const pageWrapper = document.getElementById('page-wrapper');
