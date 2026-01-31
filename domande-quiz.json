@@ -1,0 +1,934 @@
+[
+  {
+    "id": 1,
+    "q": "Quale celebre cocktail a base di Prosecco e Aperol (o Bitter) è nato in Veneto?",
+    "options": ["Negroni", "Spritz", "Bellini", "Americano"],
+    "correct": 1,
+    "anecdote": "Il nome deriva probabilmente dal termine tedesco 'spritzen' (spruzzare), l'usanza dei soldati austriaci di allungare il vino veneto con acqua frizzante."
+  },
+  {
+    "id": 2,
+    "q": "In quale città veneta è ambientata la tragedia di Romeo e Giulietta di Shakespeare?",
+    "options": ["Treviso", "Venezia", "Verona", "Rovigo"],
+    "correct": 2,
+    "anecdote": "Ogni anno migliaia di turisti visitano il celebre balcone di Giulietta, anche se la storia è frutto della letteratura."
+  },
+  {
+    "id": 3,
+    "q": "Quale di questi dolci al cucchiaio, oggi diffuso in tutto il mondo, ha origini contese tra Treviso e Tolmezzo?",
+    "options": ["Panna cotta", "Tiramisù", "Zuppa inglese", "Bonet"],
+    "correct": 1,
+    "anecdote": "La ricetta originale trevigiana sembra sia nata presso il ristorante 'Le Beccherie' verso la fine degli anni '60."
+  },
+  {
+    "id": 4,
+    "q": "Qual è il nome della tipica imbarcazione a remi che simboleggia la città di Venezia?",
+    "options": ["Vaporetto", "Gondola", "Traghetto", "Burchiello"],
+    "correct": 1,
+    "anecdote": "Le gondole sono composte da 280 pezzi di legno diversi e sono rigorosamente colorate di nero per un decreto del XVII secolo contro l'ostentazione del lusso."
+  },
+  {
+    "id": 5,
+    "q": "Come si chiama il ponte coperto in legno progettato da Andrea Palladio che attraversa il fiume Brenta?",
+    "options": ["Ponte degli Scalzi", "Ponte degli Alpini", "Ponte di Rialto", "Ponte della Libertà"],
+    "correct": 1,
+    "anecdote": "Situato a Bassano del Grappa, il ponte è stato distrutto e ricostruito più volte, l'ultima delle quali dopo la Seconda Guerra Mondiale per mano degli Alpini."
+  },
+  {
+    "id": 6,
+    "q": "Quale città veneta è nota per avere la piazza più grande d'Italia (Prato della Valle)?",
+    "options": ["Padova", "Vicenza", "Verona", "Belluno"],
+    "correct": 0,
+    "anecdote": "Prato della Valle misura quasi 90.000 metri quadrati ed è caratterizzata da un'isola centrale circondata da un canale e 78 statue."
+  },
+  {
+    "id": 7,
+    "q": "Qual è l'animale simbolo della Regione Veneto, presente anche sulla sua bandiera?",
+    "options": ["L'aquila", "Il cavallo", "Il leone alato", "Il lupo"],
+    "correct": 2,
+    "anecdote": "Rappresenta il Leone di San Marco, simbolo di maestà e potenza della storica Repubblica di Venezia."
+  },
+  {
+    "id": 8,
+    "q": "Quale gruppo montuoso, Patrimonio UNESCO, caratterizza il panorama della parte settentrionale del Veneto?",
+    "options": ["Appennini", "Dolomiti", "Alpi Cozie", "Madonie"],
+    "correct": 1,
+    "anecdote": "Le Dolomiti prendono il nome dal geologo francese Déodat de Dolomieu, che per primo ne studiò la particolare composizione rocciosa."
+  },
+  {
+    "id": 9,
+    "q": "Quale di questi vini bianchi frizzanti è prodotto principalmente nell'area di Conegliano e Valdobbiadene?",
+    "options": ["Franciacorta", "Prosecco", "Lambrusco", "Chianti"],
+    "correct": 1,
+    "anecdote": "Le colline del Prosecco di Conegliano e Valdobbiadene sono state dichiarate Patrimonio dell'Umanità UNESCO per il loro paesaggio agricolo unico."
+  },
+  {
+    "id": 10,
+    "q": "Cosa indossa tipicamente una persona che partecipa al Carnevale di Venezia per nascondere la propria identità?",
+    "options": ["Un elmo", "Una maschera", "Un velo", "Un cappuccio"],
+    "correct": 1,
+    "anecdote": "Le maschere permettevano ai veneziani di annullare temporaneamente le differenze di classe sociale e di genere."
+  },
+  {
+    "id": 11,
+    "q": "Qual è il soprannome della città di Venezia, riferito al suo storico dominio marittimo?",
+    "options": ["La Superba", "La Serenissima", "La Dotta", "La Dominante"],
+    "correct": 1,
+    "anecdote": "Il termine 'Serenissima' deriva dal titolo spettante ai Dogi e rifletteva la stabilità e la giustizia del governo veneziano."
+  },
+  {
+    "id": 12,
+    "q": "In quale comune veneto si produce il celebre vino rosso 'Amarone'?",
+    "options": ["Negrar di Valpolicella", "Asolo", "Soave", "Bardolino"],
+    "correct": 0,
+    "anecdote": "L'Amarone nasce da un errore: un produttore dimenticò una botte di Recioto (dolce), permettendo ai lieviti di fermentare tutti gli zuccheri, rendendo il vino amaro."
+  },
+  {
+    "id": 13,
+    "q": "Quale università veneta, fondata nel 1222, ospita il primo teatro anatomico stabile al mondo?",
+    "options": ["Università di Verona", "Università di Venezia (Ca' foscari)", "Università di Padova", "Università di Treviso"],
+    "correct": 2,
+    "anecdote": "Il Teatro Anatomico di Padova, costruito nel 1594, permetteva agli studenti di assistere alle autopsie da una struttura a imbuto."
+  },
+  {
+    "id": 14,
+    "q": "Che cos'è il 'Baccalà alla vicentina'?",
+    "options": ["Merluzzo fresco fritto", "Stoccafisso essiccato e cotto a fuoco lento", "Zuppa di pesce di laguna", "Pesce spada grigliato"],
+    "correct": 1,
+    "anecdote": "Nonostante il nome, si usa lo stoccafisso (merluzzo essiccato) importato dalle isole Lofoten in Norvegia fin dal 1432."
+  },
+  {
+    "id": 15,
+    "q": "Come si chiama la maschera veneziana che viene tradizionalmente rappresentata con un lungo becco a punta?",
+    "options": ["Arlecchino", "Pantalone", "Medico della Peste", "Colombina"],
+    "correct": 2,
+    "anecdote": "Il lungo naso a becco veniva riempito di erbe profumate per proteggere il medico dai presunti miasmi del contagio."
+  },
+  {
+    "id": 16,
+    "q": "In quale città si svolge ogni due anni la famosa partita a scacchi con personaggi viventi?",
+    "options": ["Cittadella", "Marostica", "Castelfranco Veneto", "Monselice"],
+    "correct": 1,
+    "anecdote": "La tradizione rievoca una sfida del 1454 tra due nobili che si contendevano la mano della figlia del castellano."
+  },
+  {
+    "id": 17,
+    "q": "Qual è il fiume più lungo che attraversa la pianura veneta sfociando nell'Adriatico?",
+    "options": ["Piave", "Adige", "Po", "Brenta"],
+    "correct": 2,
+    "anecdote": "Il Delta del Po, situato principalmente in provincia di Rovigo, è una delle zone umide più importanti d'Europa e riserva della biosfera."
+  },
+  {
+    "id": 18,
+    "q": "Quale specialità culinaria veneta consiste in fegato cotto con abbondante cipolla?",
+    "options": ["Fegato alla veneziana", "Sarde in saor", "Bigoli in salsa", "Fegato alla trevigiana"],
+    "correct": 0,
+    "anecdote": "I veneziani sostituirono i fichi (usati dai romani per mitigare l'odore del fegato) con le cipolle, abbondanti nelle lagune."
+  },
+  {
+    "id": 19,
+    "q": "Quale noto esploratore veneziano scrisse 'Il Milione', raccontando il suo viaggio in Cina?",
+    "options": ["Cristoforo Colombo", "Marco Polo", "Amerigo Vespucci", "Giovanni Caboto"],
+    "correct": 1,
+    "anecdote": "Marco Polo dettò le sue memorie a Rustichello da Pisa mentre si trovava in prigione a Genova."
+  },
+  {
+    "id": 20,
+    "q": "Quale città veneta è soprannominata 'Urbs Picta' per i suoi numerosi cicli di affreschi?",
+    "options": ["Vicenza", "Verona", "Padova", "Treviso"],
+    "correct": 2,
+    "anecdote": "Padova ospita la Cappella degli Scrovegni di Giotto, capolavoro assoluto della pittura del Trecento."
+  },
+  {
+    "id": 21,
+    "q": "Quale città veneta è storicamente legata alla produzione della Grappa e ospita un celebre Museo ad essa dedicato?",
+    "options": ["Bassano del Grappa", "Conegliano", "Soave", "Adria"],
+    "correct": 0,
+    "anecdote": "La distilleria Nardini, situata all'ingresso del Ponte degli Alpini, è la più antica d'Italia, fondata nel 1779."
+  },
+  {
+    "id": 22,
+    "q": "In quale città si trova lo storico 'Caffè Pedrocchi', noto come il caffè senza porte?",
+    "options": ["Venezia", "Vicenza", "Padova", "Treviso"],
+    "correct": 2,
+    "anecdote": "Era chiamato 'senza porte' perché fino al 1916 rimaneva aperto giorno e notte, accogliendo intellettuali e studenti."
+  },
+  {
+    "id": 23,
+    "q": "Qual è il nome del tipico piatto veneto a base di pasta fresca lunga e ruvida, condita spesso con salsa d'anatra o sarde?",
+    "options": ["Orecchiette", "Bigoli", "Tagliolini", "Passatelli"],
+    "correct": 1,
+    "anecdote": "Il nome deriva dal termine dialettale 'bigat' (bruco), per via della forma ottenuta storicamente con un torchio manuale chiamato 'torcio'."
+  },
+  {
+    "id": 24,
+    "q": "Quale celebre opera lirica inaugura tradizionalmente la stagione all'Arena di Verona?",
+    "options": ["La Traviata", "Tosca", "Aida", "Turandot"],
+    "correct": 2,
+    "anecdote": "L'Aida di Verdi è l'opera simbolo dell'Arena, rappresentata per la prima volta nell'anfiteatro nel 1913 per celebrare il centenario della nascita del compositore."
+  },
+  {
+    "id": 25,
+    "q": "Quale di queste isole veneziane è famosa in tutto il mondo per la lavorazione artigianale del vetro soffiato?",
+    "options": ["Burano", "Murano", "Torcello", "Pellestrina"],
+    "correct": 1,
+    "anecdote": "Nel 1291, per decreto della Repubblica, tutte le fornaci di Venezia furono spostate a Murano per prevenire incendi in città."
+  },
+  {
+    "id": 26,
+    "q": "Quale città veneta è cinta da mura medievali perfettamente conservate e percorribili a piedi sulla sommità?",
+    "options": ["Cittadella", "Rovigo", "Belluno", "Portogruaro"],
+    "correct": 0,
+    "anecdote": "Il camminamento di ronda di Cittadella è uno dei pochi in Europa a essere rimasto integro e interamente percorribile."
+  },
+  {
+    "id": 27,
+    "q": "Cosa si intende in Veneto con il termine 'Ombra' quando ci si riferisce a un'abitudine sociale?",
+    "options": ["Un piccolo panino", "Un bicchiere di vino", "Un caffè macchiato", "Un riposo pomeridiano"],
+    "correct": 1,
+    "anecdote": "Il nome deriva dall'antica abitudine dei mercanti di Venezia di posizionare i banchi del vino all'ombra del campanile di San Marco per tenerlo fresco."
+  },
+  {
+    "id": 28,
+    "q": "Quale isola della laguna di Venezia è celebre per le sue case coloratissime e la produzione di merletti?",
+    "options": ["Murano", "Burano", "Lido", "Giudecca"],
+    "correct": 1,
+    "anecdote": "Si dice che i colori vivaci servissero ai pescatori per riconoscere la propria casa anche in presenza di fitta nebbia."
+  },
+  {
+    "id": 29,
+    "q": "In quale mese si svolge solitamente lo storico Carnevale di Venezia?",
+    "options": ["Gennaio", "Febbraio", "Marzo", "Aprile"],
+    "correct": 1,
+    "anecdote": "Le date variano ogni anno in base alla Pasqua, ma il periodo principale cade sempre nel mese di febbraio."
+  },
+  {
+    "id": 30,
+    "q": "Qual è il nome del fiume che attraversa la città di Verona formando una caratteristica ansa a forma di S?",
+    "options": ["Brenta", "Sile", "Adige", "Livenza"],
+    "correct": 2,
+    "anecdote": "L'Adige è il secondo fiume più lungo d'Italia dopo il Po e ha modellato urbanisticamente il centro storico veronese."
+  },
+  {
+    "id": 31,
+    "q": "Qual è il nome dell'antipasto veneziano a base di sarde fritte, cipolle agrodolci, pinoli e uvetta?",
+    "options": ["Sarde in saor", "Sarde scottadito", "Baccalà mantecato", "Alici marinate"],
+    "correct": 0,
+    "anecdote": "Il 'saor' era nato come metodo di conservazione dei pescatori: l'aceto e la cipolla permettevano di preservare il pesce per diversi giorni a bordo delle barche."
+  },
+  {
+    "id": 32,
+    "q": "Quale famoso seduttore e scrittore nacque a Venezia nel 1725?",
+    "options": ["Giacomo Casanova", "Carlo Goldoni", "Antonio Vivaldi", "Lord Byron"],
+    "correct": 0,
+    "anecdote": "Casanova fu l'unico a riuscire a evadere dal carcere dei Piombi, situato nel sottotetto di Palazzo Ducale."
+  },
+  {
+    "id": 33,
+    "q": "Come si chiama la tipica imbarcazione da trasporto che percorreva il fiume Brenta tra Padova e Venezia?",
+    "options": ["Vaporetto", "Burchiello", "Gondola", "Bragozzo"],
+    "correct": 1,
+    "anecdote": "Il Burchiello era una lussuosa imbarcazione per il trasporto di nobili che volevano raggiungere le proprie ville in terraferma."
+  },
+  {
+    "id": 34,
+    "q": "Qual è il nome del formaggio DOP tipico dell'altopiano dei Sette Comuni in provincia di Vicenza?",
+    "options": ["Montasio", "Piave", "Asiago", "Taleggio"],
+    "correct": 2,
+    "anecdote": "Originariamente l'Asiago veniva prodotto solo con latte di pecora; la produzione con latte vaccino iniziò nel 1500."
+  },
+  {
+    "id": 35,
+    "q": "Quale compositore veneziano, soprannominato il 'Prete Rosso', scrisse il concerto 'Le quattro stagioni'?",
+    "options": ["Giuseppe Verdi", "Antonio Vivaldi", "Tomaso Albinoni", "Claudio Monteverdi"],
+    "correct": 1,
+    "anecdote": "Vivaldi era chiamato 'Prete Rosso' per il colore naturale della sua chioma."
+  },
+  {
+    "id": 36,
+    "q": "Quale ortaggio rosso di forma allungata o a palla è tipico della zona di Treviso?",
+    "options": ["Radicchio", "Pomodoro", "Cipolla", "Peperone"],
+    "correct": 0,
+    "anecdote": "Il Radicchio Rosso di Treviso IGP 'Tardivo' viene lavorato con una tecnica di imbianchimento in acqua risorgiva."
+  },
+  {
+    "id": 37,
+    "q": "Quale provincia veneta è la più settentrionale e interamente montana?",
+    "options": ["Vicenza", "Belluno", "Treviso", "Verona"],
+    "correct": 1,
+    "anecdote": "Belluno è l'unico capoluogo di provincia italiano il cui territorio comunale rientra interamente in un Parco Nazionale (Dolomiti Bellunesi)."
+  },
+  {
+    "id": 38,
+    "q": "Che cos'è lo 'Spritz' nel suo formato più tradizionale e antico?",
+    "options": ["Prosecco e Aperol", "Vino bianco e acqua frizzante", "Vino rosso e gassosa", "Prosecco e Gin"],
+    "correct": 1,
+    "anecdote": "Lo spritz originale non prevedeva liquori colorati, ma solo l'aggiunta di acqua per 'allungare' i vini troppo forti."
+  },
+  {
+    "id": 39,
+    "q": "Qual è il termine dialettale veneto usato per indicare una persona un po' tonta o goffa?",
+    "options": ["Fante", "Mona", "Toso", "Putìno"],
+    "correct": 1,
+    "anecdote": "Sebbene in origine avesse un significato anatomico, nel linguaggio colloquiale moderno è usato per descrivere una persona che si comporta in modo stupido."
+  },
+  {
+    "id": 40,
+    "q": "Come viene chiamato colloquialmente un ragazzo giovane in molte zone del Veneto?",
+    "options": ["Bocia", "Toso", "Fio", "Tutte le precedenti"],
+    "correct": 3,
+    "anecdote": "A seconda della provincia si preferisce 'Toso' (Vicenza/Treviso), 'Fio' (Venezia) o 'Bocia' (Verona/Padova)."
+  },
+  {
+    "id": 41,
+    "q": "Quale città veneta è nota per la leggenda studentesca legata al Prato della Valle?",
+    "options": ["Verona", "Padova", "Venezia", "Rovigo"],
+    "correct": 1,
+    "anecdote": "La leggenda universitaria padovana vuole che chi attraversa il centro di Prato della Valle o guarda negli occhi le statue non riuscirà a laurearsi."
+  },
+  {
+    "id": 42,
+    "q": "In quale città veneta si trova il parco divertimenti Gardaland?",
+    "options": ["Castelnuovo del Garda", "Jesolo", "Abano Terme", "Cortina d'Ampezzo"],
+    "correct": 0,
+    "anecdote": "Gardaland ha aperto nel 1975 ed è oggi uno dei parchi a tema più visitati d'Europa."
+  },
+  {
+    "id": 43,
+    "q": "Quale località balneare veneziana è nota per la sua lunghissima isola pedonale e la vita notturna?",
+    "options": ["Bibione", "Caorle", "Jesolo", "Rosolina Mare"],
+    "correct": 2,
+    "anecdote": "Jesolo è nota per via Bafile, una delle isole pedonali più lunghe d'Europa, centro della vita notturna tra discoteche e beach club."
+  },
+  {
+    "id": 44,
+    "q": "Cosa significa l'espressione veneta 'Fare baggy'?",
+    "options": ["Andare a fare shopping", "Andare a ballare", "Fare filone a scuola", "Studiare insieme"],
+    "correct": 2,
+    "anecdote": "È il termine gergale per indicare l'assenza ingiustificata da scuola (marinare)."
+  },
+  {
+    "id": 45,
+    "q": "Quale bevanda analcolica gassata, nata a Venezia nel 1949, è tipicamente rossa e speziata?",
+    "options": ["Chinotto", "Cedrata", "Ginger (Spuma)", "MoleCola"],
+    "correct": 2,
+    "anecdote": "Il Ginger veneto veniva storicamente mescolato al vino bianco per creare lo spritz analcolico per i più piccoli."
+  },
+  {
+    "id": 46,
+    "q": "Quale artista vicentino ha fuso lo slang americano con quello veneto nella musica trap?",
+    "options": ["Myss Keta", "Madame", "MamboLosco", "Sangiovanni"],
+    "correct": 2,
+    "anecdote": "MamboLosco ha reso virali espressioni come 'Sugoso', unendo l'immaginario veneto alla trap."
+  },
+  {
+    "id": 47,
+    "q": "In Veneto, cosa si intende solitamente se si dà del 'mago' a qualcuno in senso ironico?",
+    "options": ["Che è bravissimo", "Che è un tipo strano o imbranato", "Che sa fare i trucchi", "Che è molto intelligente"],
+    "correct": 1,
+    "anecdote": "È un classico esempio di antifrasi veneta: dare del 'mago' a qualcuno che ha appena commesso un errore banale."
+  },
+  {
+    "id": 48,
+    "q": "Quale calzatura è diventata un simbolo ironico d'appartenenza nelle zone rurali del Veneto?",
+    "options": ["Mocassino", "Stivale di gomma", "Scarpa antinfortunistica", "Pantofola di velluto"],
+    "correct": 1,
+    "anecdote": "Lo stivale di gomma verde è un'icona delle sagre e dei 'party ignoranti' in agricampeggio."
+  },
+  {
+    "id": 49,
+    "q": "Quale lago veneto è celebre per la leggenda di un mostro chiamato 'Bennie' che abiterebbe nelle sue profondità?",
+    "options": ["Lago di Santa Croce", "Lago di Misurina", "Lago di Garda", "Lago di Alleghe"],
+    "correct": 2,
+    "anecdote": "Similmente a Loch Ness, anche il Garda ha la sua leggenda: Bennie sarebbe un mostro avvistato fin dal XVI secolo, descritto come una creatura serpentiforme lunga diversi metri."
+  },
+  {
+    "id": 50,
+    "q": "In quale anno si tennero a Cortina d'Ampezzo le prime Olimpiadi Invernali ospitate in Italia?",
+    "options": ["1948", "1956", "1960", "1964"],
+    "correct": 1,
+    "anecdote": "L'edizione del 1956 fu storica anche perché fu la prima in assoluto a essere trasmessa in diretta televisiva a livello internazionale."
+  },
+  {
+    "id": 51,
+    "q": "Quale particolarità detiene la città di Belluno riguardo alla qualità della vita e dell'ambiente in Italia?",
+    "options": ["Città con più piste ciclabili", "Città con l'aria più pulita", "Città più sicura d'Italia", "Città con il record di giorni di pioggia"],
+    "correct": 1,
+    "anecdote": "Belluno svetta costantemente nelle classifiche di Legambiente e del Sole 24 Ore per la purezza dell'aria e gli standard ecosistemici urbani."
+  },
+  {
+    "id": 52,
+    "q": "Quale rapper originario di Vicenza ha vinto il Festival di Sanremo 2024 (nella categoria Big) con il brano 'La noia'?",
+    "options": ["Madame", "Francesca Michielin", "Angelina Mango", "Nitro"],
+    "correct": 2,
+    "anecdote": "Sebbene Angelina Mango sia lucana, la sua vittoria è legata al Veneto per la produzione e il forte legame artistico sviluppato negli studi di registrazione di Vicenza e Milano."
+  },
+  {
+    "id": 53,
+    "q": "Secondo le statistiche regionali, qual è la provincia veneta con la più alta densità di distretti industriali legati all'occhialeria?",
+    "options": ["Padova", "Belluno", "Treviso", "Venezia"],
+    "correct": 1,
+    "anecdote": "Il distretto di Belluno produce circa l'80% degli occhiali di fascia alta a livello mondiale, ospitando colossi come Luxottica."
+  },
+  {
+    "id": 54,
+    "q": "Quale fenomeno naturale, tipico delle Dolomiti Bellunesi, colora le pareti rocciose di rosa/rosso al tramonto?",
+    "options": ["Enrosadira", "Fata Morgana", "Bora", "Riflesso di Garda"],
+    "correct": 0,
+    "anecdote": "Il termine deriva dal ladino e indica l'effetto della luce sulla dolomite, che contiene carbonato di calcio e magnesio."
+  },
+  {
+    "id": 55,
+    "q": "Quale band veneta ha scalato le classifiche negli anni '90 e 2000 con hit come 'A che ora è la fine del mondo?'",
+    "options": ["Le Vibrazioni", "Pitura Freska", "Rumatera", "Lost"],
+    "correct": 1,
+    "anecdote": "I Pitura Freska portarono il reggae in dialetto veneziano sul palco di Sanremo nel 1997 con la celebre 'Papa Nero'."
+  },
+  {
+    "id": 56,
+    "q": "Quale curiosa statistica riguarda il comune di Padova in relazione al verde pubblico urbano?",
+    "options": ["Ha più alberi che abitanti", "Ha l'orto botanico universitario più antico al mondo", "Ha solo parchi recintati", "Non ha parchi in centro"],
+    "correct": 1,
+    "anecdote": "L'Orto Botanico di Padova, fondato nel 1545, è il più antico orto botanico universitario ancora situato nella sua collocazione originale."
+  },
+  {
+    "id": 57,
+    "q": "In che anno è stato inaugurato il MOSE, il sistema di paratoie mobili per proteggere Venezia dall'acqua alta?",
+    "options": ["2010", "2015", "2020", "2023"],
+    "correct": 2,
+    "anecdote": "Il primo test completo con tutte le 78 paratoie sollevate contemporaneamente è avvenuto nel luglio del 2020, dopo decenni di lavori."
+  },
+  {
+    "id": 58,
+    "q": "Quale famosa bevanda analcolica 'vintage' è prodotta a Recoaro Terme (Vicenza) ed è un cult degli aperitivi veneti?",
+    "options": ["Chinotto Neri", "Gingerino", "Crodino", "Sanbitter"],
+    "correct": 1,
+    "anecdote": "Il Gingerino Recoaro è nato negli anni '40 ed è diventato il simbolo dell'aperitivo analcolico 'on the rocks' in tutto il Triveneto."
+  },
+  {
+    "id": 59,
+    "q": "Quale pianta dai fiori gialli è considerata il simbolo della rinascita primaverile sull'Altopiano di Asiago?",
+    "options": ["Tarassaco", "Ciclamino", "Genziana", "Narciso"],
+    "correct": 0,
+    "anecdote": "Il tarassaco (o dente di leone) ricopre i prati dell'altopiano in primavera; a Conco si tiene ogni anno una rassegna culinaria dedicata proprio a questa erba spontanea."
+  },
+  {
+    "id": 60,
+    "q": "Quale famosissimo festival cinematografico, il più antico del mondo, si svolge ogni anno al Lido di Venezia?",
+    "options": ["Cannes Film Festival", "Mostra Internazionale d'Arte Cinematografica", "Berlinale", "David di Donatello"],
+    "correct": 1,
+    "anecdote": "La prima edizione si tenne nel 1932 sulla terrazza dell'Hotel Excelsior; il premio principale è il Leone d'Oro."
+  },
+  {
+    "id": 61,
+    "q": "In quale anno la città di Vicenza e le Ville Palladiane del Veneto sono state inserite nella lista del Patrimonio UNESCO?",
+    "options": ["1984", "1994", "2004", "2014"],
+    "correct": 1,
+    "anecdote": "Il riconoscimento inizialmente riguardava solo Vicenza ('Città del Palladio'), poi nel 1996 fu esteso alle ville sparse nel resto della regione."
+  },
+  {
+    "id": 62,
+    "q": "Quale comune del bellunese è tristemente noto per il disastro della diga che nel 1963 distrusse la valle sottostante?",
+    "options": ["Agordo", "Longarone", "Mel", "Sedico"],
+    "correct": 1,
+    "anecdote": "Il disastro del Vajont fu causato da una frana del monte Toc che cadde nel bacino artificiale, sollevando un'onda che scavalcò la diga intatta."
+  },
+  {
+    "id": 63,
+    "q": "Secondo i dati turistici, qual è la spiaggia veneta (e italiana) che registra spesso il maggior numero di presenze notturne?",
+    "options": ["Cavallino-Treporti", "Sottomarina", "Eraclea Mare", "Lido di Venezia"],
+    "correct": 0,
+    "anecdote": "Cavallino-Treporti è la capitale europea del 'plein air': i suoi campeggi extralusso ospitano milioni di turisti ogni estate, superando molte grandi città d'arte."
+  },
+  {
+    "id": 64,
+    "q": "Quale borgo bellunese è famoso per essere il 'paese dei murales' che raccontano la vita contadina di un tempo?",
+    "options": ["Cibiana di Cadore", "Cortina", "Sappada", "Limana"],
+    "correct": 0,
+    "anecdote": "Dagli anni '80, artisti da tutto il mondo dipingono le facciate delle case di Cibiana, creando un museo a cielo aperto tra le vette dolomitiche."
+  },
+  {
+    "id": 65,
+    "q": "Quale conduttore televisivo e radiofonico, nato a Verona, è diventato il volto simbolo di quiz storici e del Festival di Sanremo?",
+    "options": ["Gerry Scotti", "Amadeus", "Paolo Bonolis", "Carlo Conti"],
+    "correct": 1,
+    "anecdote": "Sebbene cresciuto a Verona, Amadeus (Amedeo Sebastiani) è legatissimo alla sua città, dove ha mosso i primi passi nelle radio locali."
+  },
+  {
+    "id": 66,
+    "q": "Quale città veneta detiene il record statistico per la produzione artigianale di calzature sportive e scarponi da montagna?",
+    "options": ["Montebelluna", "Vittorio Veneto", "Mirano", "Legnago"],
+    "correct": 0,
+    "anecdote": "Il distretto di Montebelluna produce la maggior parte degli scarponi da sci e delle scarpe tecniche utilizzate dagli atleti mondiali."
+  },
+  {
+    "id": 67,
+    "q": "In quale anno è stato inaugurato il Passante di Mestre per decongestionare il traffico autostradale verso il Friuli e l'Austria?",
+    "options": ["1999", "2005", "2009", "2012"],
+    "correct": 2,
+    "anecdote": "L'opera, lunga circa 32 km, ha permesso di evitare le code chilometriche che si formavano quotidianamente sulla vecchia tangenziale."
+  },
+  {
+    "id": 68,
+    "q": "Qual è il nome del 'deserto' di sabbia e dune situato alla foce del fiume Tagliamento, al confine tra Veneto e Friuli?",
+    "options": ["Dune di Bibione", "Valle Vecchia", "Pineta di Jesolo", "Isola della Plassa"],
+    "correct": 0,
+    "anecdote": "Quest'area conserva uno degli ultimi ecosistemi d'una integri dell'Adriatico, con piante rare che sopravvivono tra sabbia e salsedine."
+  },
+  {
+    "id": 69,
+    "q": "Nella mitologia popolare veneta, che cos'è il 'Bisso Galeto'?",
+    "options": ["Un dolce tipico pasquale", "Una creatura leggendaria metà serpente e metà gallo", "Un tipo di imbarcazione da pesca", "Un antico attrezzo agricolo"],
+    "correct": 1,
+    "anecdote": "Si dice nasca da un uovo deposto da un gallo vecchio di sette anni e covato da un rospo o da un serpente; il suo sguardo sarebbe capace di pietrificare o uccidere all'istante."
+  },
+  {
+    "id": 70,
+    "q": "Quale regione italiana confina a sud con il Veneto, separata in gran parte dal corso del fiume Po?",
+    "options": ["Lombardia", "Emilia-Romagna", "Toscana", "Marche"],
+    "correct": 1,
+    "anecdote": "Il confine segue il ramo principale del Po, ma a causa dei mutamenti del corso del fiume nei secoli, esistono piccole porzioni di terra veneta sulla sponda ferrarese e viceversa."
+  },
+  {
+    "id": 71,
+    "q": "Quale stato estero confina direttamente con il Veneto a nord, lungo la catena delle Alpi?",
+    "options": ["Slovenia", "Svizzera", "Austria", "Francia"],
+    "correct": 2,
+    "anecdote": "Il confine con l'Austria si estende principalmente lungo la provincia di Belluno, toccando i territori del Tirolo e della Carinzia."
+  },
+  {
+    "id": 72,
+    "q": "In quale anno i confini del Veneto si sono ampliati includendo ufficialmente Cortina d'Ampezzo, precedentemente sotto l'Austria?",
+    "options": ["1866", "1918", "1923", "1945"],
+    "correct": 2,
+    "anecdote": "Dopo la Grande Guerra, Cortina fu annessa all'Italia nel 1918, ma fu assegnata alla provincia di Belluno (e quindi al Veneto) solo nel 1923."
+  },
+  {
+    "id": 73,
+    "q": "Quale comune bellunese è situato al confine triplo tra Veneto, Friuli-Venezia Giulia e Austria?",
+    "options": ["Santo Stefano di Cadore", "Comelico Superiore", "Sappada", "Auronzo di Cadore"],
+    "correct": 1,
+    "anecdote": "Il passo di Monte Croce Comelico è lo storico varco che collega il Veneto con la Pusteria e i territori di confine settentrionali."
+  },
+  {
+    "id": 74,
+    "q": "Quale lago segna il confine naturale tra Veneto, Lombardia e Trentino-Alto Adige?",
+    "options": ["Lago di Garda", "Lago d'Idro", "Lago di Resia", "Lago di Ledro"],
+    "correct": 0,
+    "anecdote": "Il punto esatto in cui le tre regioni si incontrano si trova nelle acque del lago, a nord, tra Riva del Garda, Malcesine e Limone."
+  },
+  {
+    "id": 75,
+    "q": "Qual è l'unica provincia veneta che non confina con nessun'altra regione italiana o stato estero, essendo circondata solo da province venete?",
+    "options": ["Padova", "Treviso", "Rovigo", "Nessuna, tutte confinano con l'esterno"],
+    "correct": 3,
+    "anecdote": "Il Veneto è una regione 'aperta': ogni singola provincia veneta tocca almeno un'altra regione (o il mare, o uno stato estero)."
+  },
+  {
+    "id": 76,
+    "q": "Quale fiume segna gran parte del confine orientale tra la provincia di Venezia e il Friuli-Venezia Giulia?",
+    "options": ["Piave", "Livenza", "Tagliamento", "Isonzo"],
+    "correct": 2,
+    "anecdote": "Il Tagliamento è considerato l'ultimo fiume selvaggio d'Europa per il suo letto intrecciato che non ha subito interventi umani massicci."
+  },
+  {
+    "id": 77,
+    "q": "In quale anno il Veneto è entrato a far parte del Regno d'Italia a seguito di un plebiscito?",
+    "options": ["1861", "1866", "1870", "1900"],
+    "correct": 1,
+    "anecdote": "Dopo la Terza Guerra d'Indipendenza, il passaggio avvenne ufficialmente il 21 e 22 ottobre 1866 con una vittoria schiacciante dei 'sì'."
+  },
+  {
+    "id": 78,
+    "q": "Quale comune, storicamente parte del Veneto, è passato alla regione Friuli-Venezia Giulia nel 2017 dopo un referendum?",
+    "options": ["Sappada", "Erto e Casso", "Maniago", "Sacile"],
+    "correct": 0,
+    "anecdote": "Sappada (Plodn in dialetto locale) è passata dalla provincia di Belluno a quella di Udine, cambiando ufficialmente i confini regionali."
+  },
+  {
+    "id": 79,
+    "q": "Quale massiccio montuoso fa da confine naturale tra la provincia di Vicenza e la provincia di Trento?",
+    "options": ["Monte Grappa", "Pasubio", "Marmolada", "Monti Lessini"],
+    "correct": 1,
+    "anecdote": "Il Pasubio è noto per la 'Strada delle 52 gallerie', una via militare costruita durante la Prima Guerra Mondiale proprio lungo la linea di confine."
+  },
+  {
+    "id": 80,
+    "q": "Qual è il punto geografico più a sud del Veneto, situato in provincia di Rovigo?",
+    "options": ["Punta della Maestra", "Sacca di Scardovari", "Isola di Ariano", "Porto Tolle"],
+    "correct": 2,
+    "anecdote": "L'Isola di Ariano, formata dai rami del Delta del Po, ospita il comune di Ariano nel Polesine, che rappresenta l'estremità meridionale della regione."
+  },
+
+  {
+    "id": 81,
+    "q": "Quale città veneta è stata la prima in Italia ad ospitare una ferrovia sopraelevata (monorotaia) durante un'esposizione nel 1911?",
+    "options": ["Venezia", "Padova", "Vicenza", "Verona"],
+    "correct": 1,
+    "anecdote": "Durante l'Esposizione Internazionale, a Padova fu installata una monorotaia che collegava la stazione con il centro, un progetto avveniristico per l'epoca."
+  },
+  {
+    "id": 82,
+    "q": "In quale anno è stato inaugurato il Ponte della Libertà, che collega Venezia alla terraferma?",
+    "options": ["1920", "1933", "1948", "1955"],
+    "correct": 1,
+    "anecdote": "Inaugurato durante il regime fascista come 'Ponte Littorio', cambiò nome dopo la Seconda Guerra Mondiale per celebrare la liberazione."
+  },
+  {
+    "id": 83,
+    "q": "Quale località bellunese ospita 'The Queen of Dolomites', ovvero la funivia che raggiunge il punto più alto della regione?",
+    "options": ["Cortina d'Ampezzo", "Malga Ciapela", "Alleghe", "Arabba"],
+    "correct": 1,
+    "anecdote": "Da Malga Ciapela parte la funivia che porta sulla Marmolada, a quota 3.265 metri, offrendo la vista più vasta di tutte le Alpi orientali."
+  },
+  {
+    "id": 84,
+    "q": "Quale cantante veneta ha raggiunto il successo internazionale vincendo 'Amici' e partecipando a Sanremo con 'Nessun grado di separazione'?",
+    "options": ["Madame", "Chiara Galiazzo", "Francesca Michielin", "Patty Pravo"],
+    "correct": 2,
+    "anecdote": "Originaria di Bassano del Grappa, la Michielin ha rappresentato l'Italia all'Eurovision Song Contest nel 2016."
+  },
+  {
+    "id": 85,
+    "q": "Qual è la provincia veneta che, per statistiche di export, contribuisce maggiormente al PIL regionale grazie alla metalmeccanica?",
+    "options": ["Vicenza", "Rovigo", "Belluno", "Venezia"],
+    "correct": 0,
+    "anecdote": "Vicenza è tra le prime tre province in Italia per valore totale delle esportazioni, grazie alla fitta rete di piccole e medie imprese."
+  },
+  {
+    "id": 86,
+    "q": "In quale anno le Dolomiti sono state ufficialmente dichiarate Patrimonio dell'Umanità UNESCO?",
+    "options": ["2000", "2005", "2009", "2012"],
+    "correct": 2,
+    "anecdote": "Il sito seriale comprende nove sistemi montuosi, la maggior parte dei quali si trova in provincia di Belluno."
+  },
+  {
+    "id": 87,
+    "q": "Quale storica trasmissione radiofonica, nata a Padova negli anni '70, ha lanciato il concetto di 'Radio Libera' in Veneto?",
+    "options": ["Radio Padova", "Radio Sherwood", "Radio Bella & Monella", "Radio Birikina"],
+    "correct": 1,
+    "anecdote": "Radio Sherwood è una delle emittenti comunitarie più longeve d'Italia, nata nel fermento studentesco del 1976."
+  },
+  {
+    "id": 88,
+    "q": "Quale curiosità statistica riguarda la città di Treviso in relazione al consumo di prosecco?",
+    "options": ["È la città con più bar per abitante", "Ha la fontana che distribuiva vino", "Produce il 100% delle bollicine mondiali", "È l'unica senza birrerie"],
+    "correct": 1,
+    "anecdote": "La 'Fontana delle Tette' nel centro di Treviso, costruita nel 1559, distribuiva vino bianco e rosso gratis durante ogni festività."
+  },
+  {
+    "id": 89,
+    "q": "In quale mese si svolge la 'Regata Storica' di Venezia, l'evento remiero più importante dell'anno?",
+    "options": ["Maggio", "Luglio", "Settembre", "Novembre"],
+    "correct": 2,
+    "anecdote": "Si tiene la prima domenica di settembre e rievoca l'accoglienza data a Caterina Cornaro, regina di Cipro, nel 1489."
+  },
+  {
+    "id": 90,
+    "q": "Quale parco regionale veneto è famoso per i suoi 'covoli', grotte naturali utilizzate in passato come rifugi o depositi?",
+    "options": ["Parco dei Colli Euganei", "Parco del Fiume Sile", "Parco della Lessinia", "Parco del Delta del Po"],
+    "correct": 0,
+    "anecdote": "I Colli Euganei sono di origine vulcanica e presentano cavità caratteristiche che hanno ospitato insediamenti umani fin dalla preistoria."
+  },
+  {
+    "id": 91,
+    "q": "Il 'Ciclamino delle Alpi' (Cyclamen purpurascens) è un fiore protetto nei boschi veneti. Qual è la sua caratteristica principale?",
+    "options": ["Fiorisce sotto la neve", "Ha un profumo intensissimo", "È velenoso per le api", "Cresce solo sopra i 3000 metri"],
+    "correct": 1,
+    "anecdote": "A differenza dei ciclamini coltivati che sono inodore, quello selvatico tipico del sottobosco veneto emana un profumo molto dolce e persistente."
+  },
+  {
+    "id": 92,
+    "q": "In quale anno la città di Vicenza è stata colpita da una storica alluvione che ha sommerso gran parte del centro, incluso il Teatro Olimpico?",
+    "options": ["1994", "2000", "2010", "2018"],
+    "correct": 2,
+    "anecdote": "Il 1° novembre 2010 il fiume Bacchiglione esondò, causando danni ingenti; fu uno degli eventi atmosferici più critici della storia recente veneta."
+  },
+  {
+    "id": 93,
+    "q": "Quale località del Bellunese è soprannominata 'la perla delle Dolomiti'?",
+    "options": ["Agordo", "Cortina d'Ampezzo", "Fonzaso", "Belluno"],
+    "correct": 1,
+    "anecdote": "Cortina d'Ampezzo deve il soprannome alla sua posizione scenografica nella conca ampezzana, circondata da vette come le Tofane e il Cristallo."
+  },
+  {"id": 94,
+    "q": "Quale tiktoker e creator veneziana è diventata un'icona Gen Z globale grazie ai suoi video 'Attenzione pickpocket!'?",
+    "options": ["Monica Poli", "Marta Losito", "Emma Galeotti", "Elisa Maino"],
+    "correct": 0,
+    "anecdote": "Monica Poli, parte del gruppo 'Cittadini Non Distratti', è diventata un meme mondiale e un fenomeno social, venendo persino campionata in tracce techno e remix internazionali."
+  },
+  {
+    "id": 95,
+    "q": "Qual è la particolarità statistica del Lago di Garda riguardo alla sua costa veneta (sponda veronese)?",
+    "options": ["È la più profonda", "È chiamata 'Riviera degli Olivi'", "È l'unica senza spiagge", "È la più fredda"],
+    "correct": 1,
+    "anecdote": "Grazie al microclima mite, la sponda veronese permette la coltivazione di olivi e limoni a latitudini insolitamente settentrionali."
+  },
+  {
+    "id": 96,
+    "q": "In quale anno è stato inaugurato il 'Ponte della Costituzione' a Venezia, progettato dall'architetto Santiago Calatrava?",
+    "options": ["2002", "2005", "2008", "2012"],
+    "correct": 2,
+    "anecdote": "Il quarto ponte sul Canal Grande è stato al centro di numerose polemiche per i costi, lo stile moderno e la scivolosità della pavimentazione in vetro."
+  },
+  {
+    "id": 97,
+    "q": "Quale borgo bellunese, facente parte dei 'Borghi più belli d'Italia', è famoso per il suo castello e la produzione di mele?",
+    "options": ["Mel", "Longarone", "Limana", "Tambre"],
+    "correct": 0,
+    "anecdote": "Mel ospita il Castello di Zumelle, il meglio conservato della Valbelluna, legato a leggende di fantasmi e cavalieri."
+  },
+  {
+    "id": 98,
+    "q": "Quale festival musicale 'ignorante' si svolge ogni estate in Veneto, celebrando lo spirito contadino e la musica punk-rock locale?",
+    "options": ["Sherwood Festival", "Venezia Hardcore", "Summer Village", "L'Agricampeggio dei Rumatera"],
+    "correct": 3,
+    "anecdote": "I Rumatera hanno trasformato il concetto di festa di paese in un grande evento che celebra l'orgoglio veneto 'di campagna'."
+  },
+  {
+    "id": 99,
+    "q": "Secondo i dati ISTAT, qual è il comune veneto con la minore altitudine (sotto il livello del mare)?",
+    "options": ["Adria", "Contarina", "Porto Tolle", "Loreo"],
+    "correct": 2,
+    "anecdote": "Alcune zone del Delta del Po si trovano fino a 3-4 metri sotto il livello del mare, protette da argini imponenti."
+  },
+  {
+    "id": 100,
+    "q": "In quale anno Venezia è stata iscritta nella lista dei patrimoni dell'umanità UNESCO insieme alla sua Laguna?",
+    "options": ["1980", "1987", "1995", "2001"],
+    "correct": 1,
+    "anecdote": "L'UNESCO riconosce non solo la città storica, ma l'intero ecosistema lagunare come un capolavoro del genio creativo umano."
+  },
+  {
+    "id": 101,
+    "q": "Quale pianta tipica delle zone umide del Veneto è protetta e fiorisce con grandi petali bianchi o gialli?",
+    "options": ["Ninfea", "Ninfea boreale", "Giglio di palude", "Loto di Lio Piccolo"],
+    "correct": 0,
+    "anecdote": "Le ninfee sono comuni nelle zone di risorgiva come il Sile, dove formano tappeti bianchi spettacolari durante l'estate."
+  },
+  {
+    "id": 102,
+    "q": "Nella tradizione popolare delle valli venete, dove si dice che viva solitamente il Basilisco?",
+    "options": ["In cima ai campanili", "In grotte umide o pozzi abbandonati", "Sotto i ponti di Venezia", "Tra i vigneti di Prosecco"],
+    "correct": 1,
+    "anecdote": "Il Basilisco veneto è descritto come un piccolo rettile con la cresta da gallo. Si credeva che il suo respiro avvelenasse l'aria e che potesse essere ucciso solo mostrandogli uno specchio: morendo nel vedere la propria bruttezza."
+  },
+  {
+    "id": 103,
+    "q": "Quale massiccio montuoso tra Vicenza e Belluno è stato teatro della costruzione della 'Città di Ghiaccio' durante la Grande Guerra?",
+    "options": ["Marmolada", "Monte Grappa", "Altopiano di Asiago", "Pasubio"],
+    "correct": 0,
+    "anecdote": "L'esercito austro-ungarico scavò un labirinto di gallerie e alloggi profondo fino a 40 metri dentro il ghiacciaio per ripararsi dal tiro nemico e dal gelo."
+  },
+  {
+    "id": 104,
+    "q": "In quale anno è stata inaugurata la 'Pedemontana Veneta', la grande arteria stradale che collega le province di Vicenza e Treviso?",
+    "options": ["2015", "2019", "2021", "2024"],
+    "correct": 3,
+    "anecdote": "Sebbene aperta a tratti negli anni precedenti, l'opera è stata completata integralmente nel 2024, diventando un asse vitale per il distretto industriale del Nord-Est."
+  },
+  {
+    "id": 105,
+    "q": "Quale famosa cantante veneziana, soprannominata 'La ragazza del Piper', ha segnato la storia della musica leggera italiana?",
+    "options": ["Patty Pravo", "Mina", "Ornella Vanoni", "Alice"],
+    "correct": 0,
+    "anecdote": "Nata a Venezia come Nicoletta Strambelli, Patty Pravo trascorse l'infanzia tra le calli veneziane, studiando pianoforte al conservatorio Benedetto Marcello."
+  },
+  {
+    "id": 106,
+    "q": "Secondo le statistiche forestali, qual è il bosco più esteso della pianura veneta, residuo dell'antica foresta che copriva la regione?",
+    "options": ["Bosco di Mestre", "Bosco di Carpenedo", "Bosco del Cansiglio", "Bosco di Lison"],
+    "correct": 2,
+    "anecdote": "Il Cansiglio era noto come 'Il Bosco da Remi' della Repubblica di Venezia, poiché forniva il legname per i remi delle galere della flotta veneziana."
+  },
+  {
+    "id": 107,
+    "q": "Quale comune bellunese detiene il titolo di 'Città degli Scacchi' per la produzione di pregiate scacchiere in legno?",
+    "options": ["Scorzè", "Longarone", "Agordo", "Sedico"],
+    "correct": 1,
+    "anecdote": "A Longarone si tiene una storica fiera dedicata agli scacchi, celebrando l'abilità degli artigiani locali nella lavorazione del legno di montagna."
+  },
+  {
+    "id": 108,
+    "q": "In quale anno il centro storico di Verona è stato inserito nel Patrimonio Mondiale dell'Umanità UNESCO?",
+    "options": ["1990", "1995", "2000", "2005"],
+    "correct": 2,
+    "anecdote": "Verona è stata premiata per la sua struttura urbana che integra elementi romani, medievali e rinascimentali in modo eccezionale."
+  },
+  {
+    "id": 109,
+    "q": "Quale famosa compagnia teatrale veneta ha rivoluzionato il teatro popolare negli anni '70 con l'uso del dialetto e della satira?",
+    "options": ["Teatro Stabile del Veneto", "La Piccionaia", "Teatro Settimo", "Tag Teatro"],
+    "correct": 3,
+    "anecdote": "Il Tag Teatro di Mestre è stato fondamentale per il recupero della Commedia dell'Arte, portando le maschere veneziane in tutto il mondo."
+  },
+  {
+    "id": 110,
+    "q": "Qual è la provincia veneta con il maggior numero di comuni certificati tra i 'Borghi più belli d'Italia'?",
+    "options": ["Verona", "Vicenza", "Treviso", "Belluno"],
+    "correct": 2,
+    "anecdote": "La provincia di Treviso vanta borghi spettacolari come Asolo, Cison di Valmarino e Portobuffolè."
+  },
+  {
+    "id": 111,
+    "q": "Quale particolarità naturalistica caratterizza il Lago di Misurina, in provincia di Belluno?",
+    "options": ["È il lago più profondo d'Italia", "Ha un microclima ideale per chi soffre di asma", "È un lago artificiale", "È completamente privo di pesci"],
+    "correct": 1,
+    "anecdote": "L'aria intorno al lago è purissima; per questo motivo ospita l'unico centro in Italia specializzato nella cura dell'asma infantile."
+  },
+  {
+    "id": 112,
+    "q": "In che anno è stato inaugurato il parco 'Italia in Miniatura' a Rimini, che ospita una celebre ricostruzione di Venezia percorribile in barca?",
+    "options": ["1970", "1980", "1992", "2000"],
+    "correct": 2,
+    "anecdote": "La ricostruzione di Venezia nel parco è in scala 1:5; i visitatori navigano il Canal Grande tra palazzi alti fino a 4 metri."
+  },
+  {
+    "id": 113,
+    "q": "Quale legame 'nascosto' unisce Pinocchio al Veneto, oltre alla celebre fiaba di Collodi?",
+    "options": ["Pinocchio era un burattino veneziano", "L'illustratore che gli diede il volto moderno (Attilio Mussino) visse in Veneto", "Il legno di Pinocchio era pino cimbro", "Collodi scrisse il libro a Verona"],
+    "correct": 1,
+    "anecdote": "Attilio Mussino, il più celebre illustratore di Pinocchio, si stabilì a Vernante ma lavorò intensamente con l'editoria veneta, influenzando l'immaginario collettivo del burattino nella regione."
+  },
+  {
+    "id": 114,
+    "q": "Quale termine dello slang Gen Z viene usato dai ragazzi veneti per definire una situazione o una persona molto 'cool' e di tendenza?",
+    "options": ["Sugoso", "Imballato", "Fresco", "Tutte le precedenti"],
+    "correct": 3,
+    "anecdote": "Mentre 'Sugoso' è un'eredità della trap vicentina, 'Fresco' e 'Imballato' sono termini trasversali usati per descrivere qualcosa che spacca."
+  },
+  {
+    "id": 115,
+    "q": "Quale creator veneziano è diventato virale su TikTok per i suoi video in cui racconta con ironia la vita quotidiana e i disagi dei turisti in laguna?",
+    "options": ["Khaby Lame", "Gianluca Busato", "Riccardo Dose", "Awed"],
+    "correct": 2,
+    "anecdote": "Riccardo Dose, pur essendo friulano di nascita, ha vissuto e studiato in Veneto, collaborando spesso con creator locali per sketch che parodizzano il turismo di massa a Venezia."
+  },
+  {
+    "id": 116,
+    "q": "In quale anno è diventata virale la tendenza TikTok di 'invadere' pacificamente le sagre venete con outfit da cowboy o contadino?",
+    "options": ["2018", "2020", "2022", "2024"],
+    "correct": 2,
+    "anecdote": "Il trend ha visto migliaia di ragazzi della Gen Z riscoprire le sagre di paese, trasformandole in eventi 'aesthetic' da postare sui social."
+  },
+  {
+    "id": 117,
+    "q": "Quale città veneta ospita uno dei festival di musica elettronica e pop più amati dai giovanissimi, situato proprio sulle rive del Piave?",
+    "options": ["Home Festival (Treviso)", "Ama Music Festival (Bassano)", "Venezia Hardcore (Marghera)", "Teenage Dream (Padova)"],
+    "correct": 1,
+    "anecdote": "L'Ama Music Festival è diventato un punto di riferimento per la Gen Z veneta, portando sul palco artisti internazionali e icone della scena indie/trap."
+  },
+  {
+    "id": 118,
+    "q": "Secondo le tendenze social, qual è il drink 'alternativo' allo Spritz che sta spopolando tra i Gen Z veneti durante l'aperitivo?",
+    "options": ["Hugo", "Americano", "Gin Lemon", "Moscow Mule"],
+    "correct": 0,
+    "anecdote": "L'Hugo, a base di prosecco, sciroppo di sambuco e menta, è amatissimo per il suo gusto leggero e la sua estetica perfetta per le storie di Instagram."
+  },
+  {
+    "id": 119,
+    "q": "Quale provincia veneta è considerata la 'capitale' dei rave e dei party techno underground più frequentati dai ragazzi negli ultimi anni?",
+    "options": ["Verona", "Padova", "Rovigo", "Belluno"],
+    "correct": 1,
+    "anecdote": "Padova vanta una scena clubbing molto attiva, con spazi industriali riconvertiti che attirano giovani da tutto il Nord Italia."
+  },
+  {
+    "id": 120,
+    "q": "Come viene chiamato sui social il tipico 'nonno veneto' che dà consigli di vita o commenta l'attualità in dialetto, diventando un meme?",
+    "options": ["Il Bocia", "L'Umarell", "Il Vecio", "Il Mago"],
+    "correct": 2,
+    "anecdote": "Il termine 'Vecio' è passato dal dialetto allo slang social per indicare una figura saggia, ma anche un amico stretto (un po' come 'bro')."
+  },
+  {
+    "id": 121,
+    "q": "Quale brand di abbigliamento nato in Veneto è diventato un cult 'vintage' ricercatissimo dalla Gen Z nei negozi di second-hand?",
+    "options": ["Diesel", "Benetton", "Replay", "Tutte le precedenti"],
+    "correct": 3,
+    "anecdote": "Il Veneto è la culla del denim italiano; marchi come Diesel e Replay hanno definito l'estetica degli anni '90 e 2000, oggi tornata di moda con il trend Y2K."
+  },
+  {
+    "id": 122,
+    "q": "In quale anno l'espressione 'POV: sei a un aperitivo in Veneto' ha iniziato a saturare i feed dei social italiani?",
+    "options": ["2019", "2021", "2023", "2025"],
+    "correct": 1,
+    "anecdote": "Il format POV (Point Of View) ha reso l'aperitivo veneto un vero e proprio genere cinematografico su TikTok, tra cicchetti e calici di vino."
+  },
+  {
+    "id": 123,
+    "q": "Quale università veneta è la più 'taggata' e attiva su Instagram per quanto riguarda le feste di laurea goliardiche e i famosi 'papiri'?",
+    "options": ["IUAV (Venezia)", "Università di Verona", "Università di Padova", "Ca' Foscari"],
+    "correct": 2,
+    "anecdote": "La tradizione padovana del papiro e della pubblica umiliazione del laureato è un contenuto d'oro per i social, rendendo Padova la città universitaria più 'caotica' d'Italia."
+  },
+  {
+    "id": 124,
+    "q": "Quale termine usano i Gen Z veneti per indicare il gesto di 'andare a bere' in modo molto veloce e ignorante?",
+    "options": ["Sbocciare", "Sbragare", "Seccare", "Canottare"],
+    "correct": 2,
+    "anecdote": "Mentre 'sbocciare' è legato al mondo delle discoteche, 'seccare' è il termine gergale per finire un drink in un colpo solo, spesso incitati dagli amici."
+  },
+  {
+    "id": 125,
+    "q": "In quale anno è diventato virale il video 'Il Veneto non è una regione, è uno stato mentale', diventato un audio cult su TikTok?",
+    "options": ["2019", "2020", "2021", "2022"],
+    "correct": 1,
+    "anecdote": "Durante i vari lockdown, la Gen Z ha riscoperto l'identità regionale attraverso meme che celebravano il legame indissolubile tra veneti e convivialità."
+  },
+  {
+    "id": 126,
+    "q": "Quale artista vicentina della Gen Z ha conquistato le classifiche con uno stile che unisce pop, rap e testi iper-reali sulla sua generazione?",
+    "options": ["Madame", "Rose Villain", "Ariete", "Annalisa"],
+    "correct": 0,
+    "anecdote": "Francesca Calearo, in arte Madame, è nata a Vicenza nel 2002 ed è considerata una delle voci più originali e profonde della sua generazione."
+  },
+  {
+    "id": 127,
+    "q": "Qual è il 'place to be' estetico per le foto Instagram della Gen Z veneziana, noto per la sua scala a chiocciola scenografica?",
+    "options": ["Palazzo Ducale", "Scala Contarini del Bovolo", "Fondaco dei Tedeschi", "Ponte dell'Accademia"],
+    "correct": 1,
+    "anecdote": "La scala 'del Bovolo' (chiocciola in veneziano) è diventata una delle tappe fisse per chi cerca contenuti 'aesthetic' e meno scontati dei classici monumenti."
+  },
+  {
+    "id": 128,
+    "q": "Quale attività 'vintage' è tornata di moda tra i ragazzi veneti, portandoli a invadere i mercatini dell'antiquariato di Piazzola sul Brenta?",
+    "options": ["Collezionare francobolli", "Thrifting (comprare vestiti usati)", "Giocare a bocce", "Ascoltare le audiocassette"],
+    "correct": 1,
+    "anecdote": "Il mercatino di Piazzola è diventato una meta di pellegrinaggio per la Gen Z a caccia di capi d'abbigliamento unici e sostenibili."
+  },
+  {
+    "id": 129,
+    "q": "Cosa si intende per 'andare a fare serata in Erbaria' a Venezia secondo lo slang dei giovani universitari?",
+    "options": ["Andare a comprare la frutta", "Fare l'aperitivo a Rialto", "Andare a ballare a Mestre", "Fare un pic-nic al parco"],
+    "correct": 1,
+    "anecdote": "L'Erbaria è la zona vicino al mercato di Rialto che di sera si trasforma nel cuore della movida veneziana, piena di 'bacari' e giovani."
+  },
+  {
+    "id": 130,
+    "q": "Quale accessorio non può mancare nell'outfit di un 'toso' veneto Gen Z che vuole seguire il trend della 'Gorpcore' (moda outdoor)?",
+    "options": ["Lo zaino da montagna", "La scarpa tecnica da trekking", "Il gilet multitasche", "Tutte le precedenti"],
+    "correct": 3,
+    "anecdote": "Data la vicinanza alle Dolomiti, lo stile tecnico da montagna è passato dai sentieri bellunesi ai centri città, diventando un vero trend urbano."
+  },
+  {
+    "id": 131,
+    "q": "In quale anno è esploso il trend delle 'pizze giganti' di zone come Jesolo o Caorle, fotografate dai ragazzi per la loro dimensione esagerata?",
+    "options": ["2015", "2018", "2021", "2023"],
+    "correct": 3,
+    "anecdote": "Le pizze che escono abbondantemente dal piatto sono diventate un contenuto virale, trasformando una cena economica in un evento da migliaia di like."
+  },
+  {
+    "id": 132,
+    "q": "Quale creator e rapper veronese è famoso per i suoi video in cui reagisce in modo buffo a tutorial o situazioni assurde?",
+    "options": ["Sacky", "Yung Snapp", "Nitro", "Beba"],
+    "correct": 2,
+    "anecdote": "Nitro, pur essendo un pilastro del rap italiano, è molto attivo sui social dove mostra un lato ironico e schietto tipico della Gen Z veneta."
+  },
+  {
+    "id": 133,
+    "q": "Secondo i meme Gen Z, qual è l'unico modo accettabile di ordinare uno spritz se non vuoi sembrare un 'turista'?",
+    "options": ["Col seltz", "Spritz Select", "Spritz Aperol", "Spritz Campari"],
+    "correct": 1,
+    "anecdote": "Il Select è l'aperitivo nato a Venezia nel 1920; sceglierlo è considerato dai giovani locali un segno di appartenenza e di 'conoscenza' della tradizione vera."
+  }
+
+]
