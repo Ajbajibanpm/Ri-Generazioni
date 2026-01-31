@@ -62,12 +62,12 @@
     "correct": 1,
     "anecdote": "Le colline del Prosecco di Conegliano e Valdobbiadene sono state dichiarate Patrimonio dell'Umanità UNESCO per il loro paesaggio agricolo unico."
   },
-  {
+{
     "id": 10,
-    "q": "Cosa indossa tipicamente una persona che partecipa al Carnevale di Venezia per nascondere la propria identità?",
-    "options": ["Un elmo", "Una maschera", "Un velo", "Un cappuccio"],
-    "correct": 1,
-    "anecdote": "Le maschere permettevano ai veneziani di annullare temporaneamente le differenze di classe sociale e di genere."
+    "q": "Quale altopiano veneto detiene il record della temperatura più bassa mai registrata ufficialmente in Italia, con ben -49,6 °C?",
+    "options": ["Altopiano di Asiago (Sette Comuni)", "Altopiano del Cansiglio", "Altopiano della Lessinia", "Altopiano di Tonezza"],
+    "correct": 0,
+    "anecdote": "Il record è stato rilevato nel 2013 nella dolina 'Busa Nord di Fradusta'. Queste conche naturali favoriscono l'accumulo di aria gelida per inversione termica, creando dei veri e propri 'frigoriferi' naturali."
   },
   {
     "id": 11,
@@ -307,12 +307,12 @@
     "correct": 2,
     "anecdote": "È il termine gergale per indicare l'assenza ingiustificata da scuola (marinare)."
   },
-  {
+{
     "id": 45,
-    "q": "Quale bevanda analcolica gassata, nata a Venezia nel 1949, è tipicamente rossa e speziata?",
-    "options": ["Chinotto", "Cedrata", "Ginger (Spuma)", "MoleCola"],
-    "correct": 2,
-    "anecdote": "Il Ginger veneto veniva storicamente mescolato al vino bianco per creare lo spritz analcolico per i più piccoli."
+    "q": "Quale città della provincia di Treviso è considerata la 'Capitale mondiale dello scarpone' e delle calzature tecniche da sci?",
+    "options": ["Castelfranco Veneto", "Montebelluna", "Conegliano", "Vittorio Veneto"],
+    "correct": 1,
+    "anecdote": "Il distretto di Montebelluna produce circa il 50% degli scarponi da sci mondiali e l'80% delle calzature da motociclismo, vantando una tradizione artigiana iniziata nell'800."
   },
   {
     "id": 46,
@@ -400,7 +400,7 @@
   },
   {
     "id": 58,
-    "q": "Quale famosa bevanda analcolica 'vintage' è prodotta a Recoaro Terme (Vicenza) ed è un cult degli aperitivi veneti?",
+    "q": "Quale famosa bevanda analcolica 'vintage' nata e prodotta in provincia di Vicenza è un cult degli aperitivi veneti?",
     "options": ["Chinotto Neri", "Gingerino", "Crodino", "Sanbitter"],
     "correct": 1,
     "anecdote": "Il Gingerino Recoaro è nato negli anni '40 ed è diventato il simbolo dell'aperitivo analcolico 'on the rocks' in tutto il Triveneto."
@@ -447,12 +447,12 @@
     "correct": 0,
     "anecdote": "Dagli anni '80, artisti da tutto il mondo dipingono le facciate delle case di Cibiana, creando un museo a cielo aperto tra le vette dolomitiche."
   },
-  {
-    "id": 65,
-    "q": "Quale conduttore televisivo e radiofonico, nato a Verona, è diventato il volto simbolo di quiz storici e del Festival di Sanremo?",
-    "options": ["Gerry Scotti", "Amadeus", "Paolo Bonolis", "Carlo Conti"],
+{
+    "id": 146,
+    "q": "Quale primato mondiale detiene lo storico Orto Botanico di Padova, fondato nel 1545?",
+    "options": ["È l'orto botanico con più specie di fiori esotici", "È l'orto botanico universitario più antico al mondo rimasto nella sede originale", "È l'unico orto botanico interamente galleggiante", "È l'orto botanico con la serra più grande d'Europa"],
     "correct": 1,
-    "anecdote": "Sebbene cresciuto a Verona, Amadeus (Amedeo Sebastiani) è legatissimo alla sua città, dove ha mosso i primi passi nelle radio locali."
+    "anecdote": "L'Orto Botanico di Padova ha conservato nei secoli la sua collocazione originaria e la struttura circolare racchiusa da un muro, simbolo del mondo circondato dall'anello dell'acqua."
   },
   {
     "id": 66,
@@ -559,13 +559,12 @@
     "correct": 2,
     "anecdote": "L'Isola di Ariano, formata dai rami del Delta del Po, ospita il comune di Ariano nel Polesine, che rappresenta l'estremità meridionale della regione."
   },
-
-  {
+{
     "id": 81,
-    "q": "Quale città veneta è stata la prima in Italia ad ospitare una ferrovia sopraelevata (monorotaia) durante un'esposizione nel 1911?",
-    "options": ["Venezia", "Padova", "Vicenza", "Verona"],
-    "correct": 1,
-    "anecdote": "Durante l'Esposizione Internazionale, a Padova fu installata una monorotaia che collegava la stazione con il centro, un progetto avveniristico per l'epoca."
+    "q": "In quale località della provincia di Padova si tiene la 'Sagra dei Fisoli', dedicata a una frittella dolce la cui ricetta è segretissima?",
+    "options": ["Arsego", "Camposampiero", "Piazzola sul Brenta", "Limena"],
+    "correct": 0,
+    "anecdote": "Il 'fisolo' è una frittella tipica di Arsego preparata con un impasto povero; la ricetta originale è custodita gelosamente dalle donne del paese che la tramandano di generazione in generazione."
   },
   {
     "id": 82,
@@ -743,10 +742,10 @@
   },
   {
     "id": 107,
-    "q": "Quale comune bellunese detiene il titolo di 'Città degli Scacchi' per la produzione di pregiate scacchiere in legno?",
-    "options": ["Scorzè", "Longarone", "Agordo", "Sedico"],
+    "q": "Quale razza ovina autoctona, originaria della provincia di Belluno e caratterizzata da orecchie lunghe e pendenti, è stata salvata dall'estinzione?",
+    "options": ["Pecora Merinos", "Pecora Alpagota", "Pecora Sarda", "Pecora Brogna"],
     "correct": 1,
-    "anecdote": "A Longarone si tiene una storica fiera dedicata agli scacchi, celebrando l'abilità degli artigiani locali nella lavorazione del legno di montagna."
+    "anecdote": "La pecora Alpagota è un Presidio Slow Food; la sua carne è considerata una prelibatezza gastronomica poiché gli animali vivono allo stato brado nutrendosi di erbe aromatiche dei pascoli dell'Alpago."
   },
   {
     "id": 108,
@@ -778,10 +777,10 @@
   },
   {
     "id": 112,
-    "q": "In che anno è stato inaugurato il parco 'Italia in Miniatura' a Rimini, che ospita una celebre ricostruzione di Venezia percorribile in barca?",
-    "options": ["1970", "1980", "1992", "2000"],
-    "correct": 2,
-    "anecdote": "La ricostruzione di Venezia nel parco è in scala 1:5; i visitatori navigano il Canal Grande tra palazzi alti fino a 4 metri."
+    "q": "Quale maestoso volatile, quasi estinto nel secolo scorso, è tornato a popolare le vette delle Dolomiti Bellunesi grazie a progetti di reintroduzione?",
+    "options": ["Gipeto", "Fenicottero rosa", "Pellicano", "Gabbiano reale"],
+    "correct": 0,
+    "anecdote": "Il gipeto è il più grande avvoltoio europeo. È soprannominato 'avvoltoio degli agnelli' (anche se si nutre quasi esclusivamente di ossa) ed è tornato a nidificare stabilmente nel Parco Nazionale delle Dolomiti Bellunesi."
   },
   {
     "id": 113,
@@ -923,12 +922,89 @@
     "correct": 2,
     "anecdote": "Nitro, pur essendo un pilastro del rap italiano, è molto attivo sui social dove mostra un lato ironico e schietto tipico della Gen Z veneta."
   },
-  {
+{
     "id": 133,
-    "q": "Secondo i meme Gen Z, qual è l'unico modo accettabile di ordinare uno spritz se non vuoi sembrare un 'turista'?",
-    "options": ["Col seltz", "Spritz Select", "Spritz Aperol", "Spritz Campari"],
+    "q": "Oltre a descrivere una persona ubriaca, a quale eccellenza gastronomica veneta viene associato il termine 'Imbriago'?",
+    "options": ["A un tipo di pane", "A un formaggio affinato nelle vinacce", "A un particolare taglio di carne", "A un dolce tipico natalizio"],
     "correct": 1,
-    "anecdote": "Il Select è l'aperitivo nato a Venezia nel 1920; sceglierlo è considerato dai giovani locali un segno di appartenenza e di 'conoscenza' della tradizione vera."
+    "anecdote": "Il formaggio 'imbriago' nacque durante la Grande Guerra, quando i contadini trevigiani nascondevano le forme di formaggio sotto le vinacce per sottrarle ai saccheggi dei soldati austriaci."
+  },
+  {
+    "id": 134,
+    "q": "Quale celebre disegnatore veneziano è il creatore di 'Corto Maltese', il marinaio gentiluomo protagonista di storiche avventure a fumetti e film d'animazione?",
+    "options": ["Milo Manara", "Hugo Pratt", "Guido Crepax", "Giorgio Cavazzano"],
+    "correct": 1,
+    "anecdote": "Hugo Pratt è nato a Rimini ma cresciuto a Venezia, città che ha influenzato profondamente l'estetica e l'anima malinconica delle sue opere."
+  },
+  {
+    "id": 135,
+    "q": "In quale città veneta ha sede lo studio di animazione che ha creato le 'Winx', le fate famose in tutto il mondo?",
+    "options": ["Venezia", "Treviso", "Loreggia", "Verona"],
+    "correct": 2,
+    "anecdote": "La Rainbow, casa produttrice delle Winx, è stata fondata da Iginio Straffi; sebbene oggi abbia sede nelle Marche, ha legami storici con il polo dell'animazione veneta a Loreggia."
+  },
+  {
+    "id": 136,
+    "q": "Qual è il prodotto agricolo tipico di Bassano del Grappa, celebrato con una sagra e noto per il suo colore bianco candido?",
+    "options": ["Asparago Bianco DOP", "Radicchio Tardivo", "Mais Biancoperla", "Cipolla di Chioggia"],
+    "correct": 0,
+    "anecdote": "La leggenda dice che nacque nel 1500 dopo una violenta grandinata che distrusse le punte che emergevano: i contadini mangiarono la parte rimasta sotto terra, scoprendola tenera e dolce."
+  },
+  {
+    "id": 137,
+    "q": "Quale formaggio veneto, prodotto tra le province di Treviso e Belluno, prende il nome dal fiume che attraversa la zona?",
+    "options": ["Asiago", "Montasio", "Piave DOP", "Morlacco"],
+    "correct": 2,
+    "anecdote": "Il formaggio Piave nasce da un'antica tradizione casearia bellunese e viene stagionato fino a oltre 18 mesi per la versione 'Vecchio Selezione Oro'."
+  },
+  {
+    "id": 138,
+    "q": "In quale comune veneziano si tiene ogni anno la 'Sagra del Pesce', dove viene utilizzata una padella gigante da 4 metri di diametro?",
+    "options": ["Camponogara", "Chioggia", "Camponogara", "Eraclea"],
+    "correct": 1,
+    "anecdote": "La sagra di Chioggia è una delle più antiche del Veneto e celebra la tradizione peschereccia della 'Piccola Venezia' con quintali di fritto misto."
+  },
+  {
+    "id": 139,
+    "q": "Qual è il dolce tipico veronese di Natale che, secondo la leggenda, deriva dall'antico 'Nadalin'?",
+    "options": ["Panettone", "Pandoro", "Fritola", "Fugassa"],
+    "correct": 1,
+    "anecdote": "Il nome 'Pandoro' (Pane d'oro) fu depositato nel 1894 dal pasticcere veronese Domenico Melegatti, che ne perfezionò la ricetta e la forma a stella."
+  },
+  {
+    "id": 140,
+    "q": "Quale legume tipico del bellunese, coltivato nell'altopiano di Lamon, è celebre per la sua buccia sottilissima e la digeribilità?",
+    "options": ["Lenticchia di Castelluccio", "Fagiolo di Lamon IGP", "Cicerchia", "Pisello di Borso"],
+    "correct": 1,
+    "anecdote": "Viene coltivato solo in piccoli appezzamenti familiari; ogni anno a settembre si tiene una festa che attira migliaia di buongustai."
+  },
+  {
+    "id": 141,
+    "q": "A quale santo è dedicata la celebre festa veneziana di luglio che prevede un ponte votivo di barche e uno spettacolo pirotecnico unico?",
+    "options": ["San Marco", "San Teodoro", "Il Redentore", "San Rocco"],
+    "correct": 2,
+    "anecdote": "La festa del Redentore celebra la fine della terribile pestilenza del 1576; è la 'notte famosissima' in cui i veneziani cenano in barca nel bacino di San Marco."
+  },
+  {
+    "id": 142,
+    "q": "Quale insaccato tipico vicentino è caratterizzato dall'aggiunta di aglio nell'impasto e da una consistenza molto morbida?",
+    "options": ["Soppressa Vicentina DOP", "Salame Felino", "Mortandela", "Cotechino"],
+    "correct": 0,
+    "anecdote": "La vera soppressa vicentina deve contenere solo le parti pregiate del maiale, inclusi prosciutti e coppe, macinate e condite con pepe e aglio."
+  },
+  {
+    "id": 143,
+    "q": "Quale sagra padovana è famosa per il palio delle contrade che corrono a cavallo per conquistare il 'cencio'?",
+    "options": ["Palio di Montagnana", "Sagra del Prosciutto", "Festa del Prato", "Fiera di Sant'Antonio"],
+    "correct": 0,
+    "anecdote": "Il Palio dei 10 Comuni del Montagnanese rievoca la liberazione dalla tirannia di Ezzelino III da Romano nel 1256, tra sbandieratori e cene medievali."
+  },
+  {
+    "id": 144,
+    "q": "Quale città veneta ha conquistato il Guinness World Record per aver realizzato il Tiramisù più lungo del mondo?",
+    "options": ["Treviso", "Venezia", "Bassano del Grappa", "Verona"],
+    "correct": 2,
+    "anecdote": "A Bassano del Grappa è stato realizzato un Tiramisù lungo ben 273,5 metri; la sfida tra Bassano e Treviso per il primato di questo dolce è una delle competizioni gastronomiche più sentite della regione."
   }
 
 ]
