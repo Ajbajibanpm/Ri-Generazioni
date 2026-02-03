@@ -118,6 +118,18 @@ function filterVenetoMap(categoria, btnElement) {
 /**
  * Rendering dell'interfaccia (Sidebar + Markers)
  */
+// Configurazione Colori Categorie
+function getCategoryColor(cat) {
+    const colors = {
+        'Co-working': '#4f46e5', // Indigo
+        'Eventi': '#e11d48',     // Rose
+        'Cultura': '#0891b2',    // Cyan
+        'Sport': '#16a34a',      // Green
+        'default': '#64748b'     // Slate
+    };
+    return colors[cat] || colors['default'];
+}
+
 function renderVenetoUI(items) {
     const container = document.getElementById('veneto-list-container');
     if (!container || !venetoMarkers) return;
@@ -126,43 +138,78 @@ function renderVenetoUI(items) {
     venetoMarkers.clearLayers();
 
     items.forEach(item => {
-        // 1. Creazione Marker con Popup avanzato
-        const m = L.marker([item.lat, item.lng]).addTo(venetoMarkers);
+        const color = getCategoryColor(item.categoria);
+
+        // Creazione Marker a forma di Pin Classico tramite SVG
+        const pinSvg = `
+            <svg width="30" height="42" viewBox="0 0 30 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 0C6.71573 0 0 6.71573 0 15C0 26.25 15 42 15 42C15 42 30 26.25 30 15C30 6.71573 23.2843 0 15 0Z" fill="${color}"/>
+                <circle cx="15" cy="15" r="6" fill="white"/>
+            </svg>
+        `;
+
+        const customIcon = L.divIcon({
+            className: 'custom-pin',
+            html: pinSvg,
+            iconSize: [30, 42],
+            iconAnchor: [15, 42], // La punta del pin tocca il punto esatto
+            popupAnchor: [0, -40]  // Il popup appare sopra il pin
+        });
+
+        const m = L.marker([item.lat, item.lng], { icon: customIcon }).addTo(venetoMarkers);
         
+        // Popup con Anteprima Immagine
         const popupContent = `
-            <div class="map-popup-card" style="max-width:200px">
-                <img src="${item.immagine}" style="width:100%; border-radius:8px; margin-bottom:8px; height:100px; object-fit:cover;">
-                <h4 style="margin:0 0 5px 0; color:#4f46e5;">${item.titolo}</h4>
-                <p style="font-size:11px; margin-bottom:8px; color:#444;">${item.descrizione}</p>
-                <a href="mailto:${item.contatti}" style="font-size:10px; color:#4f46e5; text-decoration:none; font-weight:bold;">Contatta</a>
+            <div style="width:200px; font-family: 'Inter', sans-serif; line-height: 1.4;">
+                <div style="background-image: url('${item.immagine}'); height:100px; background-size:cover; background-position:center; border-radius:8px; margin-bottom:10px; border: 1px solid #eee;"></div>
+                <strong style="color:${color}; font-size:14px; display:block; margin-bottom:4px;">${item.titolo}</strong>
+                <p style="font-size:11px; color:#475569; margin:0 0 10px 0;">${item.descrizione.substring(0, 85)}...</p>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding-top:8px; border-top:1px solid #f1f5f9;">
+                    <span style="font-size:9px; font-weight:700; text-transform:uppercase; color:#94a3b8;">${item.categoria}</span>
+                    <a href="mailto:${item.contatti}" style="text-decoration:none; color:${color}; font-weight:700; font-size:10px; background:#f0f4ff; padding:4px 8px; border-radius:6px;">Contatta</a>
+                </div>
             </div>
         `;
         m.bindPopup(popupContent);
 
-        // 2. Creazione Card per la Sidebar
+        // Card Sidebar
         const card = document.createElement('div');
-        card.className = "veneto-card-item"; // Usa questa classe nel tuo CSS
+        card.style.cssText = `
+            padding: 12px; 
+            border: 1px solid #eef2f6; 
+            border-radius: 14px; 
+            margin-bottom: 12px; 
+            cursor: pointer; 
+            background: #fff; 
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        `;
         
-        // Generazione Tag HTML
-        const tagsHtml = item.tags ? item.tags.map(tag => `<span class="v-tag">${tag}</span>`).join('') : '';
+        card.onmouseover = () => {
+            card.style.borderColor = color;
+            card.style.transform = 'translateY(-2px)';
+            card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
+        };
+        card.onmouseout = () => {
+            card.style.borderColor = '#eef2f6';
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '0 2px 4px rgba(0,0,0,0.02)';
+        };
+
+        const tagsHtml = item.tags ? item.tags.map(t => 
+            `<span style="font-size:9px; background:#f1f5f9; color:#475569; padding:2px 7px; border-radius:5px; margin-right:4px; font-weight:500;">${t}</span>`
+        ).join('') : '';
 
         card.innerHTML = `
-            <div class="v-card-img" style="background-image: url('${item.immagine}')"></div>
-            <div class="v-card-content">
-                <span class="v-category">${item.categoria}</span>
-                <h3>${item.titolo}</h3>
-                <div class="v-tags-container">${tagsHtml}</div>
-            </div>
+            <div style="height:90px; background:url('${item.immagine}') center/cover; border-radius:10px; margin-bottom:10px;"></div>
+            <div style="font-size:10px; font-weight:800; color:${color}; text-transform:uppercase; letter-spacing:0.5px;">${item.categoria}</div>
+            <strong style="display:block; font-size:15px; color:#1e293b; margin:4px 0;">${item.titolo}</strong>
+            <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:4px;">${tagsHtml}</div>
         `;
 
         card.onclick = () => { 
             venetoMap.flyTo([item.lat, item.lng], 14); 
             m.openPopup(); 
-            
-            // Su mobile chiudi automaticamente la sidebar se necessario
-            if (window.innerWidth < 768) {
-                // logica per scrollare alla mappa o minimizzare sidebar
-            }
         };
         
         container.appendChild(card);
