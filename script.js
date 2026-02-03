@@ -2,44 +2,8 @@
 // Gestore della navigazione basato su hash
 function handleRouting() {
     const currentHash = window.location.hash;
-    if (currentHash === "#articolo-intervista-gio-biondo") {
-        GoArt3();
-    } 
-    else if (currentHash === "#articolo-arte-rigenerazione") {
-        GoArt2();
-    } 
-    else if (currentHash === "#articolo-coworking") {
-        GoArt1();
-    }
-    else if (currentHash === "#articolo-pianta-abbandonata-sul-bus") {
-        GoArt4();
-    }
-    else if (currentHash === "#gioco-quiz") {
+    if (currentHash === "#gioco-quiz") {
         GoGIOCOQUIZ();
-    }
-    else if (currentHash === "#evento-Hackathon-territoriale") {
-        GoEvento1();
-    }
-    else if (currentHash === "#workshop-public-speaking-2026") {
-        GoEvento2();
-    }   
-    else if (currentHash === "#passeggiate-patrimoniali-vicenza") {
-        GoEvento3();
-    }    
-    else if (currentHash === "#chi-siamo") {
-        GoChiSiamo();
-    }
-        else if (currentHash === "#sondaggio-trasporti-notturni") {
-        GoSond1();
-    }
-    else if (currentHash === "#sondaggio-salute-mentale") {
-        GoSond2();
-    }    
-    else if (currentHash === "#sondaggio-calisthenics-belluno") {
-        GoSond3();
-    }
-    else if (currentHash === "#opportunità") {
-        GoOpportunity();
     }
 }
 
@@ -60,65 +24,86 @@ window.addEventListener('hashchange', () => {
 //PULL DI DOMANDE per quiz
 
 //PULL VENETO
-// 1. Array Dati: Centri di aggregazione (Esempio)
-const centriVeneto = [
-    {
-        nome: "Centro San Gaetano",
-        citta: "Padova",
-        coords: [45.409, 11.884],
-        img: "https://esempio.it/padova.jpg",
-        info: "Hub culturale e spazio espositivo."
-    },
-    {
-        nome: "Fabbrica del Vedere",
-        citta: "Venezia",
-        coords: [45.434, 12.338],
-        img: "https://esempio.it/venezia.jpg",
-        info: "Spazio dedicato alla cultura visuale."
+//inserisci qui il nuovo codice:
+// --- LOGICA MAPPA VENETO (VERSIONE PROTETTA) ---
+let venetoMap = null; 
+let venetoMarkers = null;
+
+function openVenetoMap() {
+    const overlay = document.getElementById('modal-overlay-veneto');
+    if (!overlay) return; // Evita errori se l'HTML non è pronto
+
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    // Inizializza Leaflet solo se la libreria è caricata
+    if (typeof L !== 'undefined') {
+        if (!venetoMap) {
+            initVenetoMap();
+        } else {
+            setTimeout(() => { venetoMap.invalidateSize(); }, 200);
+        }
+    } else {
+        console.error("Leaflet (L) non è definito. Verifica il link CSS/JS nell'head.");
     }
-];
+}
 
-// 2. Funzione Principale
-function esploraAreaVeneto() {
-    // Creazione overlay modale
-    const overlay = document.createElement('div');
-    overlay.id = 'map-overlay';
-    overlay.style = "position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; display:flex; justify-content:center; align-items:center;";
+function closeVenetoMap() {
+    const overlay = document.getElementById('modal-overlay-veneto');
+    if (overlay) overlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
     
-    const mapContainer = document.createElement('div');
-    mapContainer.id = 'map-canvas';
-    mapContainer.style = "width:80%; height:80%; border-radius:8px; position:relative;";
+    // Non resettiamo l'hash qui per evitare il reload infinito
+    // Se vuoi pulire l'URL usa:
+    if (window.location.hash === "#mappa-veneto") {
+        history.pushState("", document.title, window.location.pathname);
+    }
+}
+
+function initVenetoMap() {
+    try {
+        venetoMap = L.map('map-veneto-container').setView([45.5, 12.1], 8);
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(venetoMap);
+        
+        venetoMarkers = L.layerGroup().addTo(venetoMap);
+
+        // Caricamento dati sicuro
+        fetch('data.json')
+            .then(res => {
+                if(!res.ok) throw new Error("File data.json non trovato");
+                return res.json();
+            })
+            .then(data => renderVenetoUI(data.punti))
+            .catch(err => console.warn("Mappa avviata senza dati: ", err));
+            
+    } catch (e) {
+        console.error("Errore inizializzazione mappa:", e);
+    }
+}
+
+function renderVenetoUI(items) {
+    const container = document.getElementById('veneto-list-container');
+    if (!container || !items) return;
     
-    const closeBtn = document.createElement('button');
-    closeBtn.innerText = "X";
-    closeBtn.style = "position:absolute; top:10px; right:10px; z-index:1001; cursor:pointer;";
-    closeBtn.onclick = () => document.body.removeChild(overlay);
+    container.innerHTML = '';
+    venetoMarkers.clearLayers();
 
-    mapContainer.appendChild(closeBtn);
-    overlay.appendChild(mapContainer);
-    document.body.appendChild(overlay);
-
-    // Inizializzazione Leaflet
-    const map = L.map('map-canvas').setView([45.440, 12.315], 8); // Focus Veneto
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
-
-    // 3. Inserimento Punti (Pings)
-    centriVeneto.forEach(centro => {
-        const marker = L.marker(centro.coords).addTo(map);
-        const popupContent = `
-            <div style="text-align:center;">
-                <img src="${centro.img}" style="width:100px; height:auto; display:block; margin-bottom:5px;">
-                <strong>${centro.nome}</strong><br>
-                <span>${centro.citta}</span><br>
-                <p style="font-size:12px;">${centro.info}</p>
-            </div>
-        `;
-        marker.bindPopup(popupContent);
+    items.forEach(item => {
+        const m = L.marker([item.lat, item.lng]).addTo(venetoMarkers);
+        const card = document.createElement('div');
+        card.style.cssText = "padding:12px; border:1px solid #eee; border-radius:8px; margin-bottom:8px; cursor:pointer; color:black;";
+        card.innerHTML = `<strong>${item.titolo}</strong><br><small>${item.categoria}</small>`;
+        card.onclick = () => { 
+            venetoMap.flyTo([item.lat, item.lng], 12); 
+            m.bindPopup(item.titolo).openPopup(); 
+        };
+        container.appendChild(card);
     });
-} 
+}
+
+
 //codice script
 document.addEventListener('DOMContentLoaded', () => {
     const aiWindow = document.getElementById('ai-chat-window');

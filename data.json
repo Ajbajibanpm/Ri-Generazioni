@@ -1,0 +1,31 @@
+{
+  "punti": [
+    {
+      "id": 1,
+      "titolo": "Restauro Ville Venete",
+      "categoria": "Cultura",
+      "descrizione": "Progetto di conservazione del patrimonio architettonico locale.",
+      "lat": 45.434,
+      "lng": 12.338,
+      "stato": "In corso"
+    },
+    {
+      "id": 2,
+      "titolo": "Pista Ciclabile del Sile",
+      "categoria": "Ambiente",
+      "descrizione": "Ampliamento dei percorsi naturali nel Parco del Sile.",
+      "lat": 45.666,
+      "lng": 12.245,
+      "stato": "Completato"
+    },
+    {
+      "id": 3,
+      "titolo": "Hub Innovazione Verona",
+      "categoria": "Tecnologia",
+      "descrizione": "Nuovo centro per startup e ricerca digitale.",
+      "lat": 45.438,
+      "lng": 10.991,
+      "stato": "Pianificato"
+    }
+  ]
+}
