@@ -25,83 +25,161 @@ window.addEventListener('hashchange', () => {
 
 //PULL VENETO
 //inserisci qui il nuovo codice:
-// --- LOGICA MAPPA VENETO (VERSIONE PROTETTA) ---
+// --- LOGICA MAPPA VENETO (VERSIONE PROTETTA ED EVOLUTA) ---
 let venetoMap = null; 
 let venetoMarkers = null;
+let originalData = []; // Buffer per i filtri
 
+/**
+ * Apre il modale della mappa e gestisce l'aggiornamento grafico
+ */
 function openVenetoMap() {
     const overlay = document.getElementById('modal-overlay-veneto');
-    if (!overlay) return; // Evita errori se l'HTML non è pronto
+    if (!overlay) return;
 
     overlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; 
     
-    // Inizializza Leaflet solo se la libreria è caricata
     if (typeof L !== 'undefined') {
         if (!venetoMap) {
             initVenetoMap();
         } else {
-            setTimeout(() => { venetoMap.invalidateSize(); }, 200);
+            // Delay necessario per permettere al CSS 'flex' di stabilizzarsi
+            setTimeout(() => { 
+                venetoMap.invalidateSize(); 
+            }, 250);
         }
     } else {
-        console.error("Leaflet (L) non è definito. Verifica il link CSS/JS nell'head.");
+        console.error("Leaflet non caricato. Controlla i link CDN.");
     }
 }
 
+/**
+ * Chiude il modale e ripristina lo scroll
+ */
 function closeVenetoMap() {
     const overlay = document.getElementById('modal-overlay-veneto');
     if (overlay) overlay.style.display = 'none';
     document.body.style.overflow = 'auto';
     
-    // Non resettiamo l'hash qui per evitare il reload infinito
-    // Se vuoi pulire l'URL usa:
     if (window.location.hash === "#mappa-veneto") {
         history.pushState("", document.title, window.location.pathname);
     }
 }
 
+/**
+ * Inizializzazione della mappa
+ */
 function initVenetoMap() {
     try {
+        // ID del contenitore mappa aggiornato
         venetoMap = L.map('map-veneto-container').setView([45.5, 12.1], 8);
+        
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-            attribution: '© OpenStreetMap'
+            attribution: '© OpenStreetMap | CartoDB'
         }).addTo(venetoMap);
         
         venetoMarkers = L.layerGroup().addTo(venetoMap);
 
-        // Caricamento dati sicuro
+        // Caricamento dati
         fetch('data.json')
             .then(res => {
-                if(!res.ok) throw new Error("File data.json non trovato");
+                if(!res.ok) throw new Error("JSON non trovato");
                 return res.json();
             })
-            .then(data => renderVenetoUI(data.punti))
-            .catch(err => console.warn("Mappa avviata senza dati: ", err));
+            .then(data => {
+                originalData = data.punti; // Salviamo i dati per i filtri
+                renderVenetoUI(originalData);
+            })
+            .catch(err => console.warn("Errore caricamento dati:", err));
             
     } catch (e) {
-        console.error("Errore inizializzazione mappa:", e);
+        console.error("Errore critico mappa:", e);
     }
 }
 
+/**
+ * Filtra i punti sulla mappa e nella sidebar
+ * @param {string} categoria - La categoria selezionata
+ */
+function filterVenetoMap(categoria, btnElement) {
+    // Gestione visuale bottoni filtro
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => btn.classList.remove('active-filter'));
+    if (btnElement) btnElement.classList.add('active-filter');
+
+    const filtered = categoria === 'all' 
+        ? originalData 
+        : originalData.filter(item => item.categoria.toLowerCase() === categoria.toLowerCase());
+    
+    renderVenetoUI(filtered);
+}
+
+/**
+ * Rendering dell'interfaccia (Sidebar + Markers)
+ */
 function renderVenetoUI(items) {
     const container = document.getElementById('veneto-list-container');
-    if (!container || !items) return;
+    if (!container || !venetoMarkers) return;
     
     container.innerHTML = '';
     venetoMarkers.clearLayers();
 
     items.forEach(item => {
+        // 1. Creazione Marker con Popup avanzato
         const m = L.marker([item.lat, item.lng]).addTo(venetoMarkers);
+        
+        const popupContent = `
+            <div class="map-popup-card" style="max-width:200px">
+                <img src="${item.immagine}" style="width:100%; border-radius:8px; margin-bottom:8px; height:100px; object-fit:cover;">
+                <h4 style="margin:0 0 5px 0; color:#4f46e5;">${item.titolo}</h4>
+                <p style="font-size:11px; margin-bottom:8px; color:#444;">${item.descrizione}</p>
+                <a href="mailto:${item.contatti}" style="font-size:10px; color:#4f46e5; text-decoration:none; font-weight:bold;">Contatta</a>
+            </div>
+        `;
+        m.bindPopup(popupContent);
+
+        // 2. Creazione Card per la Sidebar
         const card = document.createElement('div');
-        card.style.cssText = "padding:12px; border:1px solid #eee; border-radius:8px; margin-bottom:8px; cursor:pointer; color:black;";
-        card.innerHTML = `<strong>${item.titolo}</strong><br><small>${item.categoria}</small>`;
+        card.className = "veneto-card-item"; // Usa questa classe nel tuo CSS
+        
+        // Generazione Tag HTML
+        const tagsHtml = item.tags ? item.tags.map(tag => `<span class="v-tag">${tag}</span>`).join('') : '';
+
+        card.innerHTML = `
+            <div class="v-card-img" style="background-image: url('${item.immagine}')"></div>
+            <div class="v-card-content">
+                <span class="v-category">${item.categoria}</span>
+                <h3>${item.titolo}</h3>
+                <div class="v-tags-container">${tagsHtml}</div>
+            </div>
+        `;
+
         card.onclick = () => { 
-            venetoMap.flyTo([item.lat, item.lng], 12); 
-            m.bindPopup(item.titolo).openPopup(); 
+            venetoMap.flyTo([item.lat, item.lng], 14); 
+            m.openPopup(); 
+            
+            // Su mobile chiudi automaticamente la sidebar se necessario
+            if (window.innerWidth < 768) {
+                // logica per scrollare alla mappa o minimizzare sidebar
+            }
         };
+        
         container.appendChild(card);
     });
 }
+
+/**
+ * Event Listener per chiusura cliccando fuori
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('modal-overlay-veneto');
+    if (overlay) {
+        overlay.onclick = function(e) {
+            if (e.target === this) closeVenetoMap();
+        };
+    }
+});
 
 
 //codice script

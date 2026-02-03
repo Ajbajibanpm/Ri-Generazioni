@@ -104,7 +104,13 @@
                 <div id="veneto-sidebar" style="width:300px; border-right:1px solid #eee; display:flex; flex-direction:column; background:#fff;">
                     <div style="padding:20px; border-bottom:1px solid #eee;">
                         <h3 style="margin:0; color:#2563eb; font-size:1.1rem;">Veneto Futura</h3>
+                        <div style="display:flex; gap:5px; margin-top:10px; flex-wrap:wrap;">
+                            <button onclick="filterVenetoMap('all', this)" class="filter-btn" style="font-size:10px; padding:4px 8px; border-radius:12px; border:1px solid #eee; cursor:pointer; background:#2563eb; color:#eee;">Tutti</button>
+                            <button onclick="filterVenetoMap('Co-working', this)" class="filter-btn" style="font-size:10px; padding:4px 8px; border-radius:12px; border:1px solid #eee; cursor:pointer; background:#2563eb; color:#eee;">Co-working</button>
+                            <button onclick="filterVenetoMap('Eventi', this)" class="filter-btn" style="font-size:10px; padding:4px 8px; border-radius:12px; border:1px solid #eee; cursor:pointer; background:#2563eb; color:#eee;">Eventi</button>
+                        </div>
                     </div>
+                    
                     <div id="veneto-list-container" style="padding:15px; overflow-y:auto; flex-grow:1;"></div>
                 </div>
                 

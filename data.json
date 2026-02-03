@@ -2,30 +2,113 @@
   "punti": [
     {
       "id": 1,
-      "titolo": "Restauro Ville Venete",
-      "categoria": "Cultura",
-      "descrizione": "Progetto di conservazione del patrimonio architettonico locale.",
-      "lat": 45.434,
-      "lng": 12.338,
-      "stato": "In corso"
+      "titolo": "Hub Innovazione Verona",
+      "categoria": "Co-working",
+      "lat": 45.4385,
+      "lng": 10.9924,
+      "descrizione": "Spazio condiviso con postazioni fisse e flessibili, ideale per freelance under 30.",
+      "immagine": "https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=600&q=80",
+      "tags": ["WiFi 6", "Caffè incluso", "Meeting Room"],
+      "contatti": "verona.hub@esempio.it"
     },
     {
       "id": 2,
-      "titolo": "Pista Ciclabile del Sile",
-      "categoria": "Ambiente",
-      "descrizione": "Ampliamento dei percorsi naturali nel Parco del Sile.",
-      "lat": 45.666,
-      "lng": 12.245,
-      "stato": "Completato"
+      "titolo": "Workshop Street Art Padova",
+      "categoria": "Eventi",
+      "lat": 45.4079,
+      "lng": 11.8858,
+      "descrizione": "Laboratorio gratuito di murales per la rigenerazione urbana del quartiere Arcella.",
+      "immagine": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&w=600&q=80",
+      "tags": ["Creatività", "Gratuito", "Open Air"],
+      "contatti": "info@padova-street.it"
     },
     {
       "id": 3,
-      "titolo": "Hub Innovazione Verona",
-      "categoria": "Tecnologia",
-      "descrizione": "Nuovo centro per startup e ricerca digitale.",
-      "lat": 45.438,
-      "lng": 10.991,
-      "stato": "Pianificato"
+      "titolo": "Biblioteca Futura Vicenza",
+      "categoria": "Cultura",
+      "lat": 45.5481,
+      "lng": 11.5420,
+      "descrizione": "Nuova area studio tecnologica aperta fino a mezzanotte con accesso tramite app.",
+      "immagine": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80",
+      "tags": ["Studio Notturno", "Silent Zone", "Tech"],
+      "contatti": "biblioteca@comune.vicenza.it"
+    },
+    {
+      "id": 4,
+      "titolo": "Area Calisthenics Belluno",
+      "categoria": "Sport",
+      "lat": 46.1424,
+      "lng": 12.2167,
+      "descrizione": "Parco attrezzato per l'allenamento a corpo libero con vista sulle Dolomiti.",
+      "immagine": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=600&q=80",
+      "tags": ["Outdoor", "Sport", "Social"],
+      "contatti": "sport.belluno@esempio.it"
+    },
+    {
+      "id": 5,
+      "titolo": "Startup Incubator Treviso",
+      "categoria": "Co-working",
+      "lat": 45.6669,
+      "lng": 12.2431,
+      "descrizione": "Incubatore per giovani imprenditori digitali e progetti green.",
+      "immagine": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80",
+      "tags": ["Business", "Networking", "Green"],
+      "contatti": "treviso.start@hub.it"
+    },
+    {
+      "id": 6,
+      "titolo": "Festival Cinema Indipendente Venezia",
+      "categoria": "Eventi",
+      "lat": 45.4408,
+      "lng": 12.3155,
+      "descrizione": "Rassegna di cortometraggi realizzati da registi emergenti locali.",
+      "immagine": "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80",
+      "tags": ["Cinema", "Networking", "Serale"],
+      "contatti": "venezia.shorts@esempio.it"
+    },
+    {
+      "id": 7,
+      "titolo": "Laboratorio Digitale Rovigo",
+      "categoria": "Cultura",
+      "lat": 45.0711,
+      "lng": 11.7901,
+      "descrizione": "Corsi di coding, stampa 3D e modellazione per studenti e disoccupati.",
+      "immagine": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80",
+      "tags": ["Coding", "Formazione", "Maker"],
+      "contatti": "rovigo.digital@esempio.it"
+    },
+    {
+      "id": 8,
+      "titolo": "Hackathon Territoriale Bassano",
+      "categoria": "Eventi",
+      "lat": 45.7665,
+      "lng": 11.7335,
+      "descrizione": "Maratona di 24 ore per risolvere sfide legate alla sostenibilità locale.",
+      "immagine": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
+      "tags": ["Hackathon", "Premi", "Teamwork"],
+      "contatti": "hack.bassano@esempio.it"
+    },
+    {
+      "id": 9,
+      "titolo": "Centro Yoga Sociale Schio",
+      "categoria": "Sport",
+      "lat": 45.7132,
+      "lng": 11.3575,
+      "descrizione": "Corsi di yoga e meditazione a contributo libero gestiti da associazione giovanile.",
+      "immagine": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80",
+      "tags": ["Wellness", "Sociale", "Mindfulness"],
+      "contatti": "schio.yoga@esempio.it"
+    },
+    {
+      "id": 10,
+      "titolo": "Spazio Creativo Mantova",
+      "categoria": "Co-working",
+      "lat": 45.1564,
+      "lng": 10.7913,
+      "descrizione": "Atelier condiviso per giovani artisti, designer e artigiani digitali.",
+      "immagine": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80",
+      "tags": ["Design", "Artigianato", "Esposizione"],
+      "contatti": "mantova.create@esempio.it"
     }
   ]
 }
